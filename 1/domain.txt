@@ -4,6 +4,7 @@ Attributes:
 2. phoneNumber - represents the contact phone number of the university. Data type: String.
 3. address - represents the address of the university. Data type: String.
 4. numberOfStudents - represent the number of students studying in university. Data type: Integer.
+5. ranking - represents the rank of the university. Data type: Integer
 Relations:
 1. Constitutes - University constitutes faculties.
 2. Is part of - University has people (Person class) being a part of it.
@@ -15,58 +16,63 @@ Attributes:
 3. budget - represents the yearly budget of the faculty. Data type: Integer.
 Relations:
 1. constitutes - Faculty is a part of Universiy.
-2. constitues - Faculty constututes Departments.
-
-Department
-Attributes:
-1. name - represents the department's name. Data type: String.
-2. researchField[1..*] - represents a list of research fields of the department. Data type: String array.
-3. projects[1..*] - represents a list of projects registered under the given department. Data type: String array.
-Relations:
-1. constitutes- Department is a part of Faculty.
-2. teach - Department teaches Courses.
+2. teach - Faculty teaches Courses.
 
 Course
 Attributes:
 1. id - represents the course's id. Data type: String.
-2. numberOfCredits - repesents the number of credits that is given after the crouse completion. Data type: Integer.
+2. numberOfCredits - repesents the number of credits that is given after the course completion. Data type: Integer.
 3. maxCapacity - represents the maximum number of students that can enroll to this course. Data type: Integer.
 Relations:
-1. teach - Course is taught by a Department.
+1. teach - Course is taught by a Faculty.
 
 Person
 Attributes: 
 1. firstName - represents the person’s first name. Data type: String.
 2. lastName - represents the person’s last name. Data type: String.
 3. phoneNumber[1..*] - displays the person’s one or more phone number. Data type: Integer array.
-dateOfBirth - represents the date the person was born. Data type: Date.
+4. dateOfBirth - represents the date the person was born. Data type: Date.
 Relations:
-1. is part of - person is a part of University
-
-Staff Member
-is a subclass of the Person class
-Attributes:
-1. title - represents the Staff Member's title. Data type: String.
-2. salary - represents the salary of the Staff Member. Data type: Integer.	
-3. officeAdderss - represent the address of the Staff Member's office. Data type: String.
+1. is part of - Person is a part of University
 
 Professor
-is a subclass of the Staff Member class
+is a subclass of the Person class
 Attributes:
-1. researchInterests[1..*] - represents the names of the research interests of the Professor. Data type: String array.
-2. papers[0..*] - represents the titles of the published papers by the Professor. Data type: String array.
-3. officeHours [0..1] - represents the dates and times when the Professor is accepting students for consultations. Data type: String array.
+1. officeHours [0..1] - represents the dates and times when the Professor is accepting students for consultations. Data type: String array.
+Relations:
+1. has - Professor has his/her accademic Paper
+2. research - Professor researches the particular Research field
 
-Administration
-is a subclass of the Staff Member class
+Paper 
+Attributes: 
+1. name - represents the name of the paper. Data type: String.
+2. numberOfPeople - represents the number of people working on the paper. Data type: Integer.
+3. startDate - represents the start date of the paper. Data type: Date.
+Relations:
+1. has - Paper has Pprofessor working on it.
+
+Research
 Attributes:
-1. workingHours - represents the working hours of the administration person. Data type: String.
+1. name - represents the name of the research. Data type: String.
+2. numberOfPeople - represents the number of people working on the research. Data type: Integer.
+3. startDate - represents the start date of the research. Data type: Date.
+Relations:
+1. research - Research being researched by Professor
 
 Student
 is a subclass of the Person class
 Attributes:
-1. studyProgram - represents the Student's study program name. Data type: String.
-2. yearOfStudy - represents the Student's year of study. Data type: Integer.
-3. GPA - represents the average grade of the Student’s examination grades. Data type: Double.
+1. yearOfStudy - represents the Student's year of study. Data type: Integer.
+2. GPA - represents the average grade of the Student’s examination grades. Data type: Double.
+Relations:
+1. involved - Student is involved in the Study Program
+
+Study Program
+Attributes:
+1. name - represents the name of the study program. Data type: String.
+2. numberofStudents - represents the number of students attending the particular study program. Data type: Integer.
+3. courseList[1..*] - represents the list of courses the study program offers. Data type: String array.
+Relations:
+1. involved - Study Program involves Student
 
 
