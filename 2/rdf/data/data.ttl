@@ -72,7 +72,7 @@ ex:yearOfStudy
     rdfs:domain ex:student ;
     rdfs:range xsd:positiveInteger . 
 
-ex:GPA
+ex:gpa
     a rdfs:Property ;
     rdfs:label "GPA"@en ;
     rdfs:comment "grade point average"@en ;
@@ -270,7 +270,7 @@ ex:teaches
     ov:phoneNumber "+2534545467"@en ;
     vcard:bday "2002-05-30T09:00:00"^^xsd:dateTime ;
     ex:yearOfStudy "2"^^xsd:positiveInteger ;
-    ex:GPA "2.5"^^xsd:double ;
+    ex:gpa "2.5"^^xsd:double ;
     ex:studies <ComputerScience> ;
     ex:isPartOf <MassachusettsInstituteofTechnology> .
     
@@ -281,18 +281,18 @@ ex:teaches
     ov:phoneNumber "+12373472457"@en ;
     vcard:bday "2000-10-12T10:30:00"^^xsd:dateTime ;
     ex:yearOfStudy "1"^^xsd:positiveInteger ;
-    ex:GPA "1.2"^^xsd:double ;
+    ex:gpa "1.2"^^xsd:double ;
     ex:studies <Philosophy> ;
     ex:isPartOf <King'sCollegeLondon> .
 
 <MarkBlue>
-    a foaf:Student ;
+    a ex:Student ;
     foaf:firstName "Mark"@en ;
     foaf:lastName "Blue"@en ;
     ov:phoneNumber "+76444321"@en ;
     vcard:bday "1999-11-28T13:20:00"^^xsd:dateTime ;
     ex:yearOfStudy "3"^^xsd:positiveInteger ;
-    ex:GPA "1.8"^^xsd:double ;
+    ex:gpa "1.8"^^xsd:double ;
     ex:studies <Economics> ;
     ex:isPartOf <CharlesUniversity> .
 
