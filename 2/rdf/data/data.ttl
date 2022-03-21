@@ -234,7 +234,7 @@ ex:teaches
     ex:isPartOf <CharlesUniversity> .
 
 <SamRed>
-    a foaf:Professor ;
+    a ex:Professor ;
     foaf:firstName "Sam"@en ;
     foaf:lastName "Red"@en ;
     ov:phoneNumber "+7654321"@en ;
