@@ -178,4 +178,5 @@ CREATE
 (FacultyOfSocialSciences)-[:TEACHES]->(e1fos),
 (Cuni)-[:CONSTITUTES]->(FacultyOfMathematicsAndPhysics),
 (Kcl)-[:CONSTITUTES]->(FacultyOfSocialSciences),
-(Mit)-[:CONSTITUTES]->(FacultyOfMedicine)
+(Mit)-[:CONSTITUTES]->(FacultyOfMedicine),
+(MarkBlue)-[:PARTICIPATES_IN]->(ResearchAboutDeterministicAlgorithms)
