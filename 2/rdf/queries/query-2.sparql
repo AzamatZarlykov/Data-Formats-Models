@@ -1,0 +1,16 @@
+# students that have GPA < 2 and study in university that is in top 45
+PREFIX ex: <http://example.org/vocabulary/>
+prefix dbpediaowl: <https://dbpedia.org/ontology/>
+SELECT ?gpa
+WHERE {
+  ?student a ex:Student ;
+  	 ex:gpa ?gpa ;
+     ex:isPartOf ?uni .
+  {
+    SELECT *
+    WHERE {
+     ?uni dbpediaowl:ranking ?rank .
+    }
+  }
+  FILTER(?gpa<2 && ?rank<=40)
+} LIMIT 10

@@ -1,0 +1,14 @@
+#number of students in uni divided by rank of uni in descending order
+PREFIX dbpediaowl: <https://dbpedia.org/ontology/>
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+
+SELECT ?var
+WHERE { 
+  ?s a vivo:University ;
+   dbpediaowl:numberOfStudents ?num ;
+   dbpediaowl:ranking ?rank ;
+   
+     BIND(?num/?rank as ?var) .
+  
+} 
+ORDER BY DESC(?var)

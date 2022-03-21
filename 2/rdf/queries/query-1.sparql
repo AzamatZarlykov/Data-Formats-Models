@@ -1,0 +1,20 @@
+# student-professor pairs that are from the same universiy and both are born before year 2005
+PREFIX ex: <http://example.org/vocabulary/>
+prefix dbpediaowl: <https://dbpedia.org/ontology/>
+prefix vcard: <http://www.w3.org/2006/vcard/ns#> 
+
+SELECT ?student ?professor
+WHERE {
+  ?student a ex:Student ;
+  	vcard:bday ?sBday ;
+  	ex:isPartOf ?uni .
+  {
+    SELECT *
+    WHERE {
+      ?professor a ex:Professor ;
+      vcard:bday ?pBday ;
+      ex:isPartOf ?uni .
+    }
+  }
+  FILTER(year(?sBday)<2005 && year(?pBday)<2005)
+} LIMIT 10

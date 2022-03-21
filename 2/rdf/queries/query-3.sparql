@@ -1,0 +1,13 @@
+# average year of all proterties with a value of xsd:date or xsd:dateTime
+PREFIX ex: <http://example.org/vocabulary/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT (AVG(?year) as ?avgYear)
+WHERE { 
+  ?s a ?a ;
+  ?h ?dateOrTime .
+  
+  FILTER (dataType(?dateOrTime) = xsd:date || dataType(?dateOrTime) = xsd:dateTime)
+  BIND(year(?dateOrTime) as ?year) 
+} LIMIT 10
+ 
