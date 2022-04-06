@@ -17,6 +17,7 @@
 @prefix foaf: <http://xmlns.com/foaf/spec/#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 #Classes:
 
 ex:Professor
@@ -92,13 +93,6 @@ ex:courseList
     rdfs:comment "list of courses in a study program"@en ;
     rdfs:domain ex:studyProgram ;
     rdfs:range rdfs:literal .
-
-ex:startDate
-    a rdfs:Property ;
-    rdfs:label "start date"@en ;
-    rdfs:comment "date when something has started"@en ;
-    rdfs:domain ex:ThingsWithNumberOfPeople ;
-    rdfs:range xsd:date . 
 
 ex:establishDate 
     a rdfs:Property ;
@@ -189,37 +183,37 @@ ex:teaches
     a ex:Paper ;
     dcterms:title "Interseting paper about Linear Algebra"@en ;
     ex:numberOfPeopleInPaper "5"^^xsd:positiveInteger ;
-    ex:startDate "1997-05-10"^^xsd:date .
+    disco:startDate "1997-05-10"^^xsd:date .
 
 <PaperAboutMathematicalAnalysis>
     a ex:Paper ;
     dcterms:title "Interseting paper about Mathematical Analysis"@en ;
     ex:numberOfPeopleInPaper "3"^^xsd:positiveInteger ;
-    ex:startDate "1999-06-15"^^xsd:date .
+    disco:startDate "1999-06-15"^^xsd:date .
 
 <PaperAboutDiscreteMathematics>
     a ex:Paper ;
     dcterms:title "Interseting paper about Discrete Mathematics"@en ;
     ex:numberOfPeopleInPaper "7"^^xsd:positiveInteger ;
-    ex:startDate "1990-08-17"^^xsd:date .
+    disco:startDate "1990-08-17"^^xsd:date .
 
 <ResearchAboutDeterministicAlgorithms>
     a lsc:Research ;
     dcterms:title "Research About Determinisitc Algorithms"@en ;
     ex:numberOfPeopleInResearch "10"^^xsd:positiveInteger ;
-    ex:startDate "2001-05-15"^^xsd:date .
+    disco:startDate "2001-05-15"^^xsd:date .
 
 <ResearchAboutConvexHulls>
     a lsc:Research ;
     dcterms:title "Research About Convex Hulls"@en ;
     ex:numberOfPeopleInResearch "12"^^xsd:positiveInteger ;
-    ex:startDate "2003-08-05"^^xsd:date .
+    disco:startDate "2003-08-05"^^xsd:date .
 
 <ResearchAboutRandomizedAlgorithms>
     a lsc:Research ;
     dcterms:title "Research About Randomized Algorithms"@en ;
     ex:numberOfPeopleInResearch "16"^^xsd:positiveInteger ;
-    ex:startDate "2004-07-03"^^xsd:date .
+    disco:startDate "2004-07-03"^^xsd:date .
    
 <AlexGreen>
     a ex:Professor ;
