@@ -1,4 +1,4 @@
-@prefix ex: <http://example.org/vocabulary/> .
+@base <http://newbase.com/> .
 @prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dbpediaowl: <https://dbpedia.org/ontology/> .
