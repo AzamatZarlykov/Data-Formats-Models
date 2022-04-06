@@ -33,21 +33,14 @@ ex:Student
     rdfs:label "student"@en ;
     rdfs:comment "a student in a university"@en .
 
-ex:ThingsWithNumberOfPeople
-    a rdfs:Class ;
-    rdfs:label "things with number of people"@en ;
-    rdfs:comment "a superclass for classes that have property: numberOfPeople"@en .
-
 ex:Research
     a rdfs:Class;
     rdfs:subClassOf lsc:Research ;
-    rdfs:subClassOf ex:thingsWithNumberOfPeople ;
     rdfs:label "research"@en ;
     rdfs:comment "research conducted by someone"@en .
 
 ex:Paper
     a rdfs:Class;
-    rdfs:subClassOf ex:thingsWithNumberOfPeople ;
     rdfs:label "paper"@en ;
     rdfs:comment "a scientific paper that is created/published by someone"@en .
 
@@ -79,12 +72,19 @@ ex:gpa
     rdfs:domain ex:student ;
     rdfs:range xsd:double . 
 
-ex:numberOfPeople
+ex:numberOfPeopleInPaper
     a rdfs:Property ;
     rdfs:label "number of people"@en ;
-    rdfs:comment "number of people in something"@en ;
-    rdfs:domain ex:thingsWithNumberOfPeople ;
+    rdfs:comment "number of people involved in some scientific paper"@en ;
+    rdfs:domain ex:Paper ;
     rdfs:range xsd:positiveInteger .     
+
+ex:numberOfPeopleInResearch
+    a rdfs:Property ;
+    rdfs:label "number of people"@en ;
+    rdfs:comment "number of people involved in some scientific research"@en ;
+    rdfs:domain ex:Research ;
+    rdfs:range xsd:positiveInteger . 
 
 ex:courseList
     a rdfs:Property ;
@@ -188,37 +188,37 @@ ex:teaches
 <PaperAboutLinearAlgebra>
     a ex:Paper ;
     dcterms:title "Interseting paper about Linear Algebra"@en ;
-    ex:numberOfPeople "5"^^xsd:positiveInteger ;
+    ex:numberOfPeopleInPaper "5"^^xsd:positiveInteger ;
     ex:startDate "1997-05-10"^^xsd:date .
 
 <PaperAboutMathematicalAnalysis>
     a ex:Paper ;
     dcterms:title "Interseting paper about Mathematical Analysis"@en ;
-    ex:numberOfPeople "3"^^xsd:positiveInteger ;
+    ex:numberOfPeopleInPaper "3"^^xsd:positiveInteger ;
     ex:startDate "1999-06-15"^^xsd:date .
 
 <PaperAboutDiscreteMathematics>
     a ex:Paper ;
     dcterms:title "Interseting paper about Discrete Mathematics"@en ;
-    ex:numberOfPeople "7"^^xsd:positiveInteger ;
+    ex:numberOfPeopleInPaper "7"^^xsd:positiveInteger ;
     ex:startDate "1990-08-17"^^xsd:date .
 
 <ResearchAboutDeterministicAlgorithms>
     a lsc:Research ;
     dcterms:title "Research About Determinisitc Algorithms"@en ;
-    ex:numberOfPeople "10"^^xsd:positiveInteger ;
+    ex:numberOfPeopleInResearch "10"^^xsd:positiveInteger ;
     ex:startDate "2001-05-15"^^xsd:date .
 
 <ResearchAboutConvexHulls>
     a lsc:Research ;
     dcterms:title "Research About Convex Hulls"@en ;
-    ex:numberOfPeople "12"^^xsd:positiveInteger ;
+    ex:numberOfPeopleInResearch "12"^^xsd:positiveInteger ;
     ex:startDate "2003-08-05"^^xsd:date .
 
 <ResearchAboutRandomizedAlgorithms>
     a lsc:Research ;
     dcterms:title "Research About Randomized Algorithms"@en ;
-    ex:numberOfPeople "16"^^xsd:positiveInteger ;
+    ex:numberOfPeopleInResearch "16"^^xsd:positiveInteger ;
     ex:startDate "2004-07-03"^^xsd:date .
    
 <AlexGreen>
