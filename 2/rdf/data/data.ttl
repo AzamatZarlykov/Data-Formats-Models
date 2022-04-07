@@ -174,7 +174,7 @@ ex:teaches
     a vivo:University ;
     dcterms:title "Massachusetts Institute of Technology"@en ;
     ov:phoneNumber "+1 617-253-1000"@en ;
-    vcard:street-address "77 Massachusetts Ave, Cambridge, MA 02139, United States"@cz ;
+    vcard:street-address "77 Massachusetts Ave, Cambridge, MA 02139, United States"@en ;
     dbpediaowl:numberOfStudents "1300"^^xsd:nonNegativeInteger ;
     dbpediaowl:ranking "3"^^xsd:positiveInteger ;
     ex:constitutes <FacultyOfMedicine> .
