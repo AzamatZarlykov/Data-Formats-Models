@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<universities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hwSchema.xsd">
+    <university>
+     <name>Charles University</name>
+     <phoneNumber>224 491 111</phoneNumber>
+     <address>Opletalova 38, 110 00 Staré Město</address>
+     <numberOfStudents>1000</numberOfStudents>
+     <ranking>50</ranking>
+
+     <student>
+        <firstName>Mark</firstName>
+        <lastName>Blue</lastName>
+        <phoneNumber>+76444321</phoneNumber>
+        <dateOfBirth>1999-11-28T13:20:00</dateOfBirth>
+        <yearOfStudy>3</yearOfStudy>
+        <gpa>1.8</gpa>
+        
+        <studyProgram>
+            <name>Economics</name>
+            <numberOfStudents>65</numberOfStudents>
+            <courseList>course1</courseList>
+            <courseList>course2</courseList>
+            <courseList>course3</courseList>
+        </studyProgram>
+     </student>
+
+     <professor>
+         <firstName>Alex</firstName>
+         <lastName>Green</lastName>
+         <phoneNumber>+12345467</phoneNumber>
+         <dateOfBirth>1980-05-30T09:00:00</dateOfBirth>
+         <officeHours>09:00:00</officeHours>
+
+         <research>
+             <name>Research About Determinisitc Algorithms</name>
+             <numberOfPeople>10</numberOfPeople>
+             <startDate>2001-05-15</startDate>
+         </research>
+
+         <research>
+            <name>Research About Convex Hulls</name>
+            <numberOfPeople>12</numberOfPeople>
+            <startDate>2003-08-05</startDate>
+        </research>
+     </professor>
+
+     <faculty>
+         <name>faculty of mathematics and physics</name>
+         <establishmentYear>1680-02-20</establishmentYear>
+         <budget>2222222</budget>
+         <course>
+             <id>ma1fomp</id>
+             <numberOfCredits>6</numberOfCredits>
+             <maxCapacity>30</maxCapacity>
+         </course>
+     </faculty>
+    </university>
+
+    <university>
+        <name>king's college london</name>
+        <phoneNumber>+44 20 7836 5454</phoneNumber>
+        <address>Strand, London WC2R 2LS, United Kingdom</address>
+        <numberOfStudents>1200</numberOfStudents>
+        <ranking>40</ranking>
+   
+        <student>
+           <firstName>Nick</firstName>
+           <lastName>Orange</lastName>
+           <phoneNumber>+12373472457</phoneNumber>
+           <dateOfBirth>2000-10-12T10:30:00</dateOfBirth>
+           <yearOfStudy>1</yearOfStudy>
+           <gpa>1.2</gpa>
+           
+           <studyProgram>
+               <name>Philosophy</name>
+               <numberOfStudents>70</numberOfStudents>
+               <courseList>course1</courseList>
+               <courseList>course2</courseList>
+               <courseList>course3</courseList>
+           </studyProgram>
+        </student>
+   
+        <professor>
+            <firstName>Sam</firstName>
+            <lastName>Red</lastName>
+            <phoneNumber>+7654321</phoneNumber>
+            <dateOfBirth>1990-03-10T07:00:00</dateOfBirth>
+            <officeHours>10:30:00</officeHours>
+            
+            <paper>
+            <name>Interseting paper about Linear Algebra</name>
+            <numberOfPeople>5</numberOfPeople>
+            <startDate>1997-05-10</startDate>
+            </paper>
+
+            <paper>
+                <name>Interseting paper about Discrete Mathematics</name>
+                <numberOfPeople>7</numberOfPeople>
+                <startDate>1990-08-17</startDate>
+            </paper>
+
+            <research>
+                <name>Research About Randomized Algorithms</name>
+                <numberOfPeople>16</numberOfPeople>
+                <startDate>2004-07-03</startDate>
+            </research>
+        </professor>
+   
+        <faculty>
+            <name>faculty of social sciences</name>
+            <establishmentYear>1750-03-10</establishmentYear>
+            <budget>1000000</budget>
+            <course>
+                <id>e1fos</id>
+                <numberOfCredits>6</numberOfCredits>
+                <maxCapacity>60</maxCapacity>
+            </course>
+        </faculty>
+       </university>
+
+       <university>
+        <name>Massachusetts Institute of Technology</name>
+        <phoneNumber>+1 617-253-1000</phoneNumber>
+        <address>77 Massachusetts Ave, Cambridge, MA 02139, United States</address>
+        <numberOfStudents>1300</numberOfStudents>
+        <ranking>3</ranking>
+   
+        <student>
+           <firstName>Jim</firstName>
+           <lastName>Purple</lastName>
+           <phoneNumber>+2534545467</phoneNumber>
+           <dateOfBirth>2002-05-30T09:00:00</dateOfBirth>
+           <yearOfStudy>2</yearOfStudy>
+           <gpa>2.5</gpa>
+           
+           <studyProgram>
+               <name>Computer Science</name>
+               <numberOfStudents>100</numberOfStudents>
+               <courseList>course1</courseList>
+               <courseList>course2</courseList>
+               <courseList>course3</courseList>
+           </studyProgram>
+        </student>
+   
+        <faculty>
+            <name>faculty of medicine</name>
+            <establishmentYear>1800-11-04</establishmentYear>
+            <budget>999999</budget>
+            <course>
+                <id>a1fom</id>
+                <numberOfCredits>4</numberOfCredits>
+                <maxCapacity>50</maxCapacity>
+            </course>
+        </faculty>
+       </university>
+</universities> 

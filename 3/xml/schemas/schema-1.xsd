@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="universities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="university" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+</xs:element>
+<xs:element name="university">
+    <xs:complexType>
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="phoneNumber" type="xs:string"/>
+          <xs:element name="address" type="xs:string"/>
+          <xs:element name="numberOfStudents" type="xs:integer"/>
+          <xs:element name="ranking" type="xs:integer"/>
+          <xs:element ref="student" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="professor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="faculty" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+</xs:element>
+
+    <xs:complexType name="person">
+        <xs:sequence>
+        <xs:element name="firstName" type="xs:string"/>
+        <xs:element name="lastName" type="xs:string"/>
+        <xs:element name="phoneNumber" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="dateOfBirth" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+<xs:element name="student">
+    <xs:complexType>
+        <xs:complexContent>
+        <xs:extension base="person">
+        <xs:sequence>
+        <xs:element name="yearOfStudy" type="xs:integer"/>
+        <xs:element name="gpa" type="xs:double"/>
+        <xs:element ref="studyProgram" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="professor">
+    <xs:complexType>
+        <xs:complexContent>
+        <xs:extension base="person">
+        <xs:sequence>
+        <xs:element name="officeHours" type="xs:time" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="paper" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="research" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="studyProgram">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="numberOfStudents" type="xs:integer"/>
+      <xs:element name="courseList" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="paper">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="numberOfPeople" type="xs:integer"/>
+      <xs:element name="startDate" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="research">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="numberOfPeople" type="xs:integer"/>
+      <xs:element name="startDate" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="faculty">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="establishmentYear" type="xs:date"/>
+      <xs:element name="budget" type="xs:double"/>
+      <xs:element ref="course" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="course">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="numberOfCredits" type="xs:integer"/>
+      <xs:element name="maxCapacity" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>
