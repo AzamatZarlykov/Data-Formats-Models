@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+<xs:complexType name="langedString">
+  <xs:simpleContent>
+  <xs:extension base="xs:string">
+    <xs:attribute ref="xml:lang" use="required" />
+  </xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
 <xs:element name="universities">
     <xs:complexType>
       <xs:sequence>
@@ -10,9 +19,9 @@
 <xs:element name="university">
     <xs:complexType>
         <xs:sequence>
-          <xs:element name="name" type="xs:string"/>
-          <xs:element name="phoneNumber" type="xs:string"/>
-          <xs:element name="address" type="xs:string"/>
+          <xs:element name="name" type="langedString"/>
+          <xs:element name="phoneNumber" type="langedString"/>
+          <xs:element name="address" type="langedString"/>
           <xs:element name="numberOfStudents" type="xs:integer"/>
           <xs:element name="ranking" type="xs:integer"/>
           <xs:element ref="student" minOccurs="0" maxOccurs="unbounded"/>
@@ -24,9 +33,9 @@
 
     <xs:complexType name="person">
         <xs:sequence>
-        <xs:element name="firstName" type="xs:string"/>
-        <xs:element name="lastName" type="xs:string"/>
-        <xs:element name="phoneNumber" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="firstName" type="langedString"/>
+        <xs:element name="lastName" type="langedString"/>
+        <xs:element name="phoneNumber" type="langedString" minOccurs="1" maxOccurs="unbounded"/>
         <xs:element name="dateOfBirth" type="xs:dateTime"/>
         </xs:sequence>
     </xs:complexType>
@@ -62,9 +71,9 @@
 <xs:element name="studyProgram">
   <xs:complexType>
     <xs:sequence>
-      <xs:element name="name" type="xs:string"/>
+      <xs:element name="name" type="langedString"/>
       <xs:element name="numberOfStudents" type="xs:integer"/>
-      <xs:element name="courseList" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="courseList" type="langedString" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 </xs:element>
@@ -72,7 +81,7 @@
 <xs:element name="paper">
   <xs:complexType>
     <xs:sequence>
-      <xs:element name="name" type="xs:string"/>
+      <xs:element name="name" type="langedString"/>
       <xs:element name="numberOfPeople" type="xs:integer"/>
       <xs:element name="startDate" type="xs:date"/>
     </xs:sequence>
@@ -82,7 +91,7 @@
 <xs:element name="research">
   <xs:complexType>
     <xs:sequence>
-      <xs:element name="name" type="xs:string"/>
+      <xs:element name="name" type="langedString"/>
       <xs:element name="numberOfPeople" type="xs:integer"/>
       <xs:element name="startDate" type="xs:date"/>
     </xs:sequence>
@@ -92,7 +101,7 @@
 <xs:element name="faculty">
   <xs:complexType>
     <xs:sequence>
-      <xs:element name="name" type="xs:string"/>
+      <xs:element name="name" type="langedString"/>
       <xs:element name="establishmentYear" type="xs:date"/>
       <xs:element name="budget" type="xs:double"/>
       <xs:element ref="course" minOccurs="1" maxOccurs="unbounded"/>
@@ -103,7 +112,7 @@
 <xs:element name="course">
   <xs:complexType>
     <xs:sequence>
-      <xs:element name="id" type="xs:string"/>
+      <xs:element name="id" type="langedString"/>
       <xs:element name="numberOfCredits" type="xs:integer"/>
       <xs:element name="maxCapacity" type="xs:integer"/>
     </xs:sequence>
