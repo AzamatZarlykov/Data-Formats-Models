@@ -181,19 +181,19 @@ ex:teaches
 
 <PaperAboutLinearAlgebra>
     a ex:Paper ;
-    dcterms:title "Interseting paper about Linear Algebra"@en ;
+    dcterms:title "Interesting paper about Linear Algebra"@en ;
     ex:numberOfPeopleInPaper "5"^^xsd:positiveInteger ;
     disco:startDate "1997-05-10"^^xsd:date .
 
 <PaperAboutMathematicalAnalysis>
     a ex:Paper ;
-    dcterms:title "Interseting paper about Mathematical Analysis"@en ;
+    dcterms:title "Interesting paper about Mathematical Analysis"@en ;
     ex:numberOfPeopleInPaper "3"^^xsd:positiveInteger ;
     disco:startDate "1999-06-15"^^xsd:date .
 
 <PaperAboutDiscreteMathematics>
     a ex:Paper ;
-    dcterms:title "Interseting paper about Discrete Mathematics"@en ;
+    dcterms:title "Interesting paper about Discrete Mathematics"@en ;
     ex:numberOfPeopleInPaper "7"^^xsd:positiveInteger ;
     disco:startDate "1990-08-17"^^xsd:date .
 
