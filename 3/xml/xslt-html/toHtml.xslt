@@ -44,7 +44,7 @@
         <b>Papers</b>
         <br/>
         <ul>
-        <xsl:apply-templates select="papers"/>
+        <xsl:apply-templates select="paper"/>
         </ul>
     </xsl:template>
 
