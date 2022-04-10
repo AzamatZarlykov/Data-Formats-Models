@@ -1,0 +1,2 @@
+(: select the universities' names that does not have a professor :)
+//university[count(professor) = 0]/name

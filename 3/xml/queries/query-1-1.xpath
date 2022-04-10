@@ -1,0 +1,2 @@
+(: select the id of the 6 credit course that is taught in the university with more than 1100 students :)
+//university[numberOfStudents > 1100]/faculty/course[numberOfCredits=6]/id
