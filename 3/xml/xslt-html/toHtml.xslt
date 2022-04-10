@@ -33,7 +33,7 @@
 
     <xsl:template match="professor">
         <b>
-            <xsl:value-of select="lastName[@xml:lang='en']" />
+            Dr. <xsl:value-of select="firstName[@xml:lang='en']" />  <xsl:text> </xsl:text> <xsl:value-of select="lastName[@xml:lang='en']" />
         </b>
         <br/>
         <b>Research</b>
