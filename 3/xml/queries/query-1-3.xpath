@@ -1,0 +1,2 @@
+(: select all courses from Economics faculty :)
+//university/student/studyProgram[name/text()="Economics"]/courseList

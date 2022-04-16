@@ -1,0 +1,2 @@
+(: select universities' names where more that 4 people working on the paper :)
+//university[professor/paper/numberOfPeople > 4]/name
