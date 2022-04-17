@@ -67,23 +67,23 @@
     }
   },
   {
-    "name": "Charles University",
-    "phoneNumber": "224 491 111",
-    "address": "Opletalova 38, 110 00 Staré Město",
-    "numberOfStudents": "1000",
-    "ranking": "50",
+    "name": "king's college london",
+    "phoneNumber": "+44 20 7836 5454",
+    "address": "Strand, London WC2R 2LS, United Kingdom",
+    "numberOfStudents": "1200",
+    "ranking": "40",
     "studiesAt": {
       "student": {
-        "firstName": "Mark",
-        "lastName": "Blue",
-        "phoneNumber": "+76444321",
-        "dateOfBirth": "1999-11-28T13:20:00",
-        "yearOfStudy": "3",
-        "gpa": "1.8",
+        "firstName": "Nick",
+        "lastName": "Orange",
+        "phoneNumber": "+12373472457",
+        "dateOfBirth": "2000-10-12T10:30:00",
+        "yearOfStudy": "1",
+        "gpa": "1.2",
         "involved": {
           "studyProgram": {
-            "name": "Economics",
-            "numberOfStudents": "65",
+            "name": "Philosophy",
+            "numberOfStudents": "70",
             "courseList": [
               "course1",
               "course2",
@@ -95,41 +95,48 @@
     },
     "teachesAt": {
       "professor": {
-        "firstName": "Alex",
-        "lastName": "Green",
-        "phoneNumber": "+12345467",
-        "dateOfBirth": "1980-05-30T09:00:00",
-        "officeHours": "09:00:00",
-        "research": [
-          {
-            "name": "Research About Determinisitc Algorithms",
-            "numberOfPeople": "10",
-            "startDate": "2001-05-15"
-          },
-          {
-            "name": "Research About Convex Hulls",
-            "numberOfPeople": "12",
-            "startDate": "2003-08-05"
-          }
-        ],
+        "firstName": "Sam",
+        "lastName": "Red",
+        "phoneNumber": "+7654321",
+        "dateOfBirth": "1990-03-10T07:00:00",
+        "officeHours": "10:30:00",
         "has": [
           {
-            "name": "Interesting paper about Mathematical Analysis",
-            "numberOfPeople": "3",
-            "startDate": "1999-06-15"
+            "paper": {
+              "name": "Interesting paper about Linear Algebra",
+              "numberOfPeople": "5",
+              "startDate": "1997-05-10"
+            }
+          },
+          {
+            "paper": {
+              "name": "Interesting paper about Discrete Mathematics",
+              "numberOfPeople": "7",
+              "startDate": "1990-08-17"
+            }
+          }
+        ],
+        "research": [
+          {
+            "research": {
+              "name": "Research About Randomized Algorithms",
+              "numberOfPeople": "16",
+              "startDate": "2004-07-03"
+            }
           }
         ]
       }
     },
     "constitutes": {
-      "name": "faculty of mathematics and physics",
-      "establishmentYear": "1680-02-20",
-      "budget": "2222222",
-      "teaches": {
-        "type": "course",
-        "id": "ma1fomp",
-        "numberOfCredits": "6",
-        "maxCapacity": "30"
+      "faculty": {
+        "name": "faculty of social sciences",
+        "establishmentYear": "1750-03-10",
+        "budget": "1000000",
+        "course": {
+          "id": "e1fos",
+          "numberOfCredits": "6",
+          "maxCapacity": "60"
+        }
       }
     }
   },
@@ -147,18 +154,20 @@
         "dateOfBirth": "2002-05-30T09:00:00",
         "yearOfStudy": "2",
         "gpa": "2.5",
-        "studyProgram": {
-          "name": "Computer Science",
-          "numberOfStudents": "100",
-          "courseList": [
-            "course1",
-            "course2",
-            "course3"
-          ]
+        "involved":{
+          "studyProgram": {
+            "name": "Computer Science",
+            "numberOfStudents": "100",
+            "courseList": [
+              "course1",
+              "course2",
+              "course3"
+            ]
+          }
         }
       }
     },
-    "constitues": {
+    "constitutes": {
       "faculty": {
         "name": "faculty of medicine",
         "establishmentYear": "1800-11-04",
@@ -170,5 +179,5 @@
         }
       }
     }
-  }      
+  }    
 ]
