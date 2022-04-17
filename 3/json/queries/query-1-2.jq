@@ -1,0 +1,1 @@
+[.[] | { firstName: .teachesAt.professor.firstName, lastName:.teachesAt.professor.lastName, research: .teachesAt.professor.research, paper: .teachesAt.professor.has } ]

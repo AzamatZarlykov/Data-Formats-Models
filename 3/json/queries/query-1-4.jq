@@ -1,0 +1,1 @@
+[.[] | { name: .name, faculties: [ { name: .constitutes.name, courses: [ { id: .constitutes.teaches.id, credits: .constitutes.teaches.numberOfCredits } ]} ]} ]

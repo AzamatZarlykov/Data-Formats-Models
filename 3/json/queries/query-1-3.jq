@@ -1,0 +1,1 @@
+[.[] | { studentFullName: (.studiesAt.student.firstName  + " " + .studiesAt.student.lastName), studyProgram: .studiesAt.student.involved.studyProgram.name } ]

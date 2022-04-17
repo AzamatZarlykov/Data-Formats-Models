@@ -1,0 +1,1 @@
+[.[] | { firstName: .studiesAt.student.firstName, lastName: .studiesAt.student.lastName, education: .name}]
