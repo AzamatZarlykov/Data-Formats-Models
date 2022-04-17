@@ -1,0 +1,174 @@
+[
+  {
+    "name": "Charles University",
+    "phoneNumber": "224 491 111",
+    "address": "Opletalova 38, 110 00 Staré Město",
+    "numberOfStudents": "1000",
+    "ranking": "50",
+    "studiesAt": {
+      "student": {
+        "firstName": "Mark",
+        "lastName": "Blue",
+        "phoneNumber": "+76444321",
+        "dateOfBirth": "1999-11-28T13:20:00",
+        "yearOfStudy": "3",
+        "gpa": "1.8",
+        "involved": {
+          "studyProgram": {
+            "name": "Economics",
+            "numberOfStudents": "65",
+            "courseList": [
+              "course1",
+              "course2",
+              "course3"
+            ]
+          }
+        }
+      }
+    },
+    "teachesAt": {
+      "professor": {
+        "firstName": "Alex",
+        "lastName": "Green",
+        "phoneNumber": "+12345467",
+        "dateOfBirth": "1980-05-30T09:00:00",
+        "officeHours": "09:00:00",
+        "research": [
+          {
+            "name": "Research About Determinisitc Algorithms",
+            "numberOfPeople": "10",
+            "startDate": "2001-05-15"
+          },
+          {
+            "name": "Research About Convex Hulls",
+            "numberOfPeople": "12",
+            "startDate": "2003-08-05"
+          }
+        ],
+        "has": [
+          {
+            "name": "Interesting paper about Mathematical Analysis",
+            "numberOfPeople": "3",
+            "startDate": "1999-06-15"
+          }
+        ]
+      }
+    },
+    "constitutes": {
+      "name": "faculty of mathematics and physics",
+      "establishmentYear": "1680-02-20",
+      "budget": "2222222",
+      "teaches": {
+        "type": "course",
+        "id": "ma1fomp",
+        "numberOfCredits": "6",
+        "maxCapacity": "30"
+      }
+    }
+  },
+  {
+    "name": "Charles University",
+    "phoneNumber": "224 491 111",
+    "address": "Opletalova 38, 110 00 Staré Město",
+    "numberOfStudents": "1000",
+    "ranking": "50",
+    "studiesAt": {
+      "student": {
+        "firstName": "Mark",
+        "lastName": "Blue",
+        "phoneNumber": "+76444321",
+        "dateOfBirth": "1999-11-28T13:20:00",
+        "yearOfStudy": "3",
+        "gpa": "1.8",
+        "involved": {
+          "studyProgram": {
+            "name": "Economics",
+            "numberOfStudents": "65",
+            "courseList": [
+              "course1",
+              "course2",
+              "course3"
+            ]
+          }
+        }
+      }
+    },
+    "teachesAt": {
+      "professor": {
+        "firstName": "Alex",
+        "lastName": "Green",
+        "phoneNumber": "+12345467",
+        "dateOfBirth": "1980-05-30T09:00:00",
+        "officeHours": "09:00:00",
+        "research": [
+          {
+            "name": "Research About Determinisitc Algorithms",
+            "numberOfPeople": "10",
+            "startDate": "2001-05-15"
+          },
+          {
+            "name": "Research About Convex Hulls",
+            "numberOfPeople": "12",
+            "startDate": "2003-08-05"
+          }
+        ],
+        "has": [
+          {
+            "name": "Interesting paper about Mathematical Analysis",
+            "numberOfPeople": "3",
+            "startDate": "1999-06-15"
+          }
+        ]
+      }
+    },
+    "constitutes": {
+      "name": "faculty of mathematics and physics",
+      "establishmentYear": "1680-02-20",
+      "budget": "2222222",
+      "teaches": {
+        "type": "course",
+        "id": "ma1fomp",
+        "numberOfCredits": "6",
+        "maxCapacity": "30"
+      }
+    }
+  },
+  {
+    "name": "Massachusetts Institute of Technology",
+    "phoneNumber": "+1 617-253-1000",
+    "address": "77 Massachusetts Ave, Cambridge, MA 02139, United States",
+    "numberOfStudents": "1300",
+    "ranking": "3",
+    "studiesAt": {
+      "student": {
+        "firstName": "Jim",
+        "lastName": "Purple",
+        "phoneNumber": "+2534545467",
+        "dateOfBirth": "2002-05-30T09:00:00",
+        "yearOfStudy": "2",
+        "gpa": "2.5",
+        "studyProgram": {
+          "name": "Computer Science",
+          "numberOfStudents": "100",
+          "courseList": [
+            "course1",
+            "course2",
+            "course3"
+          ]
+        }
+      }
+    },
+    "constitues": {
+      "faculty": {
+        "name": "faculty of medicine",
+        "establishmentYear": "1800-11-04",
+        "budget": "999999",
+        "course": {
+          "id": "a1fom",
+          "numberOfCredits": "4",
+          "maxCapacity": "50"
+        }
+      }
+    }
+  }      
+]

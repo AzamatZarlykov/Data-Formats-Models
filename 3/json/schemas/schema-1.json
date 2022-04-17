@@ -1,0 +1,242 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "http://example.org/example.json",
+  "definitions": {
+    "person": {
+      "type": "object",
+      "required": ["firstName", "lastName", "phoneNumber", "dateOfBirth"],
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "type": "array",
+  "title": "universties",
+  "minItems": 1,
+  "items": {
+    "university": {
+      "type": "object",
+      "title": "University",
+      "description": "A university",
+      "required": [
+        "name",
+        "phoneNumber",
+        "address",
+        "numberOfStudents",
+        "ranking"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "The name of the university"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "title": "Phone number",
+          "description": "The phone number of the university"
+        },
+        "address": {
+          "type": "string",
+          "title": "Address",
+          "description": "The address of the university"
+        },
+        "numberOfStudents": {
+          "type": "integer",
+          "title": "Number of students",
+          "description": "The number of students in the university"
+        },
+        "ranking": {
+          "type": "integer",
+          "title": "Ranking",
+          "description": "The ranking of the university"
+        }
+      },
+      "studiesAt": {
+        "student": {
+          "@ref": "#/definitions/person",
+          "type": "object",
+          "title": "Student",
+          "description": "A student",
+          "required": ["yearOfStudy", "gpa"],
+          "properties": {
+            "yearOfStudy": {
+              "type": "integer",
+              "title": "Year of study",
+              "description": "The year of study of the student"
+            },
+            "gpa": {
+              "type": "double",
+              "title": "GPA",
+              "description": "The GPA of the student"
+            }
+          },
+          "involved": {
+            "stutdyProgram": {
+              "type": "object",
+              "title": "Study program",
+              "description": "The study program of the student",
+              "required": ["name", "numberOfStudents", "courseList"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Name",
+                  "description": "The name of the study program"
+                },
+                "numberOfStudents": {
+                  "type": "integer",
+                  "title": "Number of students",
+                  "description": "The number of students in the study program"
+                },
+                "courseList": {
+                  "type": "array",
+                  "title": "Course list",
+                  "description": "The list of courses in the study program"
+                }
+              }
+            }
+          }
+        }
+      },
+      "teachesAt": {
+        "professor": {
+          "@ref": "#/definitions/person",
+          "type": "object",
+          "title": "Professor",
+          "description": "A professor",
+          "required": ["officeHours"],
+          "properties": {
+            "officeHours": {
+              "type": "string",
+              "title": "Office hours",
+              "description": "The office hours of the professor"
+            },
+            "has": {
+              "type": "array",
+              "title": "Has",
+              "description": "The list of papers the professor has",
+              "items": {
+                "type": "object",
+                "title": "Paper",
+                "description": "A paper",
+                "required": ["name", "numberOfPeople", "startDate"],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "Name",
+                    "description": "The name of the paper"
+                  },
+                  "numberOfPeople": {
+                    "type": "integer",
+                    "title": "Number of people",
+                    "description": "The number of people in the paper"
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "title": "Start date",
+                    "description": "The start date of the paper"
+                  }
+                }
+              }
+            },
+            "research": {
+              "type": "array",
+              "title": "Research",
+              "description": "The list of researchs the professor has",
+              "items": {
+                "type": "object",
+                "title": "Research",
+                "description": "A research",
+                "required": ["name", "numberOfPeople", "startDate"],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "Name",
+                    "description": "The name of the research"
+                  },
+                  "numberOfPeople": {
+                    "type": "integer",
+                    "title": "Number of people",
+                    "description": "The number of people in the research"
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "title": "Start date",
+                    "description": "The start date of the research"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "constitutes": {
+        "type": "array",
+        "title": "Constitutes",
+        "description": "The list of faculties in the university",
+        "items": {
+          "type": "object",
+          "title": "Faculty",
+          "description": "A faculty",
+          "required": ["name", "establishmentYear", "budget"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name",
+              "description": "The name of the faculty"
+            },
+            "establishmentYear": {
+              "type": "string",
+              "title": "Establishment year",
+              "description": "The year the faculty was established"
+            },
+            "budget": {
+              "type": "number",
+              "title": "Budget",
+              "description": "The budget of the faculty"
+            },
+            "teaches": {
+              "type": "array",
+              "title": "Teaches",
+              "description": "The list of courses taught by the faculty",
+              "items": {
+                "type": "object",
+                "title": "Course",
+                "description": "A course",
+                "required": ["name", "numberOfCredits", "maxCapacity"],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "Name",
+                    "description": "The name of the course"
+                  },
+                  "numberOfCredits": {
+                    "type": "integer",
+                    "title": "Number of credits",
+                    "description": "The number of credits the course is worth"
+                  },
+                  "maxCapacity": {
+                    "type": "integer",
+                    "title": "Max capacity",
+                    "description": "The maximum number of students the course can take"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
