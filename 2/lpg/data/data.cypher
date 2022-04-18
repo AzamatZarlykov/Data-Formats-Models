@@ -169,14 +169,14 @@ CREATE
 (MarkBlue)-[:IS_PART_OF]->(Cuni),
 
 (AlexGreen)-[:IS_PART_OF]->(Cuni),
-(AlexGreen)-[:HAS]->(ResearchAboutDeterministicAlgorithms),
-(AlexGreen)-[:HAS]->(ResearchAboutConvexHulls),
+(AlexGreen)-[:RESEARCH]->(ResearchAboutDeterministicAlgorithms),
+(AlexGreen)-[:RESEARCH]->(ResearchAboutConvexHulls),
 (AlexGreen)-[:HAS]->(PaperAboutMathematicalAnalysis),
 
 (SamRed)-[:IS_PART_OF]->(Kcl),
 (SamRed)-[:HAS]->(PaperAboutLinearAlgebra),
 (SamRed)-[:HAS]->(PaperAboutDiscreteMathematics),
-(SamRed)-[:HAS]->(ResearchAboutRandomizedAlgorithms),
+(SamRed)-[:RESEARCH]->(ResearchAboutRandomizedAlgorithms),
 
 (FacultyOfMathematicsAndPhysics)-[:TEACHES]->(ma1fomp),
 (FacultyOfMedicine)-[:TEACHES]->(a1fom),
