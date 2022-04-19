@@ -30,19 +30,6 @@
         ex:constitutes &lt;FacultyOfMathematicsAndPhysics&gt; .
         
     
-    ex:StudyProgram
-        a rdfs:Class ;
-        rdfs:label "study program"@en ;
-        rdfs:comment "a program studied by a student"@en .
-
-    ex:teaches
-        a rdfs:Property ;
-        rdfs:label "teaches"@en ;
-        rdfs:comment "relatesfaculty and course"@en ;
-        rdfs:domain aiiso:Faculty ;
-        rdfs:range schema:Course .
-
-    
     &lt;MarkBlue&gt;
         a ex:Student ;
         foaf:firstName "Mark"@en ;
@@ -62,18 +49,6 @@
         ex:courseList "course1 course2 course3"@en .
 
     
-    ex:StudyProgram
-        a rdfs:Class ;
-        rdfs:label "study program"@en ;
-        rdfs:comment "a program studied by a student"@en .
-
-    ex:teaches
-        a rdfs:Property ;
-        rdfs:label "teaches"@en ;
-        rdfs:comment "relatesfaculty and course"@en ;
-        rdfs:domain aiiso:Faculty ;
-        rdfs:range schema:Course .
-
     
     ex:Student
         a rdfs:Class ;
@@ -83,11 +58,11 @@
         rdfs:comment "a student in a university"@en .
 
     ex:yearOfStudy
-    a rdfs:Property ;
-    rdfs:label "year of study"@en ;
-    rdfs:comment "the year of students study"@en ;
-    rdfs:domain ex:student ;
-    rdfs:range xsd:positiveInteger . 
+        a rdfs:Property ;
+        rdfs:label "year of study"@en ;
+        rdfs:comment "the year of students study"@en ;
+        rdfs:domain ex:student ;
+        rdfs:range xsd:positiveInteger . 
 
     ex:gpa
         a rdfs:Property ;
@@ -103,6 +78,18 @@
         rdfs:comment "relates student and studyProgram"@en ;
         rdfs:domain ex:student ;
         rdfs:range ex:studyProgram .
+
+    ex:StudyProgram
+        a rdfs:Class ;
+        rdfs:label "study program"@en ;
+        rdfs:comment "a program studied by a student"@en .
+
+    ex:teaches
+        a rdfs:Property ;
+        rdfs:label "teaches"@en ;
+        rdfs:comment "relatesfaculty and course"@en ;
+        rdfs:domain aiiso:Faculty ;
+        rdfs:range schema:Course .
 
     
     &lt;AlexGreen&gt;
@@ -253,19 +240,6 @@
         ex:constitutes &lt;FacultyOfMathematicsAndPhysics&gt; .
         
     
-    ex:StudyProgram
-        a rdfs:Class ;
-        rdfs:label "study program"@en ;
-        rdfs:comment "a program studied by a student"@en .
-
-    ex:teaches
-        a rdfs:Property ;
-        rdfs:label "teaches"@en ;
-        rdfs:comment "relatesfaculty and course"@en ;
-        rdfs:domain aiiso:Faculty ;
-        rdfs:range schema:Course .
-
-    
     &lt;NickOrange&gt;
         a ex:Student ;
         foaf:firstName "Nick"@en ;
@@ -284,6 +258,7 @@
         dbpediaowl:numberOfStudents "70^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
+    
     
     &lt;SamRed&gt;
         a ex:Professor ;
@@ -348,19 +323,6 @@
         ex:constitutes &lt;FacultyOfMathematicsAndPhysics&gt; .
         
     
-    ex:StudyProgram
-        a rdfs:Class ;
-        rdfs:label "study program"@en ;
-        rdfs:comment "a program studied by a student"@en .
-
-    ex:teaches
-        a rdfs:Property ;
-        rdfs:label "teaches"@en ;
-        rdfs:comment "relatesfaculty and course"@en ;
-        rdfs:domain aiiso:Faculty ;
-        rdfs:range schema:Course .
-
-    
     &lt;JimPurple&gt;
         a ex:Student ;
         foaf:firstName "Jim"@en ;
@@ -379,6 +341,7 @@
         dbpediaowl:numberOfStudents "100^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
+    
     
     &lt;facultyofmedicine&gt;
         a aiiso:Faculty ;

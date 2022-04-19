@@ -131,11 +131,11 @@
         rdfs:comment "a student in a university"@en .
 
     ex:yearOfStudy
-    a rdfs:Property ;
-    rdfs:label "year of study"@en ;
-    rdfs:comment "the year of students study"@en ;
-    rdfs:domain ex:student ;
-    rdfs:range xsd:positiveInteger . 
+        a rdfs:Property ;
+        rdfs:label "year of study"@en ;
+        rdfs:comment "the year of students study"@en ;
+        rdfs:domain ex:student ;
+        rdfs:range xsd:positiveInteger . 
 
     ex:gpa
         a rdfs:Property ;
@@ -151,6 +151,18 @@
         rdfs:comment "relates student and studyProgram"@en ;
         rdfs:domain ex:student ;
         rdfs:range ex:studyProgram .
+
+    ex:StudyProgram
+        a rdfs:Class ;
+        rdfs:label "study program"@en ;
+        rdfs:comment "a program studied by a student"@en .
+
+    ex:teaches
+        a rdfs:Property ;
+        rdfs:label "teaches"@en ;
+        rdfs:comment "relatesfaculty and course"@en ;
+        rdfs:domain aiiso:Faculty ;
+        rdfs:range schema:Course .
 
     </xsl:template>
     
@@ -201,10 +213,10 @@
         dbpediaowl:numberOfStudents "<xsl:value-of select="numberOfStudents"/>^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
-    <xsl:apply-templates select="numberOfStudents[text() = '65']"/>
+    <!-- <xsl:apply-templates select="numberOfStudents[text() = '65']"/> -->
     </xsl:template>
 
-    <xsl:template match="numberOfStudents">
+    <!-- <xsl:template match="numberOfStudents">
     ex:StudyProgram
         a rdfs:Class ;
         rdfs:label "study program"@en ;
@@ -217,7 +229,7 @@
         rdfs:domain aiiso:Faculty ;
         rdfs:range schema:Course .
 
-    </xsl:template>
+    </xsl:template> -->
 
     <xsl:template match="numberOfPeople">
     ex:Research
