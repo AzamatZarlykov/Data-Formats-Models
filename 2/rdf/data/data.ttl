@@ -17,7 +17,6 @@
 @prefix foaf: <http://xmlns.com/foaf/spec/#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 #Classes:
 
 ex:Professor
@@ -328,6 +327,3 @@ ex:teaches
     mv:id "ma1fomp"@en ;
     ex:numberOfCredits "6"^^xsd:nonNegativeInteger ;
     dbpediaowl:capacity "30"^^xsd:nonNegativeInteger .
-
-
-
