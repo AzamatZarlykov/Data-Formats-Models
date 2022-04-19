@@ -147,79 +147,83 @@
     },
     "numberOfStudents": "1000",
     "ranking": "50",
-    "studiesAt": {
-      "@type": "Student",
-      "@id": "MarkBlue",
-      "firstName": {
-        "en": "Mark"
-      },
-      "lastName": {
-        "en": "Blue"
-      },
-      "phoneNumber": {
-        "en": "+76444321"
-      },
-      "dateOfBirth": "1999-11-28T13:20:00",
-      "yearOfStudy": "3",
-      "gpa": "1.8",
-      "involved": {
-        "@type": "StudyProgram",
-        "@id": "Economics",
-        "name": {
-          "en": "Economics"
+    "@reverse" : {
+        "studiesAt": {
+          "@type": "Student",
+          "@id": "MarkBlue",
+          "firstName": {
+            "en": "Mark"
+          },
+          "lastName": {
+            "en": "Blue"
+          },
+          "phoneNumber": {
+            "en": "+76444321"
+          },
+          "dateOfBirth": "1999-11-28T13:20:00",
+          "yearOfStudy": "3",
+          "gpa": "1.8",
+          "involved": {
+            "@type": "StudyProgram",
+            "@id": "Economics",
+            "name": {
+              "en": "Economics"
+            },
+            "numberOfStudents": "65",
+            "courseList": {
+              "en": "course1 course2 course3"
+            }
+          }
         },
-        "numberOfStudents": "65",
-        "courseList": {
-          "en": "course1 course2 course3"
+        "teachesAt": {
+          "@type": "Professor",
+          "@id": "AlexGreen",
+          "firstName": {
+            "en": "Alex"
+          },
+          "lastName": {
+            "en": "Green"
+          },
+          "phoneNumber": {
+            "en": "+12345467"
+          },
+          "dateOfBirth": "1999-11-28T13:20:00",
+          "officeHours": "09:00:00",
+          "research": [
+            {
+              "@type": "Research",
+              "@id": "ResearchAboutDeterministicAlgorithms",
+              "name": {
+                "en": "Research About Determinisitc Algorithms"
+              },
+              "numberOfPeopleInResearch": "10",
+              "startDate": "2001-05-15"
+            },
+            {
+              "@type": "Research",
+              "@id": "ResearchAboutConvexHulls",
+              "name": {
+                "en": "ResearchAboutConvexHulls"
+              },
+              "numberOfPeopleInResearch": "12",
+              "startDate": "2003-08-05"
+            }
+          ],
+          "has": [
+            {
+              "@type": "Paper",
+              "@id": "PaperAboutMathematicalAnalysis",
+              "name": {
+                "en": "PaperAboutMathematicalAnalysis"
+              },
+              "numberOfPeopleInPaper": "3",
+              "startDate": "1999-06-15"
+            }
+          ]
         }
-      }
     },
-    "teachesAt": {
-      "@type": "Professor",
-      "@id": "AlexGreen",
-      "firstName": {
-        "en": "Alex"
-      },
-      "lastName": {
-        "en": "Green"
-      },
-      "phoneNumber": {
-        "en": "+12345467"
-      },
-      "dateOfBirth": "1999-11-28T13:20:00",
-      "officeHours": "09:00:00",
-      "research": [
-        {
-          "@type": "Research",
-          "@id": "ResearchAboutDeterministicAlgorithms",
-          "name": {
-            "en": "Research About Determinisitc Algorithms"
-          },
-          "numberOfPeopleInResearch": "10",
-          "startDate": "2001-05-15"
-        },
-        {
-          "@type": "Research",
-          "@id": "ResearchAboutConvexHulls",
-          "name": {
-            "en": "ResearchAboutConvexHulls"
-          },
-          "numberOfPeopleInResearch": "12",
-          "startDate": "2003-08-05"
-        }
-      ],
-      "has": [
-        {
-          "@type": "Paper",
-          "@id": "PaperAboutMathematicalAnalysis",
-          "name": {
-            "en": "PaperAboutMathematicalAnalysis"
-          },
-          "numberOfPeopleInPaper": "3",
-          "startDate": "1999-06-15"
-        }
-      ]
-    },
+
+
     "constitutes": {
       "@type": "Faculty",
       "@id": "FacultyOfMathematicsAndPhysics",
@@ -387,79 +391,82 @@
     },
     "numberOfStudents": "1200",
     "ranking": "40",
-    "studiesAt": {
-      "@type": "Student",
-      "@id": "NickOrange",
-      "firstName": {
-        "en": "Nick"
-      },
-      "lastName": {
-        "en": "Orange"
-      },
-      "phoneNumber": {
-        "en": "+12373472457"
-      },
-      "dateOfBirth": "2000-10-12T10:30:00",
-      "yearOfStudy": "1",
-      "gpa": "1.2",
-      "involved": {
-        "@type": "StudyProgram",
-        "@id": "Philosophy",
-        "name": {
-          "en": "Philosophy"
-        },
-        "numberOfStudents": "70",
-        "courseList": {
-          "en": "course1 course2 course3"
-        }
-      }
-    },
+    "@reverse" : {
 
-    "teachesAt": {
-      "@type": "Professor",
-      "@id": "SamRed",
-      "firstName": {
-        "en": "Sam"
-      },
-      "lastName": {
-        "en": "Red"
-      },
-      "phoneNumber": {
-        "en": "+7654321"
-      },
-      "dateOfBirth": "1990-03-10T07:00:00",
-      "officeHours": "10:30:00",
-      "research": [
-        {
-          "@type": "Research",
-          "@id": "ResearchAboutRandomizedAlgorithms",
-          "name": {
-            "en": "Research About Randomized Algorithms"
-          },
-          "numberOfPeopleInResearch": "16",
-          "startDate": "2004-07-03"
-        }
-      ],
-      "has": [
-        {
-          "@type": "Paper",
-          "@id": "PaperAboutLinearAlgebra",
-          "name": {
-            "en": "Interesting paper about Linear Algebra"
-          },
-          "numberOfPeopleInPaper": "5",
-          "startDate": "1997-05-10"
+      "studiesAt": {
+        "@type": "Student",
+        "@id": "NickOrange",
+        "firstName": {
+          "en": "Nick"
         },
-        {
-          "@type": "Paper",
-          "@id": "PaperAboutDiscreteMathematics",
+        "lastName": {
+          "en": "Orange"
+        },
+        "phoneNumber": {
+          "en": "+12373472457"
+        },
+        "dateOfBirth": "2000-10-12T10:30:00",
+        "yearOfStudy": "1",
+        "gpa": "1.2",
+        "involved": {
+          "@type": "StudyProgram",
+          "@id": "Philosophy",
           "name": {
-            "en": "Interesting paper about Discrete Mathematics"
+            "en": "Philosophy"
           },
-          "numberOfPeopleInPaper": "7",
-          "startDate": "1990-08-17"
+          "numberOfStudents": "70",
+          "courseList": {
+            "en": "course1 course2 course3"
+          }
         }
-      ]
+      },
+
+      "teachesAt": {
+        "@type": "Professor",
+        "@id": "SamRed",
+        "firstName": {
+          "en": "Sam"
+        },
+        "lastName": {
+          "en": "Red"
+        },
+        "phoneNumber": {
+          "en": "+7654321"
+        },
+        "dateOfBirth": "1990-03-10T07:00:00",
+        "officeHours": "10:30:00",
+        "research": [
+          {
+            "@type": "Research",
+            "@id": "ResearchAboutRandomizedAlgorithms",
+            "name": {
+              "en": "Research About Randomized Algorithms"
+            },
+            "numberOfPeopleInResearch": "16",
+            "startDate": "2004-07-03"
+          }
+        ],
+        "has": [
+          {
+            "@type": "Paper",
+            "@id": "PaperAboutLinearAlgebra",
+            "name": {
+              "en": "Interesting paper about Linear Algebra"
+            },
+            "numberOfPeopleInPaper": "5",
+            "startDate": "1997-05-10"
+          },
+          {
+            "@type": "Paper",
+            "@id": "PaperAboutDiscreteMathematics",
+            "name": {
+              "en": "Interesting paper about Discrete Mathematics"
+            },
+            "numberOfPeopleInPaper": "7",
+            "startDate": "1990-08-17"
+          }
+        ]
+      }
     },
 
     "constitutes": {
@@ -608,30 +615,33 @@
     },
     "numberOfStudents": "1300",
     "ranking": "3",
-    "studiesAt": {
-      "@type": "Student",
-      "@id": "JimPurple",
-      "firstName": {
-        "en": "Jim"
-      },
-      "lastName": {
-        "en": "Purple"
-      },
-      "phoneNumber": {
-        "en": "+2534545467"
-      },
-      "dateOfBirth": "2002-05-30T09:00:00",
-      "yearOfStudy": "2",
-      "gpa": "2.5",
-      "involved": {
-        "@type": "StudyProgram",
-        "@id": "ComputerScience",
-        "name": {
-          "en": "Computer Science"
+    "@reverse" : {
+
+      "studiesAt": {
+        "@type": "Student",
+        "@id": "JimPurple",
+        "firstName": {
+          "en": "Jim"
         },
-        "numberOfStudents": "100",
-        "courseList": {
-          "en": "course1 course2 course3"
+        "lastName": {
+          "en": "Purple"
+        },
+        "phoneNumber": {
+          "en": "+2534545467"
+        },
+        "dateOfBirth": "2002-05-30T09:00:00",
+        "yearOfStudy": "2",
+        "gpa": "2.5",
+        "involved": {
+          "@type": "StudyProgram",
+          "@id": "ComputerScience",
+          "name": {
+            "en": "Computer Science"
+          },
+          "numberOfStudents": "100",
+          "courseList": {
+            "en": "course1 course2 course3"
+          }
         }
       }
     },
