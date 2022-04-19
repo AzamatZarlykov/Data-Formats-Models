@@ -35,6 +35,13 @@
         rdfs:label "study program"@en ;
         rdfs:comment "a program studied by a student"@en .
 
+    ex:teaches
+        a rdfs:Property ;
+        rdfs:label "teaches"@en ;
+        rdfs:comment "relatesfaculty and course"@en ;
+        rdfs:domain aiiso:Faculty ;
+        rdfs:range schema:Course .
+
     
     &lt;MarkBlue&gt;
         a ex:Student ;
@@ -59,6 +66,13 @@
         a rdfs:Class ;
         rdfs:label "study program"@en ;
         rdfs:comment "a program studied by a student"@en .
+
+    ex:teaches
+        a rdfs:Property ;
+        rdfs:label "teaches"@en ;
+        rdfs:comment "relatesfaculty and course"@en ;
+        rdfs:domain aiiso:Faculty ;
+        rdfs:range schema:Course .
 
     
     ex:Student
@@ -115,7 +129,6 @@
         dcterms:title "Interesting paper about Mathematical Analysis"@en ;
         ex:numberOfPeopleInPaper "3"^^xsd:positiveInteger ;
         disco:startDate "1999-06-15"^^xsd:date .
-
     
     &lt;ResearchAboutDeterminisitcAlgorithms&gt;
         a ex:Paper ;
@@ -130,7 +143,25 @@
         rdfs:label "research"@en ;
         rdfs:comment "research conducted by someone"@en .
 
-    
+    ex:numberOfPeopleInResearch
+        a rdfs:Property ;
+        rdfs:label "number of people"@en ;
+        rdfs:comment "number of people involved in some scientific research"@en ;
+        rdfs:domain ex:Research ;
+        rdfs:range xsd:positiveInteger . 
+
+    ex:Paper
+        a rdfs:Class;
+        rdfs:label "paper"@en ;
+        rdfs:comment "a scientific paper that is created/published by someone"@en .
+
+    ex:numberOfPeopleInPaper
+        a rdfs:Property ;
+        rdfs:label "number of people"@en ;
+        rdfs:comment "number of people involved in some scientific paper"@en ;
+        rdfs:domain ex:Paper ;
+        rdfs:range xsd:positiveInteger . 
+
     
     &lt;ResearchAboutConvexHulls&gt;
         a ex:Paper ;
@@ -152,6 +183,28 @@
         rdfs:comment "time and date when the office is open"@en ;
         rdfs:domain ex:professor ;
         rdfs:range xsd:time .
+
+    ex:isAuthorOf 
+        a rdfs:Property ;
+        rdfs:label "is author of"@en ;
+        rdfs:comment "relates professor and paper"@en ; 
+        rdfs:domain ex:Professor ;
+        rdfs:range ex:Paper .
+
+    ex:isPartOf
+        a rdfs:Property ;
+        rdfs:label "is part of"@en ;
+        rdfs:comment "relates person and univesity"@en ;
+        rdfs:domain foaf:Person ;
+        rdfs:range vivo:University .
+
+    ex:participatesIn 
+        a rdfs:Property ;
+        rdfs:label "participates in"@en ;
+        rdfs:comment "relates professor and research"@en ;
+        rdfs:domain ex:Professor ;
+        rdfs:range lsc:Research .
+
     
     &lt;facultyofmathematicsandphysics&gt;
         a aiiso:Faculty ;
@@ -164,8 +217,30 @@
     &lt;&gt;
         a schema:Course ;
         mv:id "ma1fomp"@en ;
-        ex:numberOfCredits "6^^xsd:nonNegativeInteger ;
+        ex:numberOfCredits "6"^^xsd:nonNegativeInteger ;
         dbpediaowl:capacity "30"^^xsd:nonNegativeInteger .
+
+    
+    ex:courseList
+        a rdfs:Property ;
+        rdfs:label "course list"@en ;
+        rdfs:comment "list of courses in a study program"@en ;
+        rdfs:domain ex:studyProgram ;
+        rdfs:range rdfs:literal .
+
+    ex:establishDate 
+        a rdfs:Property ;
+        rdfs:label "establish date"@en ;
+        rdfs:comment "date when something was established"@en ;
+        rdfs:domain aiiso:Faculty ;
+        rdfs:range xsd:date .
+
+    ex:constitutes 
+        a rdfs:Property ;
+        rdfs:label "constitutes"@en ;
+        rdfs:comment "relates university and faculty"@en ;
+        rdfs:domain dbpediaowl:university ;
+        rdfs:range aiiso:Faculty .
 
     
     &lt;king'scollegelondon&gt;
@@ -182,6 +257,13 @@
         a rdfs:Class ;
         rdfs:label "study program"@en ;
         rdfs:comment "a program studied by a student"@en .
+
+    ex:teaches
+        a rdfs:Property ;
+        rdfs:label "teaches"@en ;
+        rdfs:comment "relatesfaculty and course"@en ;
+        rdfs:domain aiiso:Faculty ;
+        rdfs:range schema:Course .
 
     
     &lt;NickOrange&gt;
@@ -227,14 +309,12 @@
         dcterms:title "Interesting paper about Linear Algebra"@en ;
         ex:numberOfPeopleInPaper "5"^^xsd:positiveInteger ;
         disco:startDate "1997-05-10"^^xsd:date .
-
     
     &lt;InterestingpaperaboutDiscreteMathematics&gt;
         a ex:Paper ;
         dcterms:title "Interesting paper about Discrete Mathematics"@en ;
         ex:numberOfPeopleInPaper "7"^^xsd:positiveInteger ;
         disco:startDate "1990-08-17"^^xsd:date .
-
     
     &lt;ResearchAboutRandomizedAlgorithms&gt;
         a ex:Paper ;
@@ -254,7 +334,7 @@
     &lt;&gt;
         a schema:Course ;
         mv:id "e1fos"@en ;
-        ex:numberOfCredits "6^^xsd:nonNegativeInteger ;
+        ex:numberOfCredits "6"^^xsd:nonNegativeInteger ;
         dbpediaowl:capacity "60"^^xsd:nonNegativeInteger .
 
     
@@ -272,6 +352,13 @@
         a rdfs:Class ;
         rdfs:label "study program"@en ;
         rdfs:comment "a program studied by a student"@en .
+
+    ex:teaches
+        a rdfs:Property ;
+        rdfs:label "teaches"@en ;
+        rdfs:comment "relatesfaculty and course"@en ;
+        rdfs:domain aiiso:Faculty ;
+        rdfs:range schema:Course .
 
     
     &lt;JimPurple&gt;
@@ -304,7 +391,15 @@
     &lt;&gt;
         a schema:Course ;
         mv:id "a1fom"@en ;
-        ex:numberOfCredits "4^^xsd:nonNegativeInteger ;
+        ex:numberOfCredits "4"^^xsd:nonNegativeInteger ;
         dbpediaowl:capacity "50"^^xsd:nonNegativeInteger .
+
+    
+    ex:numberOfCredits
+        a rdfs:Property ;
+        rdfs:label "number of credits"@en ;
+        rdfs:comment "number of credits that course grants upon completion"@en ;
+        rdfs:domain schema:Course ;
+        rdfs:range xsd:nonNegativeInteger .
 
     
