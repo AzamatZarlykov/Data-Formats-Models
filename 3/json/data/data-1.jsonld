@@ -66,6 +66,9 @@
       "constitutes": {
         "@id": "ex:constitutes"
       },
+      "teaches" : {
+        "@id" : "ex:teaches"
+      },
       "firstName": {
         "@id": "foaf:firstName",
         "@container": "@language"
@@ -302,6 +305,9 @@
       "constitutes": {
         "@id": "ex:constitutes"
       },
+      "teaches" : {
+        "@id" : "ex:teaches"
+      },
       "firstName": {
         "@id": "foaf:firstName",
         "@container": "@language"
@@ -532,6 +538,9 @@
       },
       "constitutes": {
         "@id": "ex:constitutes"
+      },
+      "teaches" : {
+        "@id" : "ex:teaches"
       },
       "firstName": {
         "@id": "foaf:firstName",
