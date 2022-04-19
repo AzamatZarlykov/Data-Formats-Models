@@ -26,22 +26,33 @@
     @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
     @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
     @prefix disco: &lt;http://rdf-vocabulary.ddialliance.org/discovery#&gt; .
-    <xsl:apply-templates select="classes"/>
-    <xsl:apply-templates select="properties"/>
-    <xsl:apply-templates select="data"/>
+    <xsl:apply-templates/>
     </xsl:template>
 
-    <xsl:template match="classes">
-        # Classes:
-    </xsl:template>
+    <xsl:template match="student">
+    &lt;<xsl:value-of select="firstName[@xml:lang='en']"/><xsl:value-of select="lastName[@xml:lang='en']"/>&gt;
+        a ex:Student ;
+        foaf:firstName "<xsl:value-of select="firstName[@xml:lang='en']"/>"@en ;
+        foaf:lastName  "<xsl:value-of select="lastName[@xml:lang='en']"/>"@en ;
+        ov:phoneNumber  "<xsl:value-of select="phoneNumber[@xml:lang='en']"/>"@en ;
+        vcard:bday  "<xsl:value-of select="dateOfBirth"/>"^^xsd:dateTime ;
+        ex:yearOfStudy  "<xsl:value-of select="yearOfStudy"/>"^^xsd:positiveInteger ;
+        ex:gpa "<xsl:value-of select="gpa"/>"^^xsd:double ;
+        ex:studies  &lt;<xsl:value-of select="studyProgram/name[@xml:lang='en']"/>&gt; ;
+        ex:isPartOf  .
 
-    <xsl:template match="properties">
-        # Properties:
+        
     </xsl:template>
+    
+    <xsl:template match="text()"/>
 
-    <xsl:template match="data">
-        Data
-    </xsl:template>
+    <!--<xsl:template match="properties">-->
+    <!--    # Properties:-->
+    <!--</xsl:template>-->
+
+    <!--<xsl:template match="data">-->
+    <!--    Data-->
+    <!--</xsl:template>-->
 
 
 </xsl:stylesheet>
