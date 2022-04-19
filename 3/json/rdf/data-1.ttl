@@ -1,0 +1,190 @@
+@prefix aiiso:      <http://purl.org/vocab/aiiso/schema#> .
+@prefix crsw:       <http://courseware.rkbexplorer.com/ontologies/courseware#> .
+@prefix dbpediaowl: <https://dbpedia.org/ontology/> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix disco:      <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix foaf:       <http://xmlns.com/foaf/spec/#> .
+@prefix juso:       <http://rdfs.o/juso/> .
+@prefix lsc:        <http://linkedscience.org/lsc/ns#> .
+@prefix mads:       <http://www.loc.gov/mads/rdf/v1#> .
+@prefix mv:         <http://schema.mobivoc.org/> .
+@prefix ov:         <http://open.vocab.org/terms/> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:     <http://schema.org/> .
+@prefix swc:        <http://data.semanticweb.org/ns/swc/ontology#> .
+@prefix teach:      <http://linkedscience.org/teach/ns#> .
+@prefix vcard:      <http://www.w3.org/2006/vcard/ns#> .
+@prefix vivo:       <http://vivoweb.org/ontology/core#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+<http://newbase.com/FacultyOfMathematicsAndPhysics>
+        a                   aiiso:Faculty ;
+        <ex:establishDate>  "1680-02-20"^^xsd:date ;
+        <ex:teaches>        <http://newbase.com/MathematicalAnalysis> ;
+        dcterms:title       "faculty of mathematics and physics"@en ;
+        dbpediaowl:budget   "2222222"^^xsd:double .
+
+<http://newbase.com/FacultyOfMedicine>
+        a                   aiiso:Faculty ;
+        <ex:establishDate>  "1800-11-04"^^xsd:date ;
+        <ex:teaches>        <http://newbase.com/Anatomy> ;
+        dcterms:title       "faculty of medicine"@en ;
+        dbpediaowl:budget   "999999"^^xsd:double .
+
+<http://newbase.com/MathematicalAnalysis>
+        a                     schema:Course ;
+        <ex:numberOfCredits>  "6"^^xsd:nonNegativeInteger ;
+        mv:id                 "ma1fomp"@en ;
+        dbpediaowl:capacity   "30"^^xsd:nonNegativeInteger .
+
+<http://newbase.com/NickOrange>
+        a                 <ex:Student> ;
+        <ex:gpa>          "1.2"^^xsd:double ;
+        <ex:isPartOf>     <http://newbase.com/King'sCollegeLondon> ;
+        <ex:studies>      <http://newbase.com/Philosophy> ;
+        <ex:yearOfStudy>  "1"^^xsd:positiveInteger ;
+        ov:phoneNumber    "+12373472457"@en ;
+        vcard:bday        "2000-10-12T10:30:00"^^xsd:dateTime ;
+        foaf:firstName    "Nick"@en ;
+        foaf:lastName     "Orange"@en .
+
+<http://newbase.com/PaperAboutLinearAlgebra>
+        a                           <ex:Paper> ;
+        <ex:numberOfPeopleInPaper>  "5"^^xsd:positiveInteger ;
+        dcterms:title               "Interesting paper about Linear Algebra"@en ;
+        disco:startDate             "1997-05-10"^^xsd:date .
+
+<http://newbase.com/ResearchAboutRandomizedAlgorithms>
+        a                              <ex:Research> ;
+        <ex:numberOfPeopleInResearch>  "16"^^xsd:positiveInteger ;
+        dcterms:title                  "Research About Randomized Algorithms"@en ;
+        disco:startDate                "2004-07-03"^^xsd:date .
+
+<http://newbase.com/Philosophy>
+        a                            <ex:StudyProgram> ;
+        <ex:courseList>              "course1 course2 course3"@en ;
+        dcterms:title                "Philosophy"@en ;
+        dbpediaowl:numberOfStudents  "70"^^xsd:nonNegativeInteger .
+
+<http://newbase.com/SamRed>
+        a                    <ex:Professor> ;
+        <ex:isAuthorOf>      <http://newbase.com/PaperAboutDiscreteMathematics> , <http://newbase.com/PaperAboutLinearAlgebra> ;
+        <ex:isPartOf>        <http://newbase.com/King'sCollegeLondon> ;
+        <ex:officeHours>     "10:30:00"^^xsd:time ;
+        <ex:participatesIn>  <http://newbase.com/ResearchAboutRandomizedAlgorithms> ;
+        ov:phoneNumber       "+7654321"@en ;
+        vcard:bday           "1990-03-10T07:00:00"^^xsd:dateTime ;
+        foaf:firstName       "Sam"@en ;
+        foaf:lastName        "Red"@en .
+
+<http://newbase.com/PaperAboutDiscreteMathematics>
+        a                           <ex:Paper> ;
+        <ex:numberOfPeopleInPaper>  "7"^^xsd:positiveInteger ;
+        dcterms:title               "Interesting paper about Discrete Mathematics"@en ;
+        disco:startDate             "1990-08-17"^^xsd:date .
+
+<http://newbase.com/CharlesUniversity>
+        a                            vivo:University ;
+        <ex:constitutes>             <http://newbase.com/FacultyOfMathematicsAndPhysics> ;
+        ov:phoneNumber               "224 491 111"@en ;
+        dcterms:title                "Charles University"@en ;
+        vcard:street-address         "Opletalova 38, 110 00 Staré Město"@cz ;
+        dbpediaowl:numberOfStudents  "1000"^^xsd:nonNegativeInteger ;
+        dbpediaowl:ranking           "50"^^xsd:positiveInteger .
+
+<http://newbase.com/PaperAboutMathematicalAnalysis>
+        a                           <ex:Paper> ;
+        <ex:numberOfPeopleInPaper>  "3"^^xsd:positiveInteger ;
+        dcterms:title               "PaperAboutMathematicalAnalysis"@en ;
+        disco:startDate             "1999-06-15"^^xsd:date .
+
+<http://newbase.com/ComputerScience>
+        a                            <ex:StudyProgram> ;
+        <ex:courseList>              "course1 course2 course3"@en ;
+        dcterms:title                "Computer Science"@en ;
+        dbpediaowl:numberOfStudents  "100"^^xsd:nonNegativeInteger .
+
+<http://newbase.com/Economics>
+        a                            schema:Course , <ex:StudyProgram> ;
+        <ex:courseList>              "course1 course2 course3"@en ;
+        <ex:numberOfCredits>         "6"^^xsd:nonNegativeInteger ;
+        dcterms:title                "Economics"@en ;
+        mv:id                        "e1fos"@en ;
+        dbpediaowl:capacity          "60"^^xsd:nonNegativeInteger ;
+        dbpediaowl:numberOfStudents  "65"^^xsd:nonNegativeInteger .
+
+<http://newbase.com/King'sCollegeLondon>
+        a                            vivo:University ;
+        <ex:constitutes>             <http://newbase.com/FacultyOfSocialSciences> ;
+        ov:phoneNumber               "+44 20 7836 5454"@en ;
+        dcterms:title                "king's college london"@en ;
+        vcard:street-address         "Strand, London WC2R 2LS, United Kingdom"@cz ;
+        dbpediaowl:numberOfStudents  "1200"^^xsd:nonNegativeInteger ;
+        dbpediaowl:ranking           "40"^^xsd:positiveInteger .
+
+<http://newbase.com/MarkBlue>
+        a                 <ex:Student> ;
+        <ex:gpa>          "1.8"^^xsd:double ;
+        <ex:isPartOf>     <http://newbase.com/CharlesUniversity> ;
+        <ex:studies>      <http://newbase.com/Economics> ;
+        <ex:yearOfStudy>  "3"^^xsd:positiveInteger ;
+        ov:phoneNumber    "+76444321"@en ;
+        vcard:bday        "1999-11-28T13:20:00"^^xsd:dateTime ;
+        foaf:firstName    "Mark"@en ;
+        foaf:lastName     "Blue"@en .
+
+<http://newbase.com/MassachusettsInstituteofTechnology>
+        a                            vivo:University ;
+        <ex:constitutes>             <http://newbase.com/FacultyOfMedicine> ;
+        ov:phoneNumber               "+1 617-253-1000"@en ;
+        dcterms:title                "Massachusetts Institute of Technology"@en ;
+        vcard:street-address         "77 Massachusetts Ave, Cambridge, MA 02139, United States"@en ;
+        dbpediaowl:numberOfStudents  "1300"^^xsd:nonNegativeInteger ;
+        dbpediaowl:ranking           "3"^^xsd:positiveInteger .
+
+<http://newbase.com/ResearchAboutConvexHulls>
+        a                              <ex:Research> ;
+        <ex:numberOfPeopleInResearch>  "12"^^xsd:positiveInteger ;
+        dcterms:title                  "ResearchAboutConvexHulls"@en ;
+        disco:startDate                "2003-08-05"^^xsd:date .
+
+<http://newbase.com/Anatomy>
+        a                     schema:Course ;
+        <ex:numberOfCredits>  "4"^^xsd:nonNegativeInteger ;
+        mv:id                 "a1fom"@en ;
+        dbpediaowl:capacity   "50"^^xsd:nonNegativeInteger .
+
+<http://newbase.com/JimPurple>
+        a                 <ex:Student> ;
+        <ex:gpa>          "2.5"^^xsd:double ;
+        <ex:isPartOf>     <http://newbase.com/MassachusettsInstituteofTechnology> ;
+        <ex:studies>      <http://newbase.com/ComputerScience> ;
+        <ex:yearOfStudy>  "2"^^xsd:positiveInteger ;
+        ov:phoneNumber    "+2534545467"@en ;
+        vcard:bday        "2002-05-30T09:00:00"^^xsd:dateTime ;
+        foaf:firstName    "Jim"@en ;
+        foaf:lastName     "Purple"@en .
+
+<http://newbase.com/AlexGreen>
+        a                    <ex:Professor> ;
+        <ex:isAuthorOf>      <http://newbase.com/PaperAboutMathematicalAnalysis> ;
+        <ex:isPartOf>        <http://newbase.com/CharlesUniversity> ;
+        <ex:officeHours>     "09:00:00"^^xsd:time ;
+        <ex:participatesIn>  <http://newbase.com/ResearchAboutDeterministicAlgorithms> , <http://newbase.com/ResearchAboutConvexHulls> ;
+        ov:phoneNumber       "+12345467"@en ;
+        vcard:bday           "1999-11-28T13:20:00"^^xsd:dateTime ;
+        foaf:firstName       "Alex"@en ;
+        foaf:lastName        "Green"@en .
+
+<http://newbase.com/FacultyOfSocialSciences>
+        a                   aiiso:Faculty ;
+        <ex:establishDate>  "1750-03-10"^^xsd:date ;
+        <ex:teaches>        <http://newbase.com/Economics> ;
+        dcterms:title       "faculty of social sciences"@en ;
+        dbpediaowl:budget   "1000000"^^xsd:double .
+
+<http://newbase.com/ResearchAboutDeterministicAlgorithms>
+        a                              <ex:Research> ;
+        <ex:numberOfPeopleInResearch>  "10"^^xsd:positiveInteger ;
+        dcterms:title                  "Research About Determinisitc Algorithms"@en ;
+        disco:startDate                "2001-05-15"^^xsd:date .
