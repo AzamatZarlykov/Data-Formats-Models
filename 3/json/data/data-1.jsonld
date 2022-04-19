@@ -28,6 +28,7 @@
       "Research": "ex:Research",
       "Paper": "ex:Paper",
       "Course": "schema:Course",
+      "Faculty" : "aiiso:Faculty",
       "name": {
         "@id": "dcterms:title",
         "@container": "@language"
@@ -267,6 +268,7 @@
       "Research": "ex:Research",
       "Paper": "ex:Paper",
       "Course": "schema:Course",
+      "Faculty" : "aiiso:Faculty",
       "name": {
         "@id": "dcterms:title",
         "@container": "@language"
@@ -462,22 +464,20 @@
 
     "constitutes": {
       "@type": "Faculty",
-      "@id": "facultyOfSocialSciences",
+      "@id": "FacultyOfSocialSciences",
       "name": {
         "en": "faculty of social sciences"
       },
       "establishmentYear": "1750-03-10",
       "budget": "1000000",
       "teaches" : {
-        "course": {
-          "@type" : "Course",
-          "@id" : "Economics",
-          "id": {
-            "en": "e1fos"
-          },
-          "numberOfCredits": "6",
-          "maxCapacity": "60"
-        }
+        "@type" : "Course",
+        "@id" : "Economics",
+        "id": {
+          "en": "e1fos"
+        },
+        "numberOfCredits": "6",
+        "maxCapacity": "60"
       }
     }
   },
@@ -510,6 +510,7 @@
       "Research": "ex:Research",
       "Paper": "ex:Paper",
       "Course": "schema:Course",
+      "Faculty" : "aiiso:Faculty",
       "name": {
         "@id": "dcterms:title",
         "@container": "@language"
@@ -643,15 +644,13 @@
       "establishmentYear": "1800-11-04",
       "budget": "999999",
       "teaches" : {
-        "course": {
-          "@type": "Course",
-          "@id": "Anatomy",
-          "id": {
-            "en": "a1fom"
-          },
-          "numberOfCredits": "4",
-          "maxCapacity": "50"
-        }
+        "@type": "Course",
+        "@id": "Anatomy",
+        "id": {
+          "en": "a1fom"
+        },
+        "numberOfCredits": "4",
+        "maxCapacity": "50"
       }
     }
   }
