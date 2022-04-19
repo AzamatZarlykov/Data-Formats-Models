@@ -1,36 +1,42 @@
 
-    @base <http://newbase.com/> .
-    @prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
-    @prefix dcterms: <http://purl.org/dc/terms/> .
-    @prefix dbpediaowl: <https://dbpedia.org/ontology/> .
-    @prefix ov: <http://open.vocab.org/terms/> .
-    @prefix juso: <http://rdfs.o/juso/> .
-    @prefix swc: <http://data.semanticweb.org/ns/swc/ontology#> .
-    @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-    @prefix schema: <http://schema.org/> .
-    @prefix mv: <http://schema.mobivoc.org/> .
-    @prefix crsw: <http://courseware.rkbexplorer.com/ontologies/courseware#> .
-    @prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
-    @prefix lsc: <http://linkedscience.org/lsc/ns#> .
-    @prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
-    @prefix teach: <http://linkedscience.org/teach/ns#> .
-    @prefix vivo: <http://vivoweb.org/ontology/core#> .
-    @prefix foaf: <http://xmlns.com/foaf/spec/#> .
-    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+    @base &lt;http://newbase.com/&gt; .
+    @prefix aiiso: &lt;http://purl.org/vocab/aiiso/schema#&gt; .
+    @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+    @prefix dbpediaowl: &lt;https://dbpedia.org/ontology/&gt; .
+    @prefix ov: &lt;http://open.vocab.org/terms/&gt; .
+    @prefix juso: &lt;http://rdfs.o/juso/&gt; .
+    @prefix swc: &lt;http://data.semanticweb.org/ns/swc/ontology#&gt; .
+    @prefix vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt; .
+    @prefix schema: &lt;http://schema.org/&gt; .
+    @prefix mv: &lt;http://schema.mobivoc.org/&gt; .
+    @prefix crsw: &lt;http://courseware.rkbexplorer.com/ontologies/courseware#&gt; .
+    @prefix disco: &lt;http://rdf-vocabulary.ddialliance.org/discovery#&gt; .
+    @prefix lsc: &lt;http://linkedscience.org/lsc/ns#&gt; .
+    @prefix mads: &lt;http://www.loc.gov/mads/rdf/v1#&gt; .
+    @prefix teach: &lt;http://linkedscience.org/teach/ns#&gt; .
+    @prefix vivo: &lt;http://vivoweb.org/ontology/core#&gt; .
+    @prefix foaf: &lt;http://xmlns.com/foaf/spec/#&gt; .
+    @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+    @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+    @prefix disco: &lt;http://rdf-vocabulary.ddialliance.org/discovery#&gt; .
     
-    <CharlesUniversity>
+    &lt;CharlesUniversity&gt;
         a vivo:University ;
         dcterms:title "Charles University"@en ;
         ov:phoneNumber "224 491 111"@en ;
         vcard:street-address "Opletalova 38, 110 00 Staré Město"@cz ;
         dbpediaowl:numberOfStudents "1000"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "50"^^xsd:positiveInteger ;
-        ex:constitutes <FacultyOfMathematicsAndPhysics> .
+        ex:constitutes &lt;FacultyOfMathematicsAndPhysics&gt; .
         
     
-    <MarkBlue>
+    ex:StudyProgram
+        a rdfs:Class ;
+        rdfs:label "study program"@en ;
+        rdfs:comment "a program studied by a student"@en .
+
+    
+    &lt;MarkBlue&gt;
         a ex:Student ;
         foaf:firstName "Mark"@en ;
         foaf:lastName  "Blue"@en ;
@@ -38,83 +44,147 @@
         vcard:bday  "1999-11-28T13:20:00"^^xsd:dateTime ;
         ex:yearOfStudy  "3"^^xsd:positiveInteger ;
         ex:gpa "1.8"^^xsd:double ;
-        ex:studies  <Economics> ;
-        ex:isPartOf <CharlesUniversity> .
+        ex:studies  &lt;Economics&gt; ;
+        ex:isPartOf &lt;CharlesUniversity&gt; .
     
     
-    <Economics>
+    &lt;Economics&gt;
         a ex:StudyProgram ;
         dcterms:title "Economics@en ;
         dbpediaowl:numberOfStudents "65^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
     
-    <AlexGreen>
+    ex:StudyProgram
+        a rdfs:Class ;
+        rdfs:label "study program"@en ;
+        rdfs:comment "a program studied by a student"@en .
+
+    
+    ex:Student
+        a rdfs:Class ;
+        rdfs:subClassOf foaf:Person ;
+        rdfs:subClassOf teach:Student ;
+        rdfs:label "student"@en ;
+        rdfs:comment "a student in a university"@en .
+
+    ex:yearOfStudy
+    a rdfs:Property ;
+    rdfs:label "year of study"@en ;
+    rdfs:comment "the year of students study"@en ;
+    rdfs:domain ex:student ;
+    rdfs:range xsd:positiveInteger . 
+
+    ex:gpa
+        a rdfs:Property ;
+        rdfs:label "GPA"@en ;
+        rdfs:comment "grade point average"@en ;
+        rdfs:domain ex:student ;
+        rdfs:range xsd:double .
+    
+
+    ex:studies
+        a rdfs:Property ;
+        rdfs:label "studies"@en ;
+        rdfs:comment "relates student and studyProgram"@en ;
+        rdfs:domain ex:student ;
+        rdfs:range ex:studyProgram .
+
+    
+    &lt;AlexGreen&gt;
         a ex:Professor ;
         foaf:firstName "Alex"@en ;
         foaf:lastName "Green"@en ;
         ov:phoneNumber "+12345467"@en ;
-        vcard:bday "1980-05-30T09:00:00^^xsd:dateTime ;
+        vcard:bday "1980-05-30T09:00:00"^^xsd:dateTime ;
         ex:officeHours "09:00:00"^^xsd:time ;
         
-        ex:isAuthorOf <InterestingpaperaboutMathematicalAnalysis> ;
+        ex:isAuthorOf &lt;InterestingpaperaboutMathematicalAnalysis&gt; ;
         
-        ex:participatesIn  <ResearchAboutDeterminisitcAlgorithms> ;
+        ex:participatesIn  &lt;ResearchAboutDeterminisitcAlgorithms&gt; ;
         
-        ex:participatesIn  <ResearchAboutConvexHulls> ;
+        ex:participatesIn  &lt;ResearchAboutConvexHulls&gt; ;
         
-        ex:isPartOf <CharlesUniversity> .
+        ex:isPartOf &lt;CharlesUniversity&gt; .
 
     
 
     
-    <InterestingpaperaboutMathematicalAnalysis>
+    &lt;InterestingpaperaboutMathematicalAnalysis&gt;
         a ex:Paper ;
         dcterms:title "Interesting paper about Mathematical Analysis"@en ;
         ex:numberOfPeopleInPaper "3"^^xsd:positiveInteger ;
         disco:startDate "1999-06-15"^^xsd:date .
 
     
-    <ResearchAboutDeterminisitcAlgorithms>
+    &lt;ResearchAboutDeterminisitcAlgorithms&gt;
         a ex:Paper ;
         dcterms:title "Research About Determinisitc Algorithms"@en ;
         ex:numberOfPeopleInPaper "10"^^xsd:positiveInteger ;
         disco:startDate "2001-05-15"^^xsd:date .
 
     
-    <ResearchAboutConvexHulls>
+    ex:Research
+        a rdfs:Class;
+        rdfs:subClassOf lsc:Research ;
+        rdfs:label "research"@en ;
+        rdfs:comment "research conducted by someone"@en .
+
+    
+    
+    &lt;ResearchAboutConvexHulls&gt;
         a ex:Paper ;
         dcterms:title "Research About Convex Hulls"@en ;
         ex:numberOfPeopleInPaper "12"^^xsd:positiveInteger ;
         disco:startDate "2003-08-05"^^xsd:date .
 
     
-    <facultyofmathematicsandphysics>
+    ex:Professor
+    a rdfs:Class ;
+        rdfs:subClassOf foaf:Person ;
+        rdfs:subClassOf dbpediaowl:professor ;
+        rdfs:label "professor"@en ;
+        rdfs:comment "a proffesor in a university"@en .
+    
+    ex:officeHours
+        a rdfs:Property ;
+        rdfs:label "office hours"@en ;
+        rdfs:comment "time and date when the office is open"@en ;
+        rdfs:domain ex:professor ;
+        rdfs:range xsd:time .
+    
+    &lt;facultyofmathematicsandphysics&gt;
         a aiiso:Faculty ;
         dcterms:title "faculty of mathematics and physics"@en ;
         ex:establishDate "1680-02-20"^^xsd:date ;
         dbpediaowl:budget "2222222"^^xsd:double ;
-        ex:teaches <> .
+        ex:teaches &lt;&gt; .
     
     
-    <>
+    &lt;&gt;
         a schema:Course ;
         mv:id "ma1fomp"@en ;
         ex:numberOfCredits "6^^xsd:nonNegativeInteger ;
         dbpediaowl:capacity "30"^^xsd:nonNegativeInteger .
 
     
-    <kingscollegelondon>
+    &lt;king'scollegelondon&gt;
         a vivo:University ;
-        dcterms:title "kings college london"@en ;
+        dcterms:title "king's college london"@en ;
         ov:phoneNumber "+44 20 7836 5454"@en ;
         vcard:street-address "Strand, London WC2R 2LS, United Kingdom"@cz ;
         dbpediaowl:numberOfStudents "1200"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "40"^^xsd:positiveInteger ;
-        ex:constitutes <FacultyOfMathematicsAndPhysics> .
+        ex:constitutes &lt;FacultyOfMathematicsAndPhysics&gt; .
         
     
-    <NickOrange>
+    ex:StudyProgram
+        a rdfs:Class ;
+        rdfs:label "study program"@en ;
+        rdfs:comment "a program studied by a student"@en .
+
+    
+    &lt;NickOrange&gt;
         a ex:Student ;
         foaf:firstName "Nick"@en ;
         foaf:lastName  "Orange"@en ;
@@ -122,83 +192,89 @@
         vcard:bday  "2000-10-12T10:30:00"^^xsd:dateTime ;
         ex:yearOfStudy  "1"^^xsd:positiveInteger ;
         ex:gpa "1.2"^^xsd:double ;
-        ex:studies  <Philosophy> ;
-        ex:isPartOf <kingscollegelondon> .
+        ex:studies  &lt;Philosophy&gt; ;
+        ex:isPartOf &lt;king'scollegelondon&gt; .
     
     
-    <Philosophy>
+    &lt;Philosophy&gt;
         a ex:StudyProgram ;
         dcterms:title "Philosophy@en ;
         dbpediaowl:numberOfStudents "70^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
     
-    <SamRed>
+    &lt;SamRed&gt;
         a ex:Professor ;
         foaf:firstName "Sam"@en ;
         foaf:lastName "Red"@en ;
         ov:phoneNumber "+7654321"@en ;
-        vcard:bday "1990-03-10T07:00:00^^xsd:dateTime ;
-        ex:officeHours "09:00:00"^^xsd:time ;
+        vcard:bday "1990-03-10T07:00:00"^^xsd:dateTime ;
+        ex:officeHours "10:30:00"^^xsd:time ;
         
-        ex:isAuthorOf <InterestingpaperaboutLinearAlgebra> ;
+        ex:isAuthorOf &lt;InterestingpaperaboutLinearAlgebra&gt; ;
         
-        ex:isAuthorOf <InterestingpaperaboutDiscreteMathematics> ;
+        ex:isAuthorOf &lt;InterestingpaperaboutDiscreteMathematics&gt; ;
         
-        ex:participatesIn  <ResearchAboutRandomizedAlgorithms> ;
+        ex:participatesIn  &lt;ResearchAboutRandomizedAlgorithms&gt; ;
         
-        ex:isPartOf <kingscollegelondon> .
+        ex:isPartOf &lt;king'scollegelondon&gt; .
 
     
 
     
-    <InterestingpaperaboutLinearAlgebra>
+    &lt;InterestingpaperaboutLinearAlgebra&gt;
         a ex:Paper ;
         dcterms:title "Interesting paper about Linear Algebra"@en ;
         ex:numberOfPeopleInPaper "5"^^xsd:positiveInteger ;
         disco:startDate "1997-05-10"^^xsd:date .
 
     
-    <InterestingpaperaboutDiscreteMathematics>
+    &lt;InterestingpaperaboutDiscreteMathematics&gt;
         a ex:Paper ;
         dcterms:title "Interesting paper about Discrete Mathematics"@en ;
         ex:numberOfPeopleInPaper "7"^^xsd:positiveInteger ;
         disco:startDate "1990-08-17"^^xsd:date .
 
     
-    <ResearchAboutRandomizedAlgorithms>
+    &lt;ResearchAboutRandomizedAlgorithms&gt;
         a ex:Paper ;
         dcterms:title "Research About Randomized Algorithms"@en ;
         ex:numberOfPeopleInPaper "16"^^xsd:positiveInteger ;
         disco:startDate "2004-07-03"^^xsd:date .
 
     
-    <facultyofsocialsciences>
+    &lt;facultyofsocialsciences&gt;
         a aiiso:Faculty ;
         dcterms:title "faculty of social sciences"@en ;
         ex:establishDate "1750-03-10"^^xsd:date ;
         dbpediaowl:budget "1000000"^^xsd:double ;
-        ex:teaches <> .
+        ex:teaches &lt;&gt; .
     
     
-    <>
+    &lt;&gt;
         a schema:Course ;
         mv:id "e1fos"@en ;
         ex:numberOfCredits "6^^xsd:nonNegativeInteger ;
         dbpediaowl:capacity "60"^^xsd:nonNegativeInteger .
 
     
-    <MassachusettsInstituteofTechnology>
+    &lt;MassachusettsInstituteofTechnology&gt;
         a vivo:University ;
         dcterms:title "Massachusetts Institute of Technology"@en ;
         ov:phoneNumber "+1 617-253-1000"@en ;
         vcard:street-address "77 Massachusetts Ave, Cambridge, MA 02139, United States"@cz ;
         dbpediaowl:numberOfStudents "1300"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "3"^^xsd:positiveInteger ;
-        ex:constitutes <FacultyOfMathematicsAndPhysics> .
+        ex:constitutes &lt;FacultyOfMathematicsAndPhysics&gt; .
         
     
-    <JimPurple>
+    ex:StudyProgram
+        a rdfs:Class ;
+        rdfs:label "study program"@en ;
+        rdfs:comment "a program studied by a student"@en .
+
+    
+    &lt;JimPurple&gt;
         a ex:Student ;
         foaf:firstName "Jim"@en ;
         foaf:lastName  "Purple"@en ;
@@ -206,26 +282,26 @@
         vcard:bday  "2002-05-30T09:00:00"^^xsd:dateTime ;
         ex:yearOfStudy  "2"^^xsd:positiveInteger ;
         ex:gpa "2.5"^^xsd:double ;
-        ex:studies  <ComputerScience> ;
-        ex:isPartOf <MassachusettsInstituteofTechnology> .
+        ex:studies  &lt;ComputerScience&gt; ;
+        ex:isPartOf &lt;MassachusettsInstituteofTechnology&gt; .
     
     
-    <ComputerScience>
+    &lt;ComputerScience&gt;
         a ex:StudyProgram ;
         dcterms:title "Computer Science@en ;
         dbpediaowl:numberOfStudents "100^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
     
-    <facultyofmedicine>
+    &lt;facultyofmedicine&gt;
         a aiiso:Faculty ;
         dcterms:title "faculty of medicine"@en ;
         ex:establishDate "1800-11-04"^^xsd:date ;
         dbpediaowl:budget "999999"^^xsd:double ;
-        ex:teaches <> .
+        ex:teaches &lt;&gt; .
     
     
-    <>
+    &lt;&gt;
         a schema:Course ;
         mv:id "a1fom"@en ;
         ex:numberOfCredits "4^^xsd:nonNegativeInteger ;

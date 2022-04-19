@@ -42,23 +42,15 @@
     <xsl:apply-templates/>
     </xsl:template>
     
-    <!--<xsl:template match="professor[str[@name = 'firstName '] = 'Alex0']">-->
-    <!--ex:officeHours-->
-    <!--    a rdfs:Property ;-->
-    <!--    rdfs:label "office hours"@en ;-->
-    <!--    rdfs:comment "time and date when the office is open"@en ;-->
-    <!--    rdfs:domain ex:professor ;-->
-    <!--    rdfs:range xsd:time .-->
-    <!--</xsl:template>-->
-    
+
     <xsl:template match="professor">
     &lt;<xsl:value-of select="firstName[@xml:lang='en']"/><xsl:value-of select="lastName[@xml:lang='en']"/>&gt;
         a ex:Professor ;
         foaf:firstName "<xsl:value-of select="firstName[@xml:lang='en']"/>"@en ;
         foaf:lastName "<xsl:value-of select="lastName[@xml:lang='en']"/>"@en ;
         ov:phoneNumber "<xsl:value-of select="phoneNumber[@xml:lang='en']"/>"@en ;
-        vcard:bday "<xsl:value-of select="dateOfBirth"/>^^xsd:dateTime ;
-        ex:officeHours "09:00:00"^^xsd:time ;
+        vcard:bday "<xsl:value-of select="dateOfBirth"/>"^^xsd:dateTime ;
+        ex:officeHours "<xsl:value-of select="officeHours"/>"^^xsd:time ;
         <xsl:for-each select="paper">
         ex:isAuthorOf &lt;<xsl:value-of select="translate(name[@xml:lang='en'], ' ', '')"/>&gt; ;
         </xsl:for-each>
@@ -71,10 +63,26 @@
 
     <xsl:apply-templates select="paper"/>
     <xsl:apply-templates select="research"/>
+    <xsl:apply-templates select="officeHours[text() = '09:00:00']"/>
     
     </xsl:template>
 
-
+    <xsl:template match="officeHours">
+    ex:Professor
+    a rdfs:Class ;
+        rdfs:subClassOf foaf:Person ;
+        rdfs:subClassOf dbpediaowl:professor ;
+        rdfs:label "professor"@en ;
+        rdfs:comment "a proffesor in a university"@en .
+    
+    ex:officeHours
+        a rdfs:Property ;
+        rdfs:label "office hours"@en ;
+        rdfs:comment "time and date when the office is open"@en ;
+        rdfs:domain ex:professor ;
+        rdfs:range xsd:time .
+    </xsl:template>
+    
 
     <xsl:template match="student">
     &lt;<xsl:value-of select="firstName[@xml:lang='en']"/><xsl:value-of select="lastName[@xml:lang='en']"/>&gt;
@@ -88,7 +96,40 @@
         ex:studies  &lt;<xsl:value-of select="translate(studyProgram/name[@xml:lang='en'], ' ', '')"/>&gt; ;
         ex:isPartOf &lt;<xsl:value-of select="translate(../name[@xml:lang='en'], ' ', '')"/>&gt; .
     
-    <xsl:apply-templates/>
+    <xsl:apply-templates select="studyProgram"/>
+    <xsl:apply-templates select="dateOfBirth[text() = '1999-11-28T13:20:00']"/>
+    </xsl:template>
+    
+    <xsl:template match="dateOfBirth">
+    ex:Student
+        a rdfs:Class ;
+        rdfs:subClassOf foaf:Person ;
+        rdfs:subClassOf teach:Student ;
+        rdfs:label "student"@en ;
+        rdfs:comment "a student in a university"@en .
+
+    ex:yearOfStudy
+    a rdfs:Property ;
+    rdfs:label "year of study"@en ;
+    rdfs:comment "the year of students study"@en ;
+    rdfs:domain ex:student ;
+    rdfs:range xsd:positiveInteger . 
+
+    ex:gpa
+        a rdfs:Property ;
+        rdfs:label "GPA"@en ;
+        rdfs:comment "grade point average"@en ;
+        rdfs:domain ex:student ;
+        rdfs:range xsd:double .
+    
+
+    ex:studies
+        a rdfs:Property ;
+        rdfs:label "studies"@en ;
+        rdfs:comment "relates student and studyProgram"@en ;
+        rdfs:domain ex:student ;
+        rdfs:range ex:studyProgram .
+
     </xsl:template>
     
     <xsl:template match="faculty">
@@ -127,6 +168,7 @@
         ex:numberOfPeopleInPaper "<xsl:value-of select="numberOfPeople"/>"^^xsd:positiveInteger ;
         disco:startDate "<xsl:value-of select="startDate"/>"^^xsd:date .
 
+    <xsl:apply-templates select="numberOfPeople[text() = '10']"/>
     </xsl:template>
 
     <xsl:template match="studyProgram">
@@ -135,6 +177,31 @@
         dcterms:title "<xsl:value-of select="name[@xml:lang='en']"/>@en ;
         dbpediaowl:numberOfStudents "<xsl:value-of select="numberOfStudents"/>^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
+
+    <xsl:apply-templates select="numberOfStudents[text() = '65']"/>
+    </xsl:template>
+
+    <xsl:template match="numberOfStudents">
+    ex:StudyProgram
+        a rdfs:Class ;
+        rdfs:label "study program"@en ;
+        rdfs:comment "a program studied by a student"@en .
+
+    </xsl:template>
+
+    <xsl:template match="numberOfPeople">
+    ex:Research
+        a rdfs:Class;
+        rdfs:subClassOf lsc:Research ;
+        rdfs:label "research"@en ;
+        rdfs:comment "research conducted by someone"@en .
+
+    ex:numberOfPeopleInResearch
+        a rdfs:Property ;
+        rdfs:label "number of people"@en ;
+        rdfs:comment "number of people involved in some scientific research"@en ;
+        rdfs:domain ex:Research ;
+        rdfs:range xsd:positiveInteger . 
 
     </xsl:template>
     
