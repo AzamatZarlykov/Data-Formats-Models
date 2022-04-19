@@ -78,7 +78,7 @@
         "@id": "foaf:lastName",
         "@container": "@language"
       },
-      "dataOfBirth": {
+      "dateOfBirth": {
         "@id": "vcard:bday",
         "@type": "xsd:dateTime"
       },
@@ -318,7 +318,7 @@
         "@id": "foaf:lastName",
         "@container": "@language"
       },
-      "dataOfBirth": {
+      "dateOfBirth": {
         "@id": "vcard:bday",
         "@type": "xsd:dateTime"
       },
@@ -477,7 +477,7 @@
           "en": "e1fos"
         },
         "numberOfCredits": "6",
-        "maxCapacity": "60"
+        "capacity": "60"
       }
     }
   },
@@ -551,7 +551,7 @@
         "@id": "foaf:lastName",
         "@container": "@language"
       },
-      "dataOfBirth": {
+      "dateOfBirth": {
         "@id": "vcard:bday",
         "@type": "xsd:dateTime"
       },
@@ -650,7 +650,7 @@
           "en": "a1fom"
         },
         "numberOfCredits": "4",
-        "maxCapacity": "50"
+        "capacity": "50"
       }
     }
   }
