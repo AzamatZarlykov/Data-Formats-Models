@@ -20,6 +20,12 @@
       "foaf": "http://xmlns.com/foaf/spec/#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "studentOfUni": {
+        "@reverse": "studiesAt"
+      },
+      "professorOfUni": {
+        "@reverse": "teachesAt"
+      },
       "type": "@type",
       "University": "vivo:University",
       "Student": "ex:Student",
@@ -28,7 +34,7 @@
       "Research": "ex:Research",
       "Paper": "ex:Paper",
       "Course": "schema:Course",
-      "Faculty" : "aiiso:Faculty",
+      "Faculty": "aiiso:Faculty",
       "name": {
         "@id": "dcterms:title",
         "@container": "@language"
@@ -67,8 +73,8 @@
       "constitutes": {
         "@id": "ex:constitutes"
       },
-      "teaches" : {
-        "@id" : "ex:teaches"
+      "teaches": {
+        "@id": "ex:teaches"
       },
       "firstName": {
         "@id": "foaf:firstName",
@@ -78,7 +84,7 @@
         "@id": "foaf:lastName",
         "@container": "@language"
       },
-      "dataOfBirth": {
+      "dateOfBirth": {
         "@id": "vcard:bday",
         "@type": "xsd:dateTime"
       },
@@ -147,7 +153,7 @@
     },
     "numberOfStudents": "1000",
     "ranking": "50",
-    "studiesAt": {
+    "studentOfUni": {
       "@type": "Student",
       "@id": "MarkBlue",
       "firstName": {
@@ -174,7 +180,7 @@
         }
       }
     },
-    "teachesAt": {
+    "professorOfUni": {
       "@type": "Professor",
       "@id": "AlexGreen",
       "firstName": {
@@ -196,7 +202,7 @@
             "en": "Research About Determinisitc Algorithms"
           },
           "numberOfPeopleInResearch": "10",
-          "startData": "2001-05-15"
+          "startDate": "2001-05-15"
         },
         {
           "@type": "Research",
@@ -260,6 +266,12 @@
       "foaf": "http://xmlns.com/foaf/spec/#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "studentOfUni": {
+        "@reverse": "studiesAt"
+      },
+      "professorOfUni": {
+        "@reverse": "teachesAt"
+      },
       "type": "@type",
       "University": "vivo:University",
       "Student": "ex:Student",
@@ -268,7 +280,7 @@
       "Research": "ex:Research",
       "Paper": "ex:Paper",
       "Course": "schema:Course",
-      "Faculty" : "aiiso:Faculty",
+      "Faculty": "aiiso:Faculty",
       "name": {
         "@id": "dcterms:title",
         "@container": "@language"
@@ -307,8 +319,8 @@
       "constitutes": {
         "@id": "ex:constitutes"
       },
-      "teaches" : {
-        "@id" : "ex:teaches"
+      "teaches": {
+        "@id": "ex:teaches"
       },
       "firstName": {
         "@id": "foaf:firstName",
@@ -318,7 +330,7 @@
         "@id": "foaf:lastName",
         "@container": "@language"
       },
-      "dataOfBirth": {
+      "dateOfBirth": {
         "@id": "vcard:bday",
         "@type": "xsd:dateTime"
       },
@@ -387,7 +399,7 @@
     },
     "numberOfStudents": "1200",
     "ranking": "40",
-    "studiesAt": {
+    "studentOfUni": {
       "@type": "Student",
       "@id": "NickOrange",
       "firstName": {
@@ -414,8 +426,7 @@
         }
       }
     },
-
-    "teachesAt": {
+    "professorOfUni": {
       "@type": "Professor",
       "@id": "SamRed",
       "firstName": {
@@ -461,7 +472,6 @@
         }
       ]
     },
-
     "constitutes": {
       "@type": "Faculty",
       "@id": "FacultyOfSocialSciences",
@@ -470,14 +480,14 @@
       },
       "establishmentYear": "1750-03-10",
       "budget": "1000000",
-      "teaches" : {
-        "@type" : "Course",
-        "@id" : "Economics",
+      "teaches": {
+        "@type": "Course",
+        "@id": "Economics",
         "id": {
           "en": "e1fos"
         },
         "numberOfCredits": "6",
-        "maxCapacity": "60"
+        "capacity": "60"
       }
     }
   },
@@ -502,6 +512,9 @@
       "foaf": "http://xmlns.com/foaf/spec/#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "studentOfUni": {
+        "@reverse": "studiesAt"
+      },
       "type": "@type",
       "University": "vivo:University",
       "Student": "ex:Student",
@@ -510,7 +523,7 @@
       "Research": "ex:Research",
       "Paper": "ex:Paper",
       "Course": "schema:Course",
-      "Faculty" : "aiiso:Faculty",
+      "Faculty": "aiiso:Faculty",
       "name": {
         "@id": "dcterms:title",
         "@container": "@language"
@@ -540,8 +553,8 @@
       "constitutes": {
         "@id": "ex:constitutes"
       },
-      "teaches" : {
-        "@id" : "ex:teaches"
+      "teaches": {
+        "@id": "ex:teaches"
       },
       "firstName": {
         "@id": "foaf:firstName",
@@ -551,7 +564,7 @@
         "@id": "foaf:lastName",
         "@container": "@language"
       },
-      "dataOfBirth": {
+      "dateOfBirth": {
         "@id": "vcard:bday",
         "@type": "xsd:dateTime"
       },
@@ -608,7 +621,7 @@
     },
     "numberOfStudents": "1300",
     "ranking": "3",
-    "studiesAt": {
+    "studentOfUni": {
       "@type": "Student",
       "@id": "JimPurple",
       "firstName": {
@@ -643,14 +656,14 @@
       },
       "establishmentYear": "1800-11-04",
       "budget": "999999",
-      "teaches" : {
+      "teaches": {
         "@type": "Course",
         "@id": "Anatomy",
         "id": {
           "en": "a1fom"
         },
         "numberOfCredits": "4",
-        "maxCapacity": "50"
+        "capacity": "50"
       }
     }
   }
