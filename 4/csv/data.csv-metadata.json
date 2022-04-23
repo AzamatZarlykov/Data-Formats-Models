@@ -22,7 +22,7 @@
                         "titles" : "universityID",
                         "dc:description" : "University ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -36,7 +36,7 @@
                         "name" : "ranking",
                         "titles" : "ranking",
                         "dc:description" : "Rank of the university",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -50,7 +50,7 @@
                         "name" : "totalStudents",
                         "titles" : "numberOfStudents",
                         "dc:description" : "Number of students that study in the university",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     }
                 ],
                 "primaryKey" : "universityID"
@@ -71,14 +71,14 @@
                         "titles" : "facultyID",
                         "dc:description" : "Faculty ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "universityID",
                         "titles" : "universityID",
                         "dc:description" : "University ID",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -92,14 +92,14 @@
                         "name" : "establishmentYear",
                         "titles" : "establishmentYear",
                         "dc:description" : "When the faculty was established",
-                        "datatype" : "string"
+                        "datatype" : "datetime"
                     },
                     {
                         "@type" : "Column",
                         "name" : "budget",
                         "titles" : "budget",
                         "dc:description" : "budget of the faculty",
-                        "datatype" : "string"
+                        "datatype" : "double"
                     }
                 ],
                 "primaryKey" : "facultyID",
@@ -128,28 +128,28 @@
                         "titles" : "courseID",
                         "dc:description" : "Course ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "facultyID",
                         "titles" : "facultyID",
                         "dc:description" : "Faculty ID",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "totalCredits",
                         "titles" : "numberOfCredits",
                         "dc:description" : "Number of credits this course provides",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "totalCapacity",
                         "titles" : "maxCapacity",
                         "dc:description" : "Maximum students allowed to attend",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     }
                 ],
                 "primaryKey" : "courseID",
@@ -178,14 +178,14 @@
                         "titles" : "phoneNumberID",
                         "dc:description" : "phone number ID ",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "universityID",
                         "titles" : "universityID",
                         "dc:description" : "University ID",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -220,14 +220,14 @@
                         "titles" : "personID",
                         "dc:description" : "ID of the person",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "universityID",
                         "titles" : "universityID",
                         "dc:description" : "University ID",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     }
                 ],
                 "primaryKey" : "personID",
@@ -256,7 +256,7 @@
                         "titles" : "personID",
                         "dc:description" : "ID of the person",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -297,14 +297,14 @@
                         "titles" : "phoneNumberID",
                         "dc:description" : "phone number ID ",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "personID",
                         "titles" : "personID",
                         "dc:description" : "Person ID",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -340,28 +340,28 @@
                         "titles" : "personID",
                         "dc:description" : "Person ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "programID",
                         "titles" : "studyProgramID",
                         "dc:description" : "study program that student is involved",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "yearOfStudy",
                         "titles" : "yearOfStudy",
                         "dc:description" : "year of the study at university",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "gpa",
                         "titles" : "GPA",
                         "dc:description" : "GPA of the student",
-                        "datatype" : "string"
+                        "datatype" : "double"
                     }
                 ],
                 "primaryKey" : "personID",
@@ -390,7 +390,7 @@
                         "titles" : "studyProgramID",
                         "dc:description" : "study program ID that student is involved",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -404,7 +404,7 @@
                         "name" : "totalStudents",
                         "titles" : "numberOfStudents",
                         "dc:description" : "number of students in the study program",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     }
                 ],
                 "primaryKey" : "programID"
@@ -424,14 +424,14 @@
                         "titles" : "courseListID",
                         "dc:description" : "course list ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
                         "name" : "programID",
                         "titles" : "studyProgramID",
                         "dc:description" : "study program ID that student is involved",
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -467,7 +467,7 @@
                         "titles" : "personID",
                         "dc:description" : "person ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     }
                 ],
                 "primaryKey" : "personID"
@@ -487,7 +487,7 @@
                         "titles" : "officeHoursID",
                         "dc:description" : "office hours ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                      {
                         "@type" : "Column",
@@ -495,7 +495,7 @@
                         "titles" : "personID",
                         "dc:description" : "person ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -503,7 +503,7 @@
                         "titles" : "officeHours",
                         "dc:description" : "office hours ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "time"
                     }
                 ],
                 "primaryKey" : "officeHoursID",
@@ -532,7 +532,7 @@
                         "titles" : "personID",
                         "dc:description" : "person ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                      {
                         "@type" : "Column",
@@ -540,7 +540,7 @@
                         "titles" : "researchID",
                         "dc:description" : "research ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     }
                 ],
                 "primaryKey" : [
@@ -579,7 +579,7 @@
                         "titles" : "researchID",
                         "dc:description" : "research ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -595,7 +595,7 @@
                         "titles" : "numberOfPeople",
                         "dc:description" : "Number of people involved in research",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -623,7 +623,7 @@
                         "titles" : "paperID",
                         "dc:description" : "paper ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -639,7 +639,7 @@
                         "titles" : "numberOfPeople",
                         "dc:description" : "Number of people involved in paper",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                     {
                         "@type" : "Column",
@@ -667,7 +667,7 @@
                         "titles" : "personID",
                         "dc:description" : "person ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     },
                      {
                         "@type" : "Column",
@@ -675,7 +675,7 @@
                         "titles" : "paperID",
                         "dc:description" : "paper ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "integer"
                     }
                 ],
                 "primaryKey" : [
