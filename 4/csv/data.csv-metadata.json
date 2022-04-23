@@ -1,0 +1,704 @@
+{
+    "@context" : [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "@type" : "TableGroup",
+    "@id" : "https://example.org/university/data.csv-metadata.json",
+    "dc:description" : "University Structure",
+    "tables" : [
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data1.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "universityID",
+                        "titles" : "universityID",
+                        "dc:description" : "University ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "name",
+                        "titles" : "name",
+                        "dc:description" : "Name of the university",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "ranking",
+                        "titles" : "ranking",
+                        "dc:description" : "Rank of the university",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "address",
+                        "titles" : "address",
+                        "dc:description" : "Address of the university",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "totalStudents",
+                        "titles" : "numberOfStudents",
+                        "dc:description" : "Number of students that study in the university",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "universityID"
+            }
+        },
+
+        
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data2.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "facultyID",
+                        "titles" : "facultyID",
+                        "dc:description" : "Faculty ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "universityID",
+                        "titles" : "universityID",
+                        "dc:description" : "University ID",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "name",
+                        "titles" : "name",
+                        "dc:description" : "Name of the faculty",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "establishmentYear",
+                        "titles" : "establishmentYear",
+                        "dc:description" : "When the faculty was established",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "budget",
+                        "titles" : "budget",
+                        "dc:description" : "budget of the faculty",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "facultyID",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "universityID",
+                        "reference" : {
+                            "resource" : "data1.csv",
+                            "columnReference" : "universityID"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data3.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "courseID",
+                        "titles" : "courseID",
+                        "dc:description" : "Course ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "facultyID",
+                        "titles" : "facultyID",
+                        "dc:description" : "Faculty ID",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "totalCredits",
+                        "titles" : "numberOfCredits",
+                        "dc:description" : "Number of credits this course provides",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "totalCapacity",
+                        "titles" : "maxCapacity",
+                        "dc:description" : "Maximum students allowed to attend",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "courseID",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "facultyID",
+                        "reference" : {
+                            "resource" : "data2.csv",
+                            "columnReference" : "facultyID"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data4.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "phoneNumberID",
+                        "titles" : "phoneNumberID",
+                        "dc:description" : "phone number ID ",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "universityID",
+                        "titles" : "universityID",
+                        "dc:description" : "University ID",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "phoneNumber",
+                        "titles" : "phoneNumber",
+                        "dc:description" : "Phone number of the university",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "phoneNumberID",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "universityID",
+                        "reference" : {
+                            "resource" : "data1.csv",
+                            "columnReference" : "universityID"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data5.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personID",
+                        "titles" : "personID",
+                        "dc:description" : "ID of the person",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "universityID",
+                        "titles" : "universityID",
+                        "dc:description" : "University ID",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "personID",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "universityID",
+                        "reference" : {
+                            "resource" : "data1.csv",
+                            "columnReference" : "universityID"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data6.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personID",
+                        "titles" : "personID",
+                        "dc:description" : "ID of the person",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "firstName",
+                        "titles" : "firstName",
+                        "dc:description" : "first name of the person",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "lastName",
+                        "titles" : "lastName",
+                        "dc:description" : "last name of the person",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "dataOfBirth",
+                        "titles" : "dataOfBirth",
+                        "dc:description" : "the date when a person was born",
+                        "datatype" : "datetime"
+                    }
+                ],
+                "primaryKey" : "personID"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data7.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "phoneNumberID",
+                        "titles" : "phoneNumberID",
+                        "dc:description" : "phone number ID ",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "personID",
+                        "titles" : "personID",
+                        "dc:description" : "Person ID",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "phoneNumber",
+                        "titles" : "phoneNumber",
+                        "dc:description" : "Phone number of the person",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "phoneNumberID",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "personID",
+                        "reference" : {
+                            "resource" : "data6.csv",
+                            "columnReference" : "personID"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data8.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personID",
+                        "titles" : "personID",
+                        "dc:description" : "Person ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "programID",
+                        "titles" : "studyProgramID",
+                        "dc:description" : "study program that student is involved",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "yearOfStudy",
+                        "titles" : "yearOfStudy",
+                        "dc:description" : "year of the study at university",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "gpa",
+                        "titles" : "GPA",
+                        "dc:description" : "GPA of the student",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "personID",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "programID",
+                        "reference" : {
+                            "resource" : "data9.csv",
+                            "columnReference" : "programID"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data9.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "programID",
+                        "titles" : "studyProgramID",
+                        "dc:description" : "study program ID that student is involved",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "name",
+                        "titles" : "name",
+                        "dc:description" : "name of the program",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "totalStudents",
+                        "titles" : "numberOfStudents",
+                        "dc:description" : "number of students in the study program",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "programID"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data10.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "courseListID",
+                        "titles" : "courseListID",
+                        "dc:description" : "course list ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "programID",
+                        "titles" : "studyProgramID",
+                        "dc:description" : "study program ID that student is involved",
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "courseList",
+                        "titles" : "courseList",
+                        "dc:description" : "list of courses",
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "courseListID",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "programID",
+                        "reference" : {
+                            "resource" : "data9.csv",
+                            "columnReference" : "programID"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data11.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personID",
+                        "titles" : "personID",
+                        "dc:description" : "person ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "personID"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data12.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "officeHoursID",
+                        "titles" : "officeHoursID",
+                        "dc:description" : "office hours ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                     {
+                        "@type" : "Column",
+                        "name" : "personID",
+                        "titles" : "personID",
+                        "dc:description" : "person ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "officeHours",
+                        "titles" : "officeHours",
+                        "dc:description" : "office hours ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : "officeHoursID",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "personID",
+                        "reference" : {
+                            "resource" : "data11.csv",
+                            "columnReference" : "personID"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data13.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personID",
+                        "titles" : "personID",
+                        "dc:description" : "person ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                     {
+                        "@type" : "Column",
+                        "name" : "researchID",
+                        "titles" : "researchID",
+                        "dc:description" : "research ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : [
+                    "personID",
+                    "researchID"  
+                ],
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "personID",
+                        "reference" : {
+                            "resource" : "data11.csv",
+                            "columnReference" : "personID"
+                        }
+                    },
+                    {
+                        "columnReference" : "researchID",
+                        "reference" : {
+                            "resource" : "data14.csv",
+                            "columnReference" : "researchID"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data14.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "researchID",
+                        "titles" : "researchID",
+                        "dc:description" : "research ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "name",
+                        "titles" : "name",
+                        "dc:description" : "research name",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "numberOfPeople",
+                        "titles" : "numberOfPeople",
+                        "dc:description" : "Number of people involved in research",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "startDate",
+                        "titles" : "startDate",
+                        "dc:description" : "Start date of research",
+                        "required" : true,
+                        "datatype" : "datetime"
+                    }
+                ],
+                "primaryKey" : "researchID"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data15.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "paperID",
+                        "titles" : "paperID",
+                        "dc:description" : "paper ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "name",
+                        "titles" : "name",
+                        "dc:description" : "paper name",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "numberOfPeople",
+                        "titles" : "numberOfPeople",
+                        "dc:description" : "Number of people involved in paper",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "startDate",
+                        "titles" : "startDate",
+                        "dc:description" : "Start date of research",
+                        "required" : true,
+                        "datatype" : "datetime"
+                    }
+                ],
+                "primaryKey" : "paperID"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data16.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personID",
+                        "titles" : "personID",
+                        "dc:description" : "person ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    },
+                     {
+                        "@type" : "Column",
+                        "name" : "paperID",
+                        "titles" : "paperID",
+                        "dc:description" : "paper ID",
+                        "required" : true,
+                        "datatype" : "string"
+                    }
+                ],
+                "primaryKey" : [
+                    "personID",
+                    "paperID"  
+                ],
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "personID",
+                        "reference" : {
+                            "resource" : "data11.csv",
+                            "columnReference" : "personID"
+                        }
+                    },
+                    {
+                        "columnReference" : "paperID",
+                        "reference" : {
+                            "resource" : "data15.csv",
+                            "columnReference" : "paperID"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
