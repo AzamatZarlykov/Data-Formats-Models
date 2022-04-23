@@ -12,7 +12,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data1.csv",
+            "url" : "data-1.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -61,7 +61,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data2.csv",
+            "url" : "data-2.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -118,7 +118,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data3.csv",
+            "url" : "data-3.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -168,7 +168,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data4.csv",
+            "url" : "data-4.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -210,7 +210,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data5.csv",
+            "url" : "data-5.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -246,7 +246,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data6.csv",
+            "url" : "data-6.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -287,7 +287,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data7.csv",
+            "url" : "data-7.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -330,7 +330,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data8.csv",
+            "url" : "data-8.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -380,7 +380,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data9.csv",
+            "url" : "data-9.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -414,7 +414,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data10.csv",
+            "url" : "data-10.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -457,7 +457,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data11.csv",
+            "url" : "data-11.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -477,7 +477,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data12.csv",
+            "url" : "data-12.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -522,7 +522,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data13.csv",
+            "url" : "data-13.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -569,7 +569,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data14.csv",
+            "url" : "data-14.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -613,7 +613,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data15.csv",
+            "url" : "data-15.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
@@ -657,7 +657,7 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
-            "url" : "data16.csv",
+            "url" : "data-16.csv",
             "tableSchema" : {
                 "@type" : "Schema",
                 "columns" : [
