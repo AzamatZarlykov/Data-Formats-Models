@@ -1,6 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "$id": "http://example.org/example.json",
+  "definitions": {
+    "person": {
+      "type": "object",
+      "required": ["firstName", "lastName", "phoneNumber", "dateOfBirth"],
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "type": "string"
+        }
+      }
+    }
+  },
   "type": "array",
   "title": "universties",
   "minItems": 1,
@@ -32,12 +52,12 @@
         "description": "The address of the university"
       },
       "numberOfStudents": {
-        "type": "integer",
+        "type": "number",
         "title": "Number of students",
         "description": "The number of students in the university"
       },
       "ranking": {
-        "type": "integer",
+        "type": "number",
         "title": "Ranking",
         "description": "The ranking of the university"
       },
@@ -47,7 +67,7 @@
         "description": "The students at the university",
         "minItems": 0,
         "items": {
-          "@ref": "#/definitions/person",
+          "$ref": "#/definitions/person",
           "type": "object",
           "title": "Student",
           "description": "A student",
@@ -102,7 +122,7 @@
         "description": "The professors teaching at the university",
         "minItems": 0,
         "items": {
-          "@ref": "#/definitions/person",
+          "$ref": "#/definitions/person",
           "type": "object",
           "title": "Professor",
           "description": "A professor",
