@@ -33,7 +33,8 @@
       "phoneNumber",
       "address",
       "numberOfStudents",
-      "ranking"
+      "ranking",
+      "constitutes"
     ],
     "properties": {
       "name": {
@@ -75,7 +76,7 @@
           "type": "object",
           "title": "Student",
           "description": "A student",
-          "required": ["yearOfStudy", "gpa"],
+          "required": ["yearOfStudy", "gpa", "involved"],
           "properties": {
             "yearOfStudy": {
               "type": "number",
@@ -134,7 +135,7 @@
               "$ref": "#/definitions/person"
             }
           ],
-          "required": ["officeHours"],
+          "required": ["officeHours", "research"],
           "properties": {
             "officeHours": {
               "type": "string",
@@ -211,7 +212,7 @@
           "type": "object",
           "title": "Faculty",
           "description": "A faculty",
-          "required": ["name", "establishmentYear", "budget"],
+          "required": ["name", "establishmentYear", "budget", "teaches"],
           "properties": {
             "name": {
               "type": "string",
