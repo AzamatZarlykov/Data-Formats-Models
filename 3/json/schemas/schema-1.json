@@ -67,7 +67,11 @@
         "description": "The students at the university",
         "minItems": 0,
         "items": {
-          "$ref": "#/definitions/person",
+          "allOf": [
+            {
+              "$ref": "#/definitions/person"
+            }
+          ],
           "type": "object",
           "title": "Student",
           "description": "A student",
@@ -122,10 +126,14 @@
         "description": "The professors teaching at the university",
         "minItems": 0,
         "items": {
-          "$ref": "#/definitions/person",
           "type": "object",
           "title": "Professor",
           "description": "A professor",
+          "allOf": [
+            {
+              "$ref": "#/definitions/person"
+            }
+          ],
           "required": ["officeHours"],
           "properties": {
             "officeHours": {
