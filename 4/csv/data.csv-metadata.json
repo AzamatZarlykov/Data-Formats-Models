@@ -128,7 +128,7 @@
                         "titles" : "courseID",
                         "dc:description" : "Course ID",
                         "required" : true,
-                        "datatype" : "integer"
+                        "datatype" : "string"
                     },
                     {
                         "@type" : "Column",
