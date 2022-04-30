@@ -1,0 +1,4 @@
+paperID, name, numberOfPeople, startDate
+1, "Interesting paper about Mathematical Analysis", 3, 1999-06-15
+2, "Interesting paper about Linear Algebra", 5, 1997-05-10
+3, "Interesting paper about Discrete Mathematics", 7, 1990-08-17
