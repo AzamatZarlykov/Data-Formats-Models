@@ -1,0 +1,6 @@
+personID, firstName, lastName, dataOfBirth
+1, "Mark", "Blue", 1999-11-28T13:20:00
+2, "Alex", "Green", 1980-05-30T09:00:00
+3, "Nick", "Orange", 2000-10-12T10:30:00
+4, "Sam", "Red", 1990-03-10T07:00:00
+5, "Jim", "Purple", 2002-05-30T09:00:00
