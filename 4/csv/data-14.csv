@@ -1,0 +1,4 @@
+researchID, name, numberOfPeople, startDate
+1, "Research About Determinisitc Algorithms", 10, 2001-05-15
+2, "Research About Convex Hulls", 12, 2003-08-05
+3, "Research About Randomized Algorithms", 16, 2004-07-03
