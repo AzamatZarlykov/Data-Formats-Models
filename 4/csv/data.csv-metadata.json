@@ -107,7 +107,7 @@
                     {
                         "columnReference" : "universityID",
                         "reference" : {
-                            "resource" : "data1.csv",
+                            "resource" : "data-1.csv",
                             "columnReference" : "universityID"
                         }
                     }
@@ -157,7 +157,7 @@
                     {
                         "columnReference" : "facultyID",
                         "reference" : {
-                            "resource" : "data2.csv",
+                            "resource" : "data-2.csv",
                             "columnReference" : "facultyID"
                         }
                     }
@@ -200,7 +200,7 @@
                     {
                         "columnReference" : "universityID",
                         "reference" : {
-                            "resource" : "data1.csv",
+                            "resource" : "data-1.csv",
                             "columnReference" : "universityID"
                         }
                     }
@@ -235,7 +235,7 @@
                     {
                         "columnReference" : "universityID",
                         "reference" : {
-                            "resource" : "data1.csv",
+                            "resource" : "data-1.csv",
                             "columnReference" : "universityID"
                         }
                     }
@@ -319,7 +319,7 @@
                     {
                         "columnReference" : "personID",
                         "reference" : {
-                            "resource" : "data6.csv",
+                            "resource" : "data-6.csv",
                             "columnReference" : "personID"
                         }
                     }
@@ -369,7 +369,7 @@
                     {
                         "columnReference" : "programID",
                         "reference" : {
-                            "resource" : "data9.csv",
+                            "resource" : "data-9.csv",
                             "columnReference" : "programID"
                         }
                     }
@@ -446,7 +446,7 @@
                     {
                         "columnReference" : "programID",
                         "reference" : {
-                            "resource" : "data9.csv",
+                            "resource" : "data-9.csv",
                             "columnReference" : "programID"
                         }
                     }
@@ -511,7 +511,7 @@
                     {
                         "columnReference" : "personID",
                         "reference" : {
-                            "resource" : "data11.csv",
+                            "resource" : "data-11.csv",
                             "columnReference" : "personID"
                         }
                     }
@@ -551,14 +551,14 @@
                     {
                         "columnReference" : "personID",
                         "reference" : {
-                            "resource" : "data11.csv",
+                            "resource" : "data-11.csv",
                             "columnReference" : "personID"
                         }
                     },
                     {
                         "columnReference" : "researchID",
                         "reference" : {
-                            "resource" : "data14.csv",
+                            "resource" : "data-14.csv",
                             "columnReference" : "researchID"
                         }
                     }
@@ -686,14 +686,14 @@
                     {
                         "columnReference" : "personID",
                         "reference" : {
-                            "resource" : "data11.csv",
+                            "resource" : "data-11.csv",
                             "columnReference" : "personID"
                         }
                     },
                     {
                         "columnReference" : "paperID",
                         "reference" : {
-                            "resource" : "data15.csv",
+                            "resource" : "data-15.csv",
                             "columnReference" : "paperID"
                         }
                     }
