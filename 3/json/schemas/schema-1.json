@@ -151,118 +151,115 @@
           }
         }
       }
-    }
-  },
-  "type": "array",
-  "title": "universties",
-  "minItems": 1,
-  "items": {
-    "type": "object",
-    "title": "University",
-    "description": "A university",
-    "required": [
-      "name",
-      "phoneNumber",
-      "address",
-      "numberOfStudents",
-      "ranking",
-      "constitutes"
-    ],
-    "properties": {
-      "name": {
-        "type": "string",
-        "title": "Name",
-        "description": "The name of the university"
-      },
-      "phoneNumber": {
-        "type": "string",
-        "title": "Phone number",
-        "description": "The phone number of the university"
-      },
-      "address": {
-        "type": "string",
-        "title": "Address",
-        "description": "The address of the university"
-      },
-      "numberOfStudents": {
-        "type": "number",
-        "title": "Number of students",
-        "description": "The number of students in the university"
-      },
-      "ranking": {
-        "type": "number",
-        "title": "Ranking",
-        "description": "The ranking of the university"
-      },
-      "studiesAt": {
-        "type": "array",
-        "title": "studiesAt",
-        "description": "The students at the university",
-        "minItems": 0,
-        "items": {
-          "$ref": "#/definitions/student"
-        }
-      },
-      "teachesAt": {
-        "type": "array",
-        "title": "teachesAt",
-        "description": "The professors teaching at the university",
-        "minItems": 0,
-        "items": {
-          "$ref": "#/definitions/professor"
-        }
-      },
-      "constitutes": {
-        "type": "array",
-        "title": "Constitutes",
-        "description": "The list of faculties in the university",
-        "minItems": 1,
-        "items": {
-          "type": "object",
-          "title": "Faculty",
-          "description": "A faculty",
-          "required": ["name", "establishmentYear", "budget", "teaches"],
-          "properties": {
-            "name": {
-              "type": "string",
-              "title": "Name",
-              "description": "The name of the faculty"
-            },
-            "establishmentYear": {
-              "type": "string",
-              "title": "Establishment year",
-              "description": "The year the faculty was established"
-            },
-            "budget": {
-              "type": "number",
-              "title": "Budget",
-              "description": "The budget of the faculty"
-            },
-            "teaches": {
-              "type": "array",
-              "title": "Teaches",
-              "description": "The list of courses taught by the faculty",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "title": "Course",
-                "description": "A course",
-                "required": ["id", "numberOfCredits", "maxCapacity"],
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "title": "Name",
-                    "description": "The name of the course"
-                  },
-                  "numberOfCredits": {
-                    "type": "number",
-                    "title": "Number of credits",
-                    "description": "The number of credits the course is worth"
-                  },
-                  "maxCapacity": {
-                    "type": "number",
-                    "title": "Max capacity",
-                    "description": "The maximum number of students the course can take"
+    },
+    "university": {
+      "type": "object",
+      "title": "University",
+      "description": "A university",
+      "required": [
+        "name",
+        "phoneNumber",
+        "address",
+        "numberOfStudents",
+        "ranking",
+        "constitutes"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "The name of the university"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "title": "Phone number",
+          "description": "The phone number of the university"
+        },
+        "address": {
+          "type": "string",
+          "title": "Address",
+          "description": "The address of the university"
+        },
+        "numberOfStudents": {
+          "type": "number",
+          "title": "Number of students",
+          "description": "The number of students in the university"
+        },
+        "ranking": {
+          "type": "number",
+          "title": "Ranking",
+          "description": "The ranking of the university"
+        },
+        "studiesAt": {
+          "type": "array",
+          "title": "studiesAt",
+          "description": "The students at the university",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/definitions/student"
+          }
+        },
+        "teachesAt": {
+          "type": "array",
+          "title": "teachesAt",
+          "description": "The professors teaching at the university",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/definitions/professor"
+          }
+        },
+        "constitutes": {
+          "type": "array",
+          "title": "Constitutes",
+          "description": "The list of faculties in the university",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "title": "Faculty",
+            "description": "A faculty",
+            "required": ["name", "establishmentYear", "budget", "teaches"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "The name of the faculty"
+              },
+              "establishmentYear": {
+                "type": "string",
+                "title": "Establishment year",
+                "description": "The year the faculty was established"
+              },
+              "budget": {
+                "type": "number",
+                "title": "Budget",
+                "description": "The budget of the faculty"
+              },
+              "teaches": {
+                "type": "array",
+                "title": "Teaches",
+                "description": "The list of courses taught by the faculty",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "title": "Course",
+                  "description": "A course",
+                  "required": ["id", "numberOfCredits", "maxCapacity"],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "title": "Name",
+                      "description": "The name of the course"
+                    },
+                    "numberOfCredits": {
+                      "type": "number",
+                      "title": "Number of credits",
+                      "description": "The number of credits the course is worth"
+                    },
+                    "maxCapacity": {
+                      "type": "number",
+                      "title": "Max capacity",
+                      "description": "The maximum number of students the course can take"
+                    }
                   }
                 }
               }
@@ -271,5 +268,24 @@
         }
       }
     }
+  },
+  "type": "array",
+  "title": "universties",
+  "minItems": 1,
+  "items": {
+    "anyOf": [
+      {
+        "$ref": "#/definitions/university"
+      },
+      {
+        "$ref": "#/definitions/student"
+      },
+      {
+        "$ref": "#/definitions/professor"
+      },
+      {
+        "$ref": "#/definitions/studyProgram"
+      }
+    ]
   }
 }
