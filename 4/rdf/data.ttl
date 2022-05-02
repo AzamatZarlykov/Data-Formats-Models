@@ -1,0 +1,213 @@
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://example.org/vocabulary/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://dbpedia.org/ontology/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns2: <http://schema.mobivoc.org/> .
+@prefix schema: <http://schema.org/> .
+@prefix ns3: <disco:> .
+
+<https://example.org/university/data.csv-metadata.json>
+  a csvw:TableGroup, csvw:Table ;
+  csvw:table <https://example.org/university/data.csv-metadata.json> ;
+  csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv> ;
+  csvw:row [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv#row=2> ;
+    csvw:describes <http://newbase.com/CharlesUniversity>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv#row=3> ;
+    csvw:describes <http://newbase.com/KingsCollegeLondon>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv#row=4> ;
+    csvw:describes <http://newbase.com/MassachusettsInstituteofTechnology>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv#row=2> ;
+    csvw:describes <http://newbase.com/FacultyOfMathematicsAndPhysics>, <http://newbase.com/CharlesUniversity>, <http://example.org/vocabulary/establishDate>, <http://example.org/vocabulary/constitutes>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv#row=3> ;
+    csvw:describes <http://newbase.com/FacultyOfSocialSciences>, <http://newbase.com/KingsCollegeLondon>, <http://example.org/vocabulary/establishDate>, <http://example.org/vocabulary/constitutes>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv#row=4> ;
+    csvw:describes <http://newbase.com/FacultyOfMedicine>, <http://newbase.com/MassachusettsInstituteofTechnology>, <http://example.org/vocabulary/establishDate>, <http://example.org/vocabulary/constitutes>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv#row=2> ;
+    csvw:describes <http://newbase.com/MathematicalAnalysis>, <http://newbase.com/FacultyOfMathematicsAndPhysics>, <http://example.org/vocabulary/teaches>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv#row=3> ;
+    csvw:describes <http://newbase.com/Economics>, <http://newbase.com/FacultyOfSocialSciences>, <http://example.org/vocabulary/teaches>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv#row=4> ;
+    csvw:describes <http://newbase.com/Anatomy>, <http://newbase.com/FacultyOfMedicine>, <http://example.org/vocabulary/teaches>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv#row=2> ;
+    csvw:describes <http://newbase.com/ResearchAboutDeterministicAlgorithms>, <http://example.org/vocabulary/numberOfPeopleInResearch>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv#row=3> ;
+    csvw:describes <http://newbase.com/ResearchAboutConvexHulls>, <http://example.org/vocabulary/numberOfPeopleInResearch>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv#row=4> ;
+    csvw:describes <http://newbase.com/ResearchAboutRandomizedAlgorithms>, <http://example.org/vocabulary/numberOfPeopleInResearch>
+  ] ;
+  prov:wasGeneratedBy [
+    a prov:Activity ;
+    prov:wasAssociatedWith <https://rubygems.org/gems/rdf-tabular> ;
+    prov:startedAtTime "2022-05-02T18:22:41.178+02:00"^^xsd:dateTime ;
+    prov:endedAtTime "2022-05-02T18:22:41.394+02:00"^^xsd:dateTime ;
+    prov:qualifiedUsage [
+      a prov:Usage ;
+      prov:entity <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv> ;
+      prov:hadRole csvw:csvEncodedTabularData
+    ], [
+      a prov:Usage ;
+      prov:entity <file:C:/Users/Public/data-formats-t1g3/4/csv/data.csv-metadata.json> ;
+      prov:hadRole csvw:tabularMetadata
+    ]
+  ] .
+
+<http://newbase.com/CharlesUniversity>
+  ns0:entity ns0:CharlesUniversity ;
+  dc:title "Charles University"@en ;
+  ns1:ranking "50"^^xsd:positiveInteger ;
+  vcard:street-address "Opletalova 38, 110 00 Staré Město"@cs ;
+  ns1:numberOfStudents "1000"^^xsd:nonNegativeInteger ;
+  a <http://vivoweb.org/ontology/core#University> ;
+  ns0:constitutes <http://newbase.com/FacultyOfMathematicsAndPhysics> .
+
+<http://newbase.com/KingsCollegeLondon>
+  ns0:entity ns0:KingsCollegeLondon ;
+  dc:title "Kings College London"@en ;
+  ns1:ranking "40"^^xsd:positiveInteger ;
+  vcard:street-address "Strand, London WC2R 2LS, United Kingdom"@cs ;
+  ns1:numberOfStudents "1200"^^xsd:nonNegativeInteger ;
+  a <http://vivoweb.org/ontology/core#University> ;
+  ns0:constitutes <http://newbase.com/FacultyOfSocialSciences> .
+
+<http://newbase.com/MassachusettsInstituteofTechnology>
+  ns0:entity ns0:MassachusettsInstituteofTechnology ;
+  dc:title "Massachusetts Institute of Technology"@en ;
+  ns1:ranking "3"^^xsd:positiveInteger ;
+  vcard:street-address "77 Massachusetts Ave, Cambridge, MA 02139, United States"@cs ;
+  ns1:numberOfStudents "1300"^^xsd:nonNegativeInteger ;
+  a <http://vivoweb.org/ontology/core#University> ;
+  ns0:constitutes <http://newbase.com/FacultyOfMedicine> .
+
+<http://newbase.com/FacultyOfMathematicsAndPhysics>
+  ns0:entity ns0:FacultyOfMathematicsAndPhysics ;
+  dc:title "faculty of mathematics and physics"@en ;
+  ns0:establishDate "1680-02-20"^^xsd:date ;
+  ns1:budget 2.222222e+6 ;
+  a <http://purl.org/vocab/aiiso/schema#Faculty> ;
+  ns0:teaches ns0:MathematicalAnalysis .
+
+ns0:establishDate
+  a rdfs:Property ;
+  rdfs:label xsd:string:establish_date ;
+  rdfs:comment xsd:string:date_when_something_was_established ;
+  rdfs:domain xsd:Faculty ;
+  rdfs:range xsd:date .
+
+ns0:constitutes
+  a rdfs:Property ;
+  rdfs:label xsd:string:constitutes ;
+  rdfs:comment xsd:string:relates_university_and_faculty ;
+  rdfs:domain ns1:university ;
+  rdfs:range <http://purl.org/vocab/aiiso/schema#Faculty> .
+
+<http://newbase.com/FacultyOfSocialSciences>
+  ns0:entity ns0:FacultyOfSocialSciences ;
+  dc:title "faculty of social sciences"@en ;
+  ns0:establishDate "1750-03-10"^^xsd:date ;
+  ns1:budget 1.000000e+5 ;
+  a <http://purl.org/vocab/aiiso/schema#Faculty> ;
+  ns0:teaches ns0:Economics .
+
+<http://newbase.com/FacultyOfMedicine>
+  ns0:entity ns0:FacultyOfMedicine ;
+  dc:title "faculty of medicine"@en ;
+  ns0:establishDate "1800-11-04"^^xsd:date ;
+  ns1:budget 9.999990e+5 ;
+  a <http://purl.org/vocab/aiiso/schema#Faculty> ;
+  ns0:teaches ns0:Anatomy .
+
+<http://newbase.com/MathematicalAnalysis>
+  ns0:entity ns0:MathematicalAnalysis ;
+  ns2:id "ma1fomp"@en ;
+  ns0:numberOfCredits "6"^^xsd:nonNegativeInteger ;
+  ns0:capacity "30"^^xsd:nonNegativeInteger ;
+  a ns2:Course .
+
+ns0:teaches
+  a rdfs:Property ;
+  rdfs:label xsd:string:teaches ;
+  rdfs:comment xsd:string:relatesfaculty_and_course ;
+  rdfs:domain <http://purl.org/vocab/aiiso/schema#Faculty> ;
+  rdfs:range schema:Course .
+
+<http://newbase.com/Economics>
+  ns0:entity ns0:Economics ;
+  ns2:id "e1fos"@en ;
+  ns0:numberOfCredits "6"^^xsd:nonNegativeInteger ;
+  ns0:capacity "60"^^xsd:nonNegativeInteger ;
+  a ns2:Course .
+
+<http://newbase.com/Anatomy>
+  ns0:entity ns0:Anatomy ;
+  ns2:id "a1fom"@en ;
+  ns0:numberOfCredits "4"^^xsd:nonNegativeInteger ;
+  ns0:capacity "50"^^xsd:nonNegativeInteger ;
+  a ns2:Course .
+
+<http://newbase.com/ResearchAboutDeterministicAlgorithms>
+  ns0:entity <http://newbase.com/ResearchAboutDeterministicAlgorithms> ;
+  dc:title "Research About Determinisitc Algorithms"@en ;
+  ns0:numberOfPeopleInResearch "10"^^xsd:positiveInteger ;
+  ns3:startDate "2001-05-15"^^xsd:date ;
+  a <http://linkedscience.org/lsc/ns#Research> .
+
+ns0:numberOfPeopleInResearch
+  a rdfs:Property ;
+  rdfs:number_of_people xsd:string:teaches ;
+  rdfs:comment xsd:string:relatesnumber_of_people_involved_in_some_scientific_research ;
+  rdfs:domain ns0:Research ;
+  rdfs:range xsd:positiveInteger .
+
+<http://newbase.com/ResearchAboutConvexHulls>
+  ns0:entity <http://newbase.com/ResearchAboutConvexHulls> ;
+  dc:title "Research About Convex Hulls"@en ;
+  ns0:numberOfPeopleInResearch "12"^^xsd:positiveInteger ;
+  ns3:startDate "2003-08-05"^^xsd:date ;
+  a <http://linkedscience.org/lsc/ns#Research> .
+
+<http://newbase.com/ResearchAboutRandomizedAlgorithms>
+  ns0:entity <http://newbase.com/ResearchAboutRandomizedAlgorithms> ;
+  dc:title "Research About Randomized Algorithms"@en ;
+  ns0:numberOfPeopleInResearch "16"^^xsd:positiveInteger ;
+  ns3:startDate "2004-07-03"^^xsd:date ;
+  a <http://linkedscience.org/lsc/ns#Research> .
