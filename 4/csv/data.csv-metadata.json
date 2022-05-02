@@ -379,6 +379,84 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
+            "url" : "data-5.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+personIRI}",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personIRI",
+                        "titles" : "personIRI",
+                        "dc:description" : "ID of the person",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+personIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "universityIRI",
+                        "titles" : "universityIRI",
+                        "dc:description" : "University ID",
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/isPartOf",
+                        "valueUrl": "http://example.org/vocabulary/{+universityIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/isPartOf",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/isPartOf",
+                        "propertyUrl": "rdfs:number_of_people",
+                        "valueUrl": "xsd:string:ispartof",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/isPartOf",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:relates_person_and_univesity",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/isPartOf",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "foaf:Person",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/isPartOf",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "http://vivoweb.org/ontology/core#University",
+                        "virtual": true
+                    }
+                ],
+                "primaryKey" : "personIRI",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "universityIRI",
+                        "reference" : {
+                            "resource" : "data-1.csv",
+                            "columnReference" : "universityIRI"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
             "url" : "data-6.csv",
             "tableSchema" : {
                 "@type" : "Schema",
@@ -392,7 +470,7 @@
                         "required" : true,
                         "datatype" : "string",
                         "propertyUrl": "http://example.org/vocabulary/entity",
-                        "valueUrl": "http://example.org/vocabulary/{+personeIRI}"
+                        "valueUrl": "http://example.org/vocabulary/{+personIRI}"
                     },
                     {
                         "@type" : "Column",
@@ -422,6 +500,46 @@
                     }
                 ],
                 "primaryKey" : "personIRI"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data-7.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+personIRI}",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personIRI",
+                        "titles" : "personIRI",
+                        "dc:description" : "Person ID",
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+personIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "phoneNumber",
+                        "titles" : "phoneNumber",
+                        "dc:description" : "Phone number of the university",
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "http://open.vocab.org/terms/phoneNumber"
+                    }
+                ],
+                "primaryKey" : "personIRI",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "personIRI",
+                        "reference" : {
+                            "resource" : "data-5.csv",
+                            "columnReference" : "personIRI"
+                        }
+                    }
+                ]
             }
         },
 
