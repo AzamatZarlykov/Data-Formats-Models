@@ -224,6 +224,7 @@
             }
         },
 
+
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
@@ -290,8 +291,37 @@
                         "propertyUrl": "rdf:type",
                         "valueUrl": "rdfs:Property",
                         "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/teaches",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:teaches",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/teaches",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:relatesfaculty_and_course",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/teaches",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "http://purl.org/vocab/aiiso/schema#Faculty",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/teaches",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "http://schema.org/Course",
+                        "virtual": true
                     }
-
                 ],
                 "primaryKey" : "courseIRI",
                 "foreignKeys" : [
@@ -304,6 +334,287 @@
                     }
                 ]
             }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data-4.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+universityIRI}",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "universityIRI",
+                        "titles" : "universityIRI",
+                        "dc:description" : "University ID",
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+universityIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "phoneNumber",
+                        "titles" : "phoneNumber",
+                        "dc:description" : "Phone number of the university",
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "http://open.vocab.org/terms/phoneNumber"
+                    }
+                ],
+                "primaryKey" : "universityIRI",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "universityIRI",
+                        "reference" : {
+                            "resource" : "data-1.csv",
+                            "columnReference" : "universityIRI"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data-6.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+personIRI}",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personIRI",
+                        "titles" : "personIRI",
+                        "dc:description" : "ID of the person",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+personeIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "firstName",
+                        "titles" : "firstName",
+                        "dc:description" : "first name of the person",
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "foaf:firstName"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "lastName",
+                        "titles" : "lastName",
+                        "dc:description" : "last name of the person",
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "foaf:lastName"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "dataOfBirth",
+                        "titles" : "dataOfBirth",
+                        "dc:description" : "the date when a person was born",
+                        "datatype" : "datetime",
+                        "propertyUrl": "vcard:bday"
+                    }
+                ],
+                "primaryKey" : "personIRI"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data-14.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+researchIRI}",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "researchIRI",
+                        "titles" : "researchIRI",
+                        "dc:description" : "research ID",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://newbase.com/{+researchIRI}"
+
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "name",
+                        "titles" : "name",
+                        "dc:description" : "research name",
+                        "required" : true,
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "dcterms:title"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "numberOfPeople",
+                        "titles" : "numberOfPeople",
+                        "dc:description" : "Number of people involved in research",
+                        "required" : true,
+                        "datatype" : "positiveInteger",
+                        "propertyUrl": "http://example.org/vocabulary/numberOfPeopleInResearch"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "startDate",
+                        "titles" : "startDate",
+                        "dc:description" : "Start date of research",
+                        "required" : true,
+                        "datatype" : "date",
+                        "propertyUrl": "http://rdf-vocabulary.ddialliance.org/discovery#startDate"
+                    },
+                    {
+                        "@type": "Column",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://linkedscience.org/lsc/ns#Research",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInResearch",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInResearch",
+                        "propertyUrl": "rdfs:number_of_people",
+                        "valueUrl": "xsd:string:teaches",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInResearch",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:relatesnumber_of_people_involved_in_some_scientific_research",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInResearch",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "http://example.org/vocabulary/Research",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInResearch",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "xsd:positiveInteger",
+                        "virtual": true
+                    }
+                ],
+                "primaryKey" : "researchIRI"
+            }
+        },
+
+        
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data-15.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+paperIRI}",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "paperIRI",
+                        "titles" : "paperIRI",
+                        "dc:description" : "paper ID",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://newbase.com/{+paperIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "name",
+                        "titles" : "name",
+                        "dc:description" : "paper name",
+                        "required" : true,
+                        "datatype" : "string",
+                        "lang":"en",
+                        "propertyUrl": "dcterms:title"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "numberOfPeople",
+                        "titles" : "numberOfPeople",
+                        "dc:description" : "Number of people involved in paper",
+                        "required" : true,
+                        "datatype" : "positiveInteger",
+                        "propertyUrl": "http://example.org/vocabulary/numberOfPeopleInPaper"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "startDate",
+                        "titles" : "startDate",
+                        "dc:description" : "Start date of research",
+                        "required" : true,
+                        "datatype" : "date",
+                        "propertyUrl": "http://rdf-vocabulary.ddialliance.org/discovery#startDate"
+                    },
+                    {
+                        "@type": "Column",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocabulary/Paper",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInPaper",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInPaper",
+                        "propertyUrl": "rdfs:number_of_people",
+                        "valueUrl": "xsd:string:teaches",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInPaper",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:relatesnumber_of_people_involved_in_some_scientific_paper",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInPaper",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "http://example.org/vocabulary/Paper",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInPaper",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "xsd:positiveInteger",
+                        "virtual": true
+                    }
+
+                ],
+                "primaryKey" : "paperIRI"
+            }
         }
+
     ]
 }
