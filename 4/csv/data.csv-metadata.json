@@ -546,6 +546,181 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
+            "url" : "data-8.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+personIRI}",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personIRI",
+                        "titles" : "personIRI",
+                        "dc:description" : "Person ID",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+personIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "programIRI",
+                        "titles" : "programIRI",
+                        "dc:description" : "study program that student is involved",
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/studies",
+                        "valueUrl": "http://newbase.com/{+programIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "yearOfStudy",
+                        "titles" : "yearOfStudy",
+                        "dc:description" : "year of the study at university",
+                        "datatype" : "positiveInteger",
+                        "propertyUrl": "http://example.org/vocabulary/yearOfStudy"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "gpa",
+                        "titles" : "GPA",
+                        "dc:description" : "GPA of the student",
+                        "datatype" : "double",
+                        "propertyUrl": "http://example.org/vocabulary/gpa"
+                    },
+                    {
+                        "@type": "Column",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://example.org/vocabulary/Student",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/yearOfStudy",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/yearOfStudy",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:yearofstudy",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/yearOfStudy",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:the_year_of_students_study",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/yearOfStudy",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "http://example.org/vocabulary/student",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/yearOfStudy",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "xsd:positiveInteger",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/gpa",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/gpa",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:GPA",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/gpa",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:grade_point_average",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/gpa",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "http://example.org/vocabulary/student",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/gpa",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "xsd:double",
+                        "virtual": true
+                    }
+
+                ],
+                "primaryKey" : "personIRI"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data-9.csv",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+programIRI}",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "programIRI",
+                        "titles" : "programIRI",
+                        "dc:description" : "study program ID that student is involved",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+programIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "name",
+                        "titles" : "name",
+                        "dc:description" : "name of the program",
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "dcterms:title"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "totalStudents",
+                        "titles" : "numberOfStudents",
+                        "dc:description" : "number of students in the study program",
+                        "datatype" : "nonNegativeInteger",
+                        "propertyUrl": "https://dbpedia.org/ontology/numberOfStudents"
+                    },
+                    {
+                        "@type": "Column",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://schema.org/Course",
+                        "virtual": true
+                    }
+                ],
+                "primaryKey" : "programIRI"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
             "url" : "data-14.csv",
             "tableSchema" : {
                 "@type" : "Schema",
@@ -608,7 +783,7 @@
                         "datatype": "string",
                         "lang": "en",
                         "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInResearch",
-                        "propertyUrl": "rdfs:number_of_people",
+                        "propertyUrl": "rdfs:label",
                         "valueUrl": "xsd:string:teaches",
                         "virtual": true
                     },

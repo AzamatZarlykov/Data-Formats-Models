@@ -5,15 +5,17 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://dbpedia.org/ontology/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ns2: <http://open.vocab.org/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ns2: <http://schema.mobivoc.org/> .
+@prefix ns3: <http://schema.mobivoc.org/> .
 @prefix schema: <http://schema.org/> .
-@prefix ns3: <disco:> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns4: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 
 <https://example.org/university/data.csv-metadata.json>
   a csvw:TableGroup, csvw:Table ;
   csvw:table <https://example.org/university/data.csv-metadata.json> ;
-  csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv> ;
+  csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv> ;
   csvw:row [
     csvw:rownum 1 ;
     a csvw:Row ;
@@ -62,6 +64,111 @@
   ], [
     csvw:rownum 1 ;
     a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv#row=2> ;
+    csvw:describes <http://newbase.com/CharlesUniversity>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv#row=3> ;
+    csvw:describes <http://newbase.com/KingsCollegeLondon>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv#row=4> ;
+    csvw:describes <http://newbase.com/MassachusettsInstituteofTechnology>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv#row=2> ;
+    csvw:describes <http://newbase.com/MarkBlue>, <http://example.org/vocabulary/isPartOf>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv#row=3> ;
+    csvw:describes <http://newbase.com/AlexGreen>, <http://example.org/vocabulary/isPartOf>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv#row=4> ;
+    csvw:describes <http://newbase.com/NickOrange>, <http://example.org/vocabulary/isPartOf>
+  ], [
+    csvw:rownum 4 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv#row=5> ;
+    csvw:describes <http://newbase.com/SamRed>, <http://example.org/vocabulary/isPartOf>
+  ], [
+    csvw:rownum 5 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv#row=6> ;
+    csvw:describes <http://newbase.com/JimPurple>, <http://example.org/vocabulary/isPartOf>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv#row=2> ;
+    csvw:describes <http://newbase.com/MarkBlue>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv#row=3> ;
+    csvw:describes <http://newbase.com/AlexGreen>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv#row=4> ;
+    csvw:describes <http://newbase.com/NickOrange>
+  ], [
+    csvw:rownum 4 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv#row=5> ;
+    csvw:describes <http://newbase.com/SamRed>
+  ], [
+    csvw:rownum 5 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv#row=6> ;
+    csvw:describes <http://newbase.com/JimPurple>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv#row=2> ;
+    csvw:describes <http://newbase.com/MarkBlue>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv#row=3> ;
+    csvw:describes <http://newbase.com/AlexGreen>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv#row=4> ;
+    csvw:describes <http://newbase.com/NickOrange>
+  ], [
+    csvw:rownum 4 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv#row=5> ;
+    csvw:describes <http://newbase.com/SamRed>
+  ], [
+    csvw:rownum 5 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv#row=6> ;
+    csvw:describes <http://newbase.com/JimPurple>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv#row=2> ;
+    csvw:describes <http://newbase.com/MarkBlue>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv#row=3> ;
+    csvw:describes <http://newbase.com/NickOrange>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv#row=4> ;
+    csvw:describes <http://newbase.com/JimPurple>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv#row=2> ;
     csvw:describes <http://newbase.com/ResearchAboutDeterministicAlgorithms>, <http://example.org/vocabulary/numberOfPeopleInResearch>
   ], [
@@ -74,15 +181,30 @@
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv#row=4> ;
     csvw:describes <http://newbase.com/ResearchAboutRandomizedAlgorithms>, <http://example.org/vocabulary/numberOfPeopleInResearch>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv#row=2> ;
+    csvw:describes <http://newbase.com/PaperAboutLinearAlgebra>, <http://example.org/vocabulary/numberOfPeopleInPaper>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv#row=3> ;
+    csvw:describes <http://newbase.com/PaperAboutMathematicalAnalysis>, <http://example.org/vocabulary/numberOfPeopleInPaper>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv#row=4> ;
+    csvw:describes <http://newbase.com/PaperAboutDiscreteMathematics>, <http://example.org/vocabulary/numberOfPeopleInPaper>
   ] ;
   prov:wasGeneratedBy [
     a prov:Activity ;
     prov:wasAssociatedWith <https://rubygems.org/gems/rdf-tabular> ;
-    prov:startedAtTime "2022-05-02T18:22:41.178+02:00"^^xsd:dateTime ;
-    prov:endedAtTime "2022-05-02T18:22:41.394+02:00"^^xsd:dateTime ;
+    prov:startedAtTime "2022-05-02T19:43:03.938+02:00"^^xsd:dateTime ;
+    prov:endedAtTime "2022-05-02T19:43:04.408+02:00"^^xsd:dateTime ;
     prov:qualifiedUsage [
       a prov:Usage ;
-      prov:entity <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv> ;
+      prov:entity <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv> ;
       prov:hadRole csvw:csvEncodedTabularData
     ], [
       a prov:Usage ;
@@ -98,7 +220,8 @@
   vcard:street-address "Opletalova 38, 110 00 Staré Město"@cs ;
   ns1:numberOfStudents "1000"^^xsd:nonNegativeInteger ;
   a <http://vivoweb.org/ontology/core#University> ;
-  ns0:constitutes <http://newbase.com/FacultyOfMathematicsAndPhysics> .
+  ns0:constitutes <http://newbase.com/FacultyOfMathematicsAndPhysics> ;
+  ns2:phoneNumber "224 491 111"@en .
 
 <http://newbase.com/KingsCollegeLondon>
   ns0:entity ns0:KingsCollegeLondon ;
@@ -107,7 +230,8 @@
   vcard:street-address "Strand, London WC2R 2LS, United Kingdom"@cs ;
   ns1:numberOfStudents "1200"^^xsd:nonNegativeInteger ;
   a <http://vivoweb.org/ontology/core#University> ;
-  ns0:constitutes <http://newbase.com/FacultyOfSocialSciences> .
+  ns0:constitutes <http://newbase.com/FacultyOfSocialSciences> ;
+  ns2:phoneNumber "+44 20 7836 5454"@en .
 
 <http://newbase.com/MassachusettsInstituteofTechnology>
   ns0:entity ns0:MassachusettsInstituteofTechnology ;
@@ -116,7 +240,8 @@
   vcard:street-address "77 Massachusetts Ave, Cambridge, MA 02139, United States"@cs ;
   ns1:numberOfStudents "1300"^^xsd:nonNegativeInteger ;
   a <http://vivoweb.org/ontology/core#University> ;
-  ns0:constitutes <http://newbase.com/FacultyOfMedicine> .
+  ns0:constitutes <http://newbase.com/FacultyOfMedicine> ;
+  ns2:phoneNumber "+1 617-253-1000"@en .
 
 <http://newbase.com/FacultyOfMathematicsAndPhysics>
   ns0:entity ns0:FacultyOfMathematicsAndPhysics ;
@@ -158,10 +283,10 @@ ns0:constitutes
 
 <http://newbase.com/MathematicalAnalysis>
   ns0:entity ns0:MathematicalAnalysis ;
-  ns2:id "ma1fomp"@en ;
+  ns3:id "ma1fomp"@en ;
   ns0:numberOfCredits "6"^^xsd:nonNegativeInteger ;
   ns0:capacity "30"^^xsd:nonNegativeInteger ;
-  a ns2:Course .
+  a ns3:Course .
 
 ns0:teaches
   a rdfs:Property ;
@@ -172,28 +297,101 @@ ns0:teaches
 
 <http://newbase.com/Economics>
   ns0:entity ns0:Economics ;
-  ns2:id "e1fos"@en ;
+  ns3:id "e1fos"@en ;
   ns0:numberOfCredits "6"^^xsd:nonNegativeInteger ;
   ns0:capacity "60"^^xsd:nonNegativeInteger ;
-  a ns2:Course .
+  a ns3:Course .
 
 <http://newbase.com/Anatomy>
   ns0:entity ns0:Anatomy ;
-  ns2:id "a1fom"@en ;
+  ns3:id "a1fom"@en ;
   ns0:numberOfCredits "4"^^xsd:nonNegativeInteger ;
   ns0:capacity "50"^^xsd:nonNegativeInteger ;
-  a ns2:Course .
+  a ns3:Course .
+
+<http://newbase.com/MarkBlue>
+  ns0:entity ns0:MarkBlue ;
+  ns0:isPartOf ns0:CharlesUniversity ;
+  foaf:firstName "Mark"@en ;
+  foaf:lastName "Blue"@en ;
+  vcard:bday "1999-11-28T13:20:00"^^xsd:dateTime ;
+  ns2:phoneNumber "+76444321"@en ;
+  ns0:studies <http://newbase.com/Economics> ;
+  ns0:yearOfStudy "3"^^xsd:positiveInteger ;
+  ns0:gpa 1.800000e+0 ;
+  a ns0:Student .
+
+ns0:isPartOf
+  a rdfs:Property ;
+  rdfs:number_of_people xsd:string:ispartof ;
+  rdfs:comment xsd:string:relates_person_and_univesity ;
+  rdfs:domain foaf:Person ;
+  rdfs:range <http://vivoweb.org/ontology/core#University> .
+
+<http://newbase.com/AlexGreen>
+  ns0:entity ns0:AlexGreen ;
+  ns0:isPartOf ns0:CharlesUniversity ;
+  foaf:firstName "Alex"@en ;
+  foaf:lastName "Green"@en ;
+  vcard:bday "1980-05-30T09:00:00"^^xsd:dateTime ;
+  ns2:phoneNumber "+12345467"@en .
+
+<http://newbase.com/NickOrange>
+  ns0:entity ns0:NickOrange ;
+  ns0:isPartOf ns0:KingsCollegeLondon ;
+  foaf:firstName "Nick"@en ;
+  foaf:lastName "Orange"@en ;
+  vcard:bday "2000-10-12T10:30:00"^^xsd:dateTime ;
+  ns2:phoneNumber "+12373472457"@en ;
+  ns0:studies <http://newbase.com/Philosophy> ;
+  ns0:yearOfStudy "1"^^xsd:positiveInteger ;
+  ns0:gpa 1.200000e+0 ;
+  a ns0:Student .
+
+<http://newbase.com/SamRed>
+  ns0:entity ns0:SamRed ;
+  ns0:isPartOf ns0:KingsCollegeLondon ;
+  foaf:firstName "Sam"@en ;
+  foaf:lastName "Red"@en ;
+  vcard:bday "1990-03-10T07:00:00"^^xsd:dateTime ;
+  ns2:phoneNumber "+7654321"@en .
+
+<http://newbase.com/JimPurple>
+  ns0:entity ns0:JimPurple ;
+  ns0:isPartOf ns0:MassachusettsInstituteofTechnology ;
+  foaf:firstName "Jim"@en ;
+  foaf:lastName "Purple"@en ;
+  vcard:bday "2002-05-30T09:00:00"^^xsd:dateTime ;
+  ns2:phoneNumber "+2534545467"@en ;
+  ns0:studies <http://newbase.com/ComputerScience> ;
+  ns0:yearOfStudy "2"^^xsd:positiveInteger ;
+  ns0:gpa 2.500000e+0 ;
+  a ns0:Student .
+
+ns0:yearOfStudy
+  a rdfs:Property ;
+  rdfs:label xsd:string:yearofstudy ;
+  rdfs:comment xsd:string:the_year_of_students_study ;
+  rdfs:domain ns0:student ;
+  rdfs:range xsd:positiveInteger .
+
+ns0:gpa
+  a rdfs:Property ;
+  rdfs:label xsd:string:GPA ;
+  rdfs:comment xsd:string:grade_point_average ;
+  rdfs:domain ns0:student ;
+  rdfs:range xsd:double .
 
 <http://newbase.com/ResearchAboutDeterministicAlgorithms>
   ns0:entity <http://newbase.com/ResearchAboutDeterministicAlgorithms> ;
   dc:title "Research About Determinisitc Algorithms"@en ;
   ns0:numberOfPeopleInResearch "10"^^xsd:positiveInteger ;
-  ns3:startDate "2001-05-15"^^xsd:date ;
+  ns4:startDate "2001-05-15"^^xsd:date ;
   a <http://linkedscience.org/lsc/ns#Research> .
 
 ns0:numberOfPeopleInResearch
   a rdfs:Property ;
-  rdfs:number_of_people xsd:string:teaches ;
+  rdfs:label xsd:string:teaches ;
   rdfs:comment xsd:string:relatesnumber_of_people_involved_in_some_scientific_research ;
   rdfs:domain ns0:Research ;
   rdfs:range xsd:positiveInteger .
@@ -202,12 +400,40 @@ ns0:numberOfPeopleInResearch
   ns0:entity <http://newbase.com/ResearchAboutConvexHulls> ;
   dc:title "Research About Convex Hulls"@en ;
   ns0:numberOfPeopleInResearch "12"^^xsd:positiveInteger ;
-  ns3:startDate "2003-08-05"^^xsd:date ;
+  ns4:startDate "2003-08-05"^^xsd:date ;
   a <http://linkedscience.org/lsc/ns#Research> .
 
 <http://newbase.com/ResearchAboutRandomizedAlgorithms>
   ns0:entity <http://newbase.com/ResearchAboutRandomizedAlgorithms> ;
   dc:title "Research About Randomized Algorithms"@en ;
   ns0:numberOfPeopleInResearch "16"^^xsd:positiveInteger ;
-  ns3:startDate "2004-07-03"^^xsd:date ;
+  ns4:startDate "2004-07-03"^^xsd:date ;
   a <http://linkedscience.org/lsc/ns#Research> .
+
+<http://newbase.com/PaperAboutLinearAlgebra>
+  ns0:entity <http://newbase.com/PaperAboutLinearAlgebra> ;
+  dc:title "Interesting paper about Mathematical Analysis"@en ;
+  ns0:numberOfPeopleInPaper "3"^^xsd:positiveInteger ;
+  ns4:startDate "1999-06-15"^^xsd:date ;
+  a ns0:Paper .
+
+ns0:numberOfPeopleInPaper
+  a rdfs:Property ;
+  rdfs:number_of_people xsd:string:teaches ;
+  rdfs:comment xsd:string:relatesnumber_of_people_involved_in_some_scientific_paper ;
+  rdfs:domain ns0:Paper ;
+  rdfs:range xsd:positiveInteger .
+
+<http://newbase.com/PaperAboutMathematicalAnalysis>
+  ns0:entity <http://newbase.com/PaperAboutMathematicalAnalysis> ;
+  dc:title "Interesting paper about Linear Algebra"@en ;
+  ns0:numberOfPeopleInPaper "5"^^xsd:positiveInteger ;
+  ns4:startDate "1997-05-10"^^xsd:date ;
+  a ns0:Paper .
+
+<http://newbase.com/PaperAboutDiscreteMathematics>
+  ns0:entity <http://newbase.com/PaperAboutDiscreteMathematics> ;
+  dc:title "Interesting paper about Discrete Mathematics"@en ;
+  ns0:numberOfPeopleInPaper "7"^^xsd:positiveInteger ;
+  ns4:startDate "1990-08-17"^^xsd:date ;
+  a ns0:Paper .
