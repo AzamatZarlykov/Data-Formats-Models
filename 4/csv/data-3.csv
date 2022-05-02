@@ -1,4 +1,4 @@
-courseID,facultyID,numberOfCredits,maxCapacity
-ma1fomp,1,6,30
-e1fos,2,6,60
-a1fom,3,4,50
+courseIRI,courseID,facultyID,numberOfCredits,maxCapacity
+"MathematicalAnalysis",ma1fomp,"FacultyOfMathematicsAndPhysics",6,30
+"Economics",e1fos,"FacultyOfSocialSciences",6,60
+"Anatomy",a1fom,"FacultyOfMedicine",4,50

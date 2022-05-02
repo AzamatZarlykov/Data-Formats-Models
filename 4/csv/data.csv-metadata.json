@@ -7,7 +7,6 @@
     ],
     "@type" : "TableGroup",
     "@id" : "https://example.org/university/data.csv-metadata.json",
-    "dc:description" : "University Structure",
     "tables" : [
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
@@ -15,100 +14,210 @@
             "url" : "data-1.csv",
             "tableSchema" : {
                 "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+universityIRI}",
                 "columns" : [
                     {
                         "@type" : "Column",
-                        "name" : "universityID",
-                        "titles" : "universityID",
+                        "name" : "universityIRI",
+                        "titles" : "universityIRI",
                         "dc:description" : "University ID",
                         "required" : true,
-                        "datatype" : "integer"
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+universityIRI}"
                     },
                     {
                         "@type" : "Column",
                         "name" : "name",
                         "titles" : "name",
                         "dc:description" : "Name of the university",
-                        "datatype" : "string"
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "dcterms:title"
                     },
                     {
                         "@type" : "Column",
                         "name" : "ranking",
                         "titles" : "ranking",
                         "dc:description" : "Rank of the university",
-                        "datatype" : "integer"
+                        "datatype" : "positiveInteger",
+                        "propertyUrl": "https://dbpedia.org/ontology/ranking"
                     },
                     {
                         "@type" : "Column",
                         "name" : "address",
                         "titles" : "address",
                         "dc:description" : "Address of the university",
-                        "datatype" : "string"
+                        "datatype" : "string",
+                        "lang": "cs",
+                        "propertyUrl": "vcard:street-address"
                     },
                     {
                         "@type" : "Column",
                         "name" : "totalStudents",
-                        "titles" : "numberOfStudents",
+                        "titles" : "totalStudents",
                         "dc:description" : "Number of students that study in the university",
-                        "datatype" : "integer"
+                        "datatype" : "nonNegativeInteger",
+                        "propertyUrl": "https://dbpedia.org/ontology/numberOfStudents"
+                    },
+                    {
+                        "@type" : "Column",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://vivoweb.org/ontology/core#University",
+                        "virtual": true
                     }
                 ],
-                "primaryKey" : "universityID"
+                "primaryKey" : "universityIRI"
             }
         },
 
-        
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
             "url" : "data-2.csv",
             "tableSchema" : {
                 "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+facultyIRI}",
                 "columns" : [
                     {
                         "@type" : "Column",
-                        "name" : "facultyID",
-                        "titles" : "facultyID",
+                        "name" : "facultyIRI",
+                        "titles" : "facultyIRI",
                         "dc:description" : "Faculty ID",
                         "required" : true,
-                        "datatype" : "integer"
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+facultyIRI}"
                     },
                     {
                         "@type" : "Column",
-                        "name" : "universityID",
-                        "titles" : "universityID",
+                        "name" : "universityIRI",
+                        "titles" : "universityIRI",
                         "dc:description" : "University ID",
-                        "datatype" : "integer"
+                        "datatype" : "string",
+                        "aboutUrl": "http://newbase.com/{+universityIRI}",
+                        "propertyUrl": "http://example.org/vocabulary/constitutes",
+                        "valueUrl": "http://newbase.com/{+facultyIRI}"
                     },
                     {
                         "@type" : "Column",
                         "name" : "name",
                         "titles" : "name",
                         "dc:description" : "Name of the faculty",
-                        "datatype" : "string"
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "dcterms:title"
                     },
                     {
                         "@type" : "Column",
                         "name" : "establishmentYear",
                         "titles" : "establishmentYear",
                         "dc:description" : "When the faculty was established",
-                        "datatype" : "datetime"
+                        "datatype" : "date",
+                        "propertyUrl": "http://example.org/vocabulary/establishDate"
                     },
                     {
                         "@type" : "Column",
                         "name" : "budget",
                         "titles" : "budget",
                         "dc:description" : "budget of the faculty",
-                        "datatype" : "double"
+                        "datatype" : "double",
+                        "propertyUrl": "https://dbpedia.org/ontology/budget"
+                    },
+                    {
+                        "@type" : "Column",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://purl.org/vocab/aiiso/schema#Faculty",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/establishDate",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/establishDate",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:establish_date",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/establishDate",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:date_when_something_was_established",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/establishDate",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "xsd:Faculty",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/establishDate",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "xsd:date",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/constitutes",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/constitutes",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:constitutes",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/constitutes",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:relates_university_and_faculty",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/constitutes",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "https://dbpedia.org/ontology/university",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/constitutes",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "http://purl.org/vocab/aiiso/schema#Faculty",
+                        "virtual": true
+                    },
+                    {
+                    "@type" : "Column",
+                    "aboutUrl": "http://example.org/vocabulary/establishDate",
+                    "propertyUrl": "rdf:type",
+                    "valueUrl": "rdfs:Property",
+                    "virtual": true
                     }
+
                 ],
-                "primaryKey" : "facultyID",
+                "primaryKey" : "facultyIRI",
                 "foreignKeys" : [
                     {
-                        "columnReference" : "universityID",
+                        "columnReference" : "universityIRI",
                         "reference" : {
                             "resource" : "data-1.csv",
-                            "columnReference" : "universityID"
+                            "columnReference" : "universityIRI"
                         }
                     }
                 ]
@@ -121,580 +230,76 @@
             "url" : "data-3.csv",
             "tableSchema" : {
                 "@type" : "Schema",
+                "aboutUrl": "http://newbase.com/{+courseIRI}",
                 "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "courseIRI",
+                        "titles" : "courseIRI",
+                        "dc:description" : "Course IRI",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+courseIRI}"
+                    },
                     {
                         "@type" : "Column",
                         "name" : "courseID",
                         "titles" : "courseID",
                         "dc:description" : "Course ID",
                         "required" : true,
-                        "datatype" : "string"
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "http://schema.mobivoc.org/id"
                     },
                     {
                         "@type" : "Column",
-                        "name" : "facultyID",
-                        "titles" : "facultyID",
+                        "name" : "facultyIRI",
+                        "titles" : "facultyIRI",
                         "dc:description" : "Faculty ID",
-                        "datatype" : "integer"
+                        "datatype" : "string",
+                        "aboutUrl": "http://newbase.com/{+facultyIRI}",
+                        "propertyUrl": "http://example.org/vocabulary/teaches",
+                        "valueUrl": "http://example.org/vocabulary/{+courseIRI}"
                     },
                     {
                         "@type" : "Column",
                         "name" : "totalCredits",
                         "titles" : "numberOfCredits",
                         "dc:description" : "Number of credits this course provides",
-                        "datatype" : "integer"
+                        "datatype" : "nonNegativeInteger",
+                        "propertyUrl": "http://example.org/vocabulary/numberOfCredits"
                     },
                     {
                         "@type" : "Column",
                         "name" : "totalCapacity",
                         "titles" : "maxCapacity",
                         "dc:description" : "Maximum students allowed to attend",
-                        "datatype" : "integer"
+                        "datatype" : "nonNegativeInteger",
+                        "propertyUrl": "http://example.org/vocabulary/capacity"
+                    },
+                    {
+                        "@type" : "Column",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://schema.mobivoc.org/Course",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/teaches",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
                     }
+
                 ],
-                "primaryKey" : "courseID",
+                "primaryKey" : "courseIRI",
                 "foreignKeys" : [
                     {
-                        "columnReference" : "facultyID",
+                        "columnReference" : "facultyIRI",
                         "reference" : {
                             "resource" : "data-2.csv",
-                            "columnReference" : "facultyID"
-                        }
-                    }
-                ]
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-4.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "phoneNumberID",
-                        "titles" : "phoneNumberID",
-                        "dc:description" : "phone number ID ",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "universityID",
-                        "titles" : "universityID",
-                        "dc:description" : "University ID",
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "phoneNumber",
-                        "titles" : "phoneNumber",
-                        "dc:description" : "Phone number of the university",
-                        "datatype" : "string"
-                    }
-                ],
-                "primaryKey" : "phoneNumberID",
-                "foreignKeys" : [
-                    {
-                        "columnReference" : "universityID",
-                        "reference" : {
-                            "resource" : "data-1.csv",
-                            "columnReference" : "universityID"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-5.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "personID",
-                        "titles" : "personID",
-                        "dc:description" : "ID of the person",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "universityID",
-                        "titles" : "universityID",
-                        "dc:description" : "University ID",
-                        "datatype" : "integer"
-                    }
-                ],
-                "primaryKey" : "personID",
-                "foreignKeys" : [
-                    {
-                        "columnReference" : "universityID",
-                        "reference" : {
-                            "resource" : "data-1.csv",
-                            "columnReference" : "universityID"
-                        }
-                    }
-                ]
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-6.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "personID",
-                        "titles" : "personID",
-                        "dc:description" : "ID of the person",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "firstName",
-                        "titles" : "firstName",
-                        "dc:description" : "first name of the person",
-                        "datatype" : "string"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "lastName",
-                        "titles" : "lastName",
-                        "dc:description" : "last name of the person",
-                        "datatype" : "string"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "dataOfBirth",
-                        "titles" : "dataOfBirth",
-                        "dc:description" : "the date when a person was born",
-                        "datatype" : "datetime"
-                    }
-                ],
-                "primaryKey" : "personID"
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-7.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "phoneNumberID",
-                        "titles" : "phoneNumberID",
-                        "dc:description" : "phone number ID ",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "personID",
-                        "titles" : "personID",
-                        "dc:description" : "Person ID",
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "phoneNumber",
-                        "titles" : "phoneNumber",
-                        "dc:description" : "Phone number of the person",
-                        "datatype" : "string"
-                    }
-                ],
-                "primaryKey" : "phoneNumberID",
-                "foreignKeys" : [
-                    {
-                        "columnReference" : "personID",
-                        "reference" : {
-                            "resource" : "data-6.csv",
-                            "columnReference" : "personID"
-                        }
-                    }
-                ]
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-8.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "personID",
-                        "titles" : "personID",
-                        "dc:description" : "Person ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "programID",
-                        "titles" : "studyProgramID",
-                        "dc:description" : "study program that student is involved",
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "yearOfStudy",
-                        "titles" : "yearOfStudy",
-                        "dc:description" : "year of the study at university",
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "gpa",
-                        "titles" : "GPA",
-                        "dc:description" : "GPA of the student",
-                        "datatype" : "double"
-                    }
-                ],
-                "primaryKey" : "personID",
-                "foreignKeys" : [
-                    {
-                        "columnReference" : "programID",
-                        "reference" : {
-                            "resource" : "data-9.csv",
-                            "columnReference" : "programID"
-                        }
-                    }
-                ]
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-9.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "programID",
-                        "titles" : "studyProgramID",
-                        "dc:description" : "study program ID that student is involved",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "name",
-                        "titles" : "name",
-                        "dc:description" : "name of the program",
-                        "datatype" : "string"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "totalStudents",
-                        "titles" : "numberOfStudents",
-                        "dc:description" : "number of students in the study program",
-                        "datatype" : "integer"
-                    }
-                ],
-                "primaryKey" : "programID"
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-10.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "courseListID",
-                        "titles" : "courseListID",
-                        "dc:description" : "course list ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "programID",
-                        "titles" : "studyProgramID",
-                        "dc:description" : "study program ID that student is involved",
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "courseList",
-                        "titles" : "courseList",
-                        "dc:description" : "list of courses",
-                        "datatype" : "string"
-                    }
-                ],
-                "primaryKey" : "courseListID",
-                "foreignKeys" : [
-                    {
-                        "columnReference" : "programID",
-                        "reference" : {
-                            "resource" : "data-9.csv",
-                            "columnReference" : "programID"
-                        }
-                    }
-                ]
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-11.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "personID",
-                        "titles" : "personID",
-                        "dc:description" : "person ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    }
-                ],
-                "primaryKey" : "personID"
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-12.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "officeHoursID",
-                        "titles" : "officeHoursID",
-                        "dc:description" : "office hours ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                     {
-                        "@type" : "Column",
-                        "name" : "personID",
-                        "titles" : "personID",
-                        "dc:description" : "person ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "officeHours",
-                        "titles" : "officeHours",
-                        "dc:description" : "office hours ID",
-                        "required" : true,
-                        "datatype" : "time"
-                    }
-                ],
-                "primaryKey" : "officeHoursID",
-                "foreignKeys" : [
-                    {
-                        "columnReference" : "personID",
-                        "reference" : {
-                            "resource" : "data-11.csv",
-                            "columnReference" : "personID"
-                        }
-                    }
-                ]
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-13.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "personID",
-                        "titles" : "personID",
-                        "dc:description" : "person ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                     {
-                        "@type" : "Column",
-                        "name" : "researchID",
-                        "titles" : "researchID",
-                        "dc:description" : "research ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    }
-                ],
-                "primaryKey" : [
-                    "personID",
-                    "researchID"  
-                ],
-                "foreignKeys" : [
-                    {
-                        "columnReference" : "personID",
-                        "reference" : {
-                            "resource" : "data-11.csv",
-                            "columnReference" : "personID"
-                        }
-                    },
-                    {
-                        "columnReference" : "researchID",
-                        "reference" : {
-                            "resource" : "data-14.csv",
-                            "columnReference" : "researchID"
-                        }
-                    }
-                ]
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-14.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "researchID",
-                        "titles" : "researchID",
-                        "dc:description" : "research ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "name",
-                        "titles" : "name",
-                        "dc:description" : "research name",
-                        "required" : true,
-                        "datatype" : "string"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "numberOfPeople",
-                        "titles" : "numberOfPeople",
-                        "dc:description" : "Number of people involved in research",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "startDate",
-                        "titles" : "startDate",
-                        "dc:description" : "Start date of research",
-                        "required" : true,
-                        "datatype" : "datetime"
-                    }
-                ],
-                "primaryKey" : "researchID"
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-15.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "paperID",
-                        "titles" : "paperID",
-                        "dc:description" : "paper ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "name",
-                        "titles" : "name",
-                        "dc:description" : "paper name",
-                        "required" : true,
-                        "datatype" : "string"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "numberOfPeople",
-                        "titles" : "numberOfPeople",
-                        "dc:description" : "Number of people involved in paper",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                    {
-                        "@type" : "Column",
-                        "name" : "startDate",
-                        "titles" : "startDate",
-                        "dc:description" : "Start date of research",
-                        "required" : true,
-                        "datatype" : "datetime"
-                    }
-                ],
-                "primaryKey" : "paperID"
-            }
-        },
-
-        {
-            "@id" : "https://example.org/university/data.csv-metadata.json",
-            "@type" : "Table",
-            "url" : "data-16.csv",
-            "tableSchema" : {
-                "@type" : "Schema",
-                "columns" : [
-                    {
-                        "@type" : "Column",
-                        "name" : "personID",
-                        "titles" : "personID",
-                        "dc:description" : "person ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    },
-                     {
-                        "@type" : "Column",
-                        "name" : "paperID",
-                        "titles" : "paperID",
-                        "dc:description" : "paper ID",
-                        "required" : true,
-                        "datatype" : "integer"
-                    }
-                ],
-                "primaryKey" : [
-                    "personID",
-                    "paperID"  
-                ],
-                "foreignKeys" : [
-                    {
-                        "columnReference" : "personID",
-                        "reference" : {
-                            "resource" : "data-11.csv",
-                            "columnReference" : "personID"
-                        }
-                    },
-                    {
-                        "columnReference" : "paperID",
-                        "reference" : {
-                            "resource" : "data-15.csv",
-                            "columnReference" : "paperID"
+                            "columnReference" : "facultyIRI"
                         }
                     }
                 ]

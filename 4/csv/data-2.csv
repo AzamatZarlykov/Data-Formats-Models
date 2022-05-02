@@ -1,4 +1,4 @@
-facultyID,universityID,name,establishmentYear,budget
-1,1,"faculty of mathematics and physics",1680-02-20T00:00:00,2222222
-2,2,"faculty of social sciences",1750-03-10T00:00:00,100000
-3,3,"faculty of medicine",1800-11-04T00:00:00, 999999
+facultyIRI,universityIRI,name,establishmentYear,budget
+"FacultyOfMathematicsAndPhysics","CharlesUniversity","faculty of mathematics and physics",1680-02-20,2222222
+"FacultyOfSocialSciences","KingsCollegeLondon","faculty of social sciences",1750-03-10,100000
+"FacultyOfMedicine","MassachusettsInstituteofTechnology","faculty of medicine",1800-11-04,999999

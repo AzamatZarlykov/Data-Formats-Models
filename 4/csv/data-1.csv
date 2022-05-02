@@ -1,4 +1,4 @@
-universityID,name,ranking,address,totalStudents
-1,"Charles University",50,"Opletalova 38, 110 00 Staré Město",1000
-2,"King's College London",40,"Strand, London WC2R 2LS, United Kingdom",1200
-3,"Massachusetts Institute of Technology",3,"77 Massachusetts Ave, Cambridge, MA 02139, United States",1300
+universityIRI,name,ranking,address,totalStudents
+"CharlesUniversity","Charles University",50,"Opletalova 38, 110 00 Staré Město",1000
+"KingsCollegeLondon","Kings College London",40,"Strand, London WC2R 2LS, United Kingdom",1200
+"MassachusettsInstituteofTechnology","Massachusetts Institute of Technology",3,"77 Massachusetts Ave, Cambridge, MA 02139, United States",1300
