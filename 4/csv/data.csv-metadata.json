@@ -721,6 +721,46 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
+            "url" : "data-10.csv",
+            "aboutUrl": "http://newbase.com/{+programIRI}",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "programIRI",
+                        "titles" : "programIRI",
+                        "dc:description" : "study program ID that student is involved",
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+programIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "courseList",
+                        "titles" : "courseList",
+                        "dc:description" : "list of courses",
+                        "datatype" : "string",
+                        "lang": "en",
+                        "propertyUrl": "http://example.org/vocabulary/courseList"
+                    }
+                ],
+                "primaryKey" : "programIRI",
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "programIRI",
+                        "reference" : {
+                            "resource" : "data-9.csv",
+                            "columnReference" : "programIRI"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
             "url" : "data-14.csv",
             "tableSchema" : {
                 "@type" : "Schema",
