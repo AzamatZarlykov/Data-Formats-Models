@@ -761,6 +761,76 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
+            "url" : "data-12.csv",
+            "aboutUrl": "http://newbase.com/{+personIRI}",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                     {
+                        "@type" : "Column",
+                        "name" : "personIRI",
+                        "titles" : "personIRI",
+                        "dc:description" : "person ID",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+personIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "officeHours",
+                        "titles" : "officeHours",
+                        "dc:description" : "office hours ID",
+                        "required" : true,
+                        "datatype" : "time",
+                        "propertyUrl": "http://example.org/vocabulary/officeHours"
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/officeHours",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/officeHours",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:officehours",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/officeHours",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:time_and_date_when_the_office_is_open",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/officeHours",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "http://example.org/vocabulary/Professor",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/officeHours",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "xsd:time",
+                        "virtual": true
+                    }
+
+                ],
+                "primaryKey" : "personIRI"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
             "url" : "data-14.csv",
             "tableSchema" : {
                 "@type" : "Schema",

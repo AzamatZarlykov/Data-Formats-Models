@@ -1,3 +1,3 @@
-officeHoursID,personID,officeHours
-1,2,09:00:00
-2,4,10:30:00
+personIRI,officeHours
+"AlexGreen",09:00:00
+"SamRed",10:30:00
