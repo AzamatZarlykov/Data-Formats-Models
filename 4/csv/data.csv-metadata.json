@@ -831,6 +831,87 @@
         {
             "@id" : "https://example.org/university/data.csv-metadata.json",
             "@type" : "Table",
+            "url" : "data-13.csv",
+            "aboutUrl": "http://newbase.com/{+personIRI}",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personIRI",
+                        "titles" : "personIRI",
+                        "dc:description" : "person ID",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+personIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "researchIRI",
+                        "titles" : "researchIRI",
+                        "dc:description" : "research ID",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/participatesIn"
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/participatesIn",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/participatesIn",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:participatesin",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/participatesIn",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:relates_professor_and_research",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/participatesIn",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "http://example.org/vocabulary/Person",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/participatesIn",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "http://linkedscience.org/lsc/ns#Research",
+                        "virtual": true
+                    }
+                ],
+                "primaryKey" : [
+                    "personIRI",
+                    "researchIRI"  
+                ],
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "researchIRI",
+                        "reference" : {
+                            "resource" : "data-14.csv",
+                            "columnReference" : "researchIRI"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
             "url" : "data-14.csv",
             "tableSchema" : {
                 "@type" : "Schema",
@@ -1016,6 +1097,88 @@
 
                 ],
                 "primaryKey" : "paperIRI"
+            }
+        },
+
+        {
+            "@id" : "https://example.org/university/data.csv-metadata.json",
+            "@type" : "Table",
+            "url" : "data-16.csv",
+            "aboutUrl": "http://newbase.com/{+personIRI}",
+            "tableSchema" : {
+                "@type" : "Schema",
+                "columns" : [
+                    {
+                        "@type" : "Column",
+                        "name" : "personIRI",
+                        "titles" : "personIRI",
+                        "dc:description" : "person ID",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/entity",
+                        "valueUrl": "http://example.org/vocabulary/{+personIRI}"
+                    },
+                    {
+                        "@type" : "Column",
+                        "name" : "paperIRI",
+                        "titles" : "paperIRI",
+                        "dc:description" : "paper ID",
+                        "required" : true,
+                        "datatype" : "string",
+                        "propertyUrl": "http://example.org/vocabulary/isAuthorOf"
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/isAuthorOf",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/isAuthorOf",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:isauthorof",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/isAuthorOf",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:relates_professor_and_paper",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/isAuthorOf",
+                        "propertyUrl": "rdfs:domain",
+                        "valueUrl": "http://example.org/vocabulary/Professor",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/isAuthorOf",
+                        "propertyUrl": "rdfs:range",
+                        "valueUrl": "http://example.org/vocabulary/Paper",
+                        "virtual": true
+                    }
+                    
+                ],
+                "primaryKey" : [
+                    "personIRI",
+                    "paperIRI"
+                ],
+                "foreignKeys" : [
+                    {
+                        "columnReference" : "paperIRI",
+                        "reference" : {
+                            "resource" : "data-15.csv",
+                            "columnReference" : "paperIRI"
+                        }
+                    }
+                ]
             }
         }
 
