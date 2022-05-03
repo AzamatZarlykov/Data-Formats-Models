@@ -15,7 +15,7 @@
 <https://example.org/university/data.csv-metadata.json>
   a csvw:TableGroup, csvw:Table ;
   csvw:table <https://example.org/university/data.csv-metadata.json> ;
-  csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv> ;
+  csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-9.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-10.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-12.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-13.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-16.csv> ;
   csvw:row [
     csvw:rownum 1 ;
     a csvw:Row ;
@@ -155,56 +155,126 @@
     csvw:rownum 1 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv#row=2> ;
-    csvw:describes <http://newbase.com/MarkBlue>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>
+    csvw:describes <http://newbase.com/MarkBlue>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>, <http://example.org/vocabulary/Student>
   ], [
     csvw:rownum 2 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv#row=3> ;
-    csvw:describes <http://newbase.com/NickOrange>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>
+    csvw:describes <http://newbase.com/NickOrange>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>, <http://example.org/vocabulary/Student>
   ], [
     csvw:rownum 3 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv#row=4> ;
-    csvw:describes <http://newbase.com/JimPurple>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>
+    csvw:describes <http://newbase.com/JimPurple>, <http://example.org/vocabulary/yearOfStudy>, <http://example.org/vocabulary/gpa>, <http://example.org/vocabulary/Student>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-9.csv#row=2> ;
+    csvw:describes <http://newbase.com/Economics>, <http://example.org/vocabulary/StudyProgram>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-9.csv#row=3> ;
+    csvw:describes <http://newbase.com/Philosophy>, <http://example.org/vocabulary/StudyProgram>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-9.csv#row=4> ;
+    csvw:describes <http://newbase.com/ComputerScience>, <http://example.org/vocabulary/StudyProgram>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-10.csv#row=2> ;
+    csvw:describes <http://newbase.com/Economics>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-10.csv#row=3> ;
+    csvw:describes <http://newbase.com/Philosophy>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-10.csv#row=4> ;
+    csvw:describes <http://newbase.com/ComputerScience>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-12.csv#row=2> ;
+    csvw:describes <http://newbase.com/AlexGreen>, <http://example.org/vocabulary/officeHours>, <http://example.org/vocabulary/Professor>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-12.csv#row=3> ;
+    csvw:describes <http://newbase.com/SamRed>, <http://example.org/vocabulary/officeHours>, <http://example.org/vocabulary/Professor>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-13.csv#row=2> ;
+    csvw:describes <http://newbase.com/AlexGreen>, <http://example.org/vocabulary/participatesIn>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-13.csv#row=3> ;
+    csvw:describes <http://newbase.com/AlexGreen>, <http://example.org/vocabulary/participatesIn>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-13.csv#row=4> ;
+    csvw:describes <http://newbase.com/SamRed>, <http://example.org/vocabulary/participatesIn>
   ], [
     csvw:rownum 1 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv#row=2> ;
-    csvw:describes <http://newbase.com/ResearchAboutDeterministicAlgorithms>, <http://example.org/vocabulary/numberOfPeopleInResearch>
+    csvw:describes <http://newbase.com/ResearchAboutDeterministicAlgorithms>, <http://example.org/vocabulary/numberOfPeopleInResearch>, <http://example.org/vocabulary/Research>
   ], [
     csvw:rownum 2 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv#row=3> ;
-    csvw:describes <http://newbase.com/ResearchAboutConvexHulls>, <http://example.org/vocabulary/numberOfPeopleInResearch>
+    csvw:describes <http://newbase.com/ResearchAboutConvexHulls>, <http://example.org/vocabulary/numberOfPeopleInResearch>, <http://example.org/vocabulary/Research>
   ], [
     csvw:rownum 3 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv#row=4> ;
-    csvw:describes <http://newbase.com/ResearchAboutRandomizedAlgorithms>, <http://example.org/vocabulary/numberOfPeopleInResearch>
+    csvw:describes <http://newbase.com/ResearchAboutRandomizedAlgorithms>, <http://example.org/vocabulary/numberOfPeopleInResearch>, <http://example.org/vocabulary/Research>
   ], [
     csvw:rownum 1 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv#row=2> ;
-    csvw:describes <http://newbase.com/PaperAboutLinearAlgebra>, <http://example.org/vocabulary/numberOfPeopleInPaper>
+    csvw:describes <http://newbase.com/PaperAboutLinearAlgebra>, <http://example.org/vocabulary/numberOfPeopleInPaper>, <http://example.org/vocabulary/Paper>
   ], [
     csvw:rownum 2 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv#row=3> ;
-    csvw:describes <http://newbase.com/PaperAboutMathematicalAnalysis>, <http://example.org/vocabulary/numberOfPeopleInPaper>
+    csvw:describes <http://newbase.com/PaperAboutMathematicalAnalysis>, <http://example.org/vocabulary/numberOfPeopleInPaper>, <http://example.org/vocabulary/Paper>
   ], [
     csvw:rownum 3 ;
     a csvw:Row ;
     csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv#row=4> ;
-    csvw:describes <http://newbase.com/PaperAboutDiscreteMathematics>, <http://example.org/vocabulary/numberOfPeopleInPaper>
+    csvw:describes <http://newbase.com/PaperAboutDiscreteMathematics>, <http://example.org/vocabulary/numberOfPeopleInPaper>, <http://example.org/vocabulary/Paper>
+  ], [
+    csvw:rownum 1 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-16.csv#row=2> ;
+    csvw:describes <http://newbase.com/AlexGreen>, <http://example.org/vocabulary/isAuthorOf>
+  ], [
+    csvw:rownum 2 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-16.csv#row=3> ;
+    csvw:describes <http://newbase.com/AlexGreen>, <http://example.org/vocabulary/isAuthorOf>
+  ], [
+    csvw:rownum 3 ;
+    a csvw:Row ;
+    csvw:url <file:C:/Users/Public/data-formats-t1g3/4/csv/data-16.csv#row=4> ;
+    csvw:describes <http://newbase.com/SamRed>, <http://example.org/vocabulary/isAuthorOf>
   ] ;
   prov:wasGeneratedBy [
     a prov:Activity ;
     prov:wasAssociatedWith <https://rubygems.org/gems/rdf-tabular> ;
-    prov:startedAtTime "2022-05-02T19:43:03.938+02:00"^^xsd:dateTime ;
-    prov:endedAtTime "2022-05-02T19:43:04.408+02:00"^^xsd:dateTime ;
+    prov:startedAtTime "2022-05-03T16:38:30.486+02:00"^^xsd:dateTime ;
+    prov:endedAtTime "2022-05-03T16:38:31.333+02:00"^^xsd:dateTime ;
     prov:qualifiedUsage [
       a prov:Usage ;
-      prov:entity <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv> ;
+      prov:entity <file:C:/Users/Public/data-formats-t1g3/4/csv/data-1.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-2.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-3.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-4.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-5.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-6.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-7.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-8.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-9.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-10.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-12.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-13.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-14.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-15.csv>, <file:C:/Users/Public/data-formats-t1g3/4/csv/data-16.csv> ;
       prov:hadRole csvw:csvEncodedTabularData
     ], [
       a prov:Usage ;
@@ -300,7 +370,10 @@ ns0:teaches
   ns3:id "e1fos"@en ;
   ns0:numberOfCredits "6"^^xsd:nonNegativeInteger ;
   ns0:capacity "60"^^xsd:nonNegativeInteger ;
-  a ns3:Course .
+  a ns3:Course, schema:Course ;
+  dc:title "Economics"@en ;
+  ns1:numberOfStudents "65"^^xsd:nonNegativeInteger ;
+  ns0:courseList "course 1, course 2, course 3"@en .
 
 <http://newbase.com/Anatomy>
   ns0:entity ns0:Anatomy ;
@@ -334,7 +407,10 @@ ns0:isPartOf
   foaf:firstName "Alex"@en ;
   foaf:lastName "Green"@en ;
   vcard:bday "1980-05-30T09:00:00"^^xsd:dateTime ;
-  ns2:phoneNumber "+12345467"@en .
+  ns2:phoneNumber "+12345467"@en ;
+  ns0:officeHours "09:00:00"^^xsd:time ;
+  ns0:participatesIn "ResearchAboutDeterministicAlgorithms", "ResearchAboutConvexHulls" ;
+  ns0:isAuthorOf "PaperAboutLinearAlgebra", "PaperAboutMathematicalAnalysis" .
 
 <http://newbase.com/NickOrange>
   ns0:entity ns0:NickOrange ;
@@ -354,7 +430,10 @@ ns0:isPartOf
   foaf:firstName "Sam"@en ;
   foaf:lastName "Red"@en ;
   vcard:bday "1990-03-10T07:00:00"^^xsd:dateTime ;
-  ns2:phoneNumber "+7654321"@en .
+  ns2:phoneNumber "+7654321"@en ;
+  ns0:officeHours "10:30:00"^^xsd:time ;
+  ns0:participatesIn "ResearchAboutRandomizedAlgorithms" ;
+  ns0:isAuthorOf "PaperAboutDiscreteMathematics" .
 
 <http://newbase.com/JimPurple>
   ns0:entity ns0:JimPurple ;
@@ -382,6 +461,51 @@ ns0:gpa
   rdfs:domain ns0:student ;
   rdfs:range xsd:double .
 
+ns0:Student
+  a rdfs:Class ;
+  rdfs:label xsd:string:student ;
+  rdfs:comment xsd:string:a_student_in_a_university ;
+  rdfs:subClassOf foaf:Person, <http://linkedscience.org/teach/ns#Student> .
+
+ns0:StudyProgram
+  a rdfs:Class ;
+  rdfs:label xsd:string:study_program ;
+  rdfs:comment xsd:string:a_program_studied_by_a_student .
+
+<http://newbase.com/Philosophy>
+  ns0:entity ns0:Philosophy ;
+  dc:title "Philosophy"@en ;
+  ns1:numberOfStudents "70"^^xsd:nonNegativeInteger ;
+  a schema:Course ;
+  ns0:courseList "course 1, course 2, course 3"@en .
+
+<http://newbase.com/ComputerScience>
+  ns0:entity ns0:ComputerScience ;
+  dc:title "Computer Science"@en ;
+  ns1:numberOfStudents "100"^^xsd:nonNegativeInteger ;
+  a schema:Course ;
+  ns0:courseList "course 1, course 2, course 3"@en .
+
+ns0:officeHours
+  a rdfs:Property ;
+  rdfs:label xsd:string:officehours ;
+  rdfs:comment xsd:string:time_and_date_when_the_office_is_open ;
+  rdfs:domain ns0:Professor ;
+  rdfs:range xsd:time .
+
+ns0:Professor
+  a rdfs:Class ;
+  rdfs:label xsd:string:professor ;
+  rdfs:comment xsd:string:a_professor_in_a_university ;
+  rdfs:subClassOf foaf:Person, ns1:professor .
+
+ns0:participatesIn
+  a rdfs:Property ;
+  rdfs:label xsd:string:participatesin ;
+  rdfs:comment xsd:string:relates_professor_and_research ;
+  rdfs:domain ns0:Person ;
+  rdfs:range <http://linkedscience.org/lsc/ns#Research> .
+
 <http://newbase.com/ResearchAboutDeterministicAlgorithms>
   ns0:entity <http://newbase.com/ResearchAboutDeterministicAlgorithms> ;
   dc:title "Research About Determinisitc Algorithms"@en ;
@@ -395,6 +519,12 @@ ns0:numberOfPeopleInResearch
   rdfs:comment xsd:string:relatesnumber_of_people_involved_in_some_scientific_research ;
   rdfs:domain ns0:Research ;
   rdfs:range xsd:positiveInteger .
+
+ns0:Research
+  a rdfs:Class ;
+  rdfs:label xsd:string:research ;
+  rdfs:comment xsd:string:research_conducted_by_someone ;
+  rdfs:subClassOf <http://linkedscience.org/lsc/ns#Research> .
 
 <http://newbase.com/ResearchAboutConvexHulls>
   ns0:entity <http://newbase.com/ResearchAboutConvexHulls> ;
@@ -424,6 +554,11 @@ ns0:numberOfPeopleInPaper
   rdfs:domain ns0:Paper ;
   rdfs:range xsd:positiveInteger .
 
+ns0:Paper
+  a rdfs:Class ;
+  rdfs:label xsd:string:paper ;
+  rdfs:comment <http://www.w3.org/2001/XMLSchema#string:a_scientific_paper_that_is_created/published_by_someone> .
+
 <http://newbase.com/PaperAboutMathematicalAnalysis>
   ns0:entity <http://newbase.com/PaperAboutMathematicalAnalysis> ;
   dc:title "Interesting paper about Linear Algebra"@en ;
@@ -437,3 +572,10 @@ ns0:numberOfPeopleInPaper
   ns0:numberOfPeopleInPaper "7"^^xsd:positiveInteger ;
   ns4:startDate "1990-08-17"^^xsd:date ;
   a ns0:Paper .
+
+ns0:isAuthorOf
+  a rdfs:Property ;
+  rdfs:label xsd:string:isauthorof ;
+  rdfs:comment xsd:string:relates_professor_and_paper ;
+  rdfs:domain ns0:Professor ;
+  rdfs:range ns0:Paper .

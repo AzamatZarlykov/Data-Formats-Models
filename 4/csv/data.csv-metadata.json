@@ -665,6 +665,44 @@
                         "propertyUrl": "rdfs:range",
                         "valueUrl": "xsd:double",
                         "virtual": true
+                    },
+
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Student",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Class",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/Student",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:student",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Student",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:a_student_in_a_university",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Student",
+                        "propertyUrl": "rdfs:subClassOf",
+                        "valueUrl": "foaf:Person",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Student",
+                        "propertyUrl": "rdfs:subClassOf",
+                        "valueUrl": "http://linkedscience.org/teach/ns#Student",
+                        "virtual": true
                     }
 
                 ],
@@ -711,6 +749,30 @@
                         "@type": "Column",
                         "propertyUrl": "rdf:type",
                         "valueUrl": "http://schema.org/Course",
+                        "virtual": true
+                    },
+
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/StudyProgram",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Class",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/StudyProgram",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:study_program",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/StudyProgram",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:a_program_studied_by_a_student",
                         "virtual": true
                     }
                 ],
@@ -820,6 +882,44 @@
                         "aboutUrl": "http://example.org/vocabulary/officeHours",
                         "propertyUrl": "rdfs:range",
                         "valueUrl": "xsd:time",
+                        "virtual": true
+                    },
+
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Professor",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Class",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/Professor",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:professor",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Professor",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:a_professor_in_a_university",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Professor",
+                        "propertyUrl": "rdfs:subClassOf",
+                        "valueUrl": "foaf:Person",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Professor",
+                        "propertyUrl": "rdfs:subClassOf",
+                        "valueUrl": "https://dbpedia.org/ontology/professor",
                         "virtual": true
                     }
 
@@ -998,7 +1098,39 @@
                         "propertyUrl": "rdfs:range",
                         "valueUrl": "xsd:positiveInteger",
                         "virtual": true
+                    },
+
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Research",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Class",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/Research",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:research",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Research",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:research_conducted_by_someone",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Research",
+                        "propertyUrl": "rdfs:subClassOf",
+                        "valueUrl": "http://linkedscience.org/lsc/ns#Research",
+                        "virtual": true
                     }
+                    
                 ],
                 "primaryKey" : "researchIRI"
             }
@@ -1092,6 +1224,30 @@
                         "aboutUrl": "http://example.org/vocabulary/numberOfPeopleInPaper",
                         "propertyUrl": "rdfs:range",
                         "valueUrl": "xsd:positiveInteger",
+                        "virtual": true
+                    },
+
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Paper",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Class",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "datatype": "string",
+                        "lang": "en",
+                        "aboutUrl": "http://example.org/vocabulary/Paper",
+                        "propertyUrl": "rdfs:label",
+                        "valueUrl": "xsd:string:paper",
+                        "virtual": true
+                    },
+                    {
+                        "@type" : "Column",
+                        "aboutUrl": "http://example.org/vocabulary/Paper",
+                        "propertyUrl": "rdfs:comment",
+                        "valueUrl": "xsd:string:a_scientific_paper_that_is_created/published_by_someone",
                         "virtual": true
                     }
 
