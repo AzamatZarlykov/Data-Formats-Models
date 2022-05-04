@@ -210,7 +210,7 @@
     &lt;<xsl:value-of select="translate(name[@xml:lang='en'], ' ', '')"/>&gt;
         a ex:StudyProgram ;
         dcterms:title "<xsl:value-of select="name[@xml:lang='en']"/>"@en ;
-        dbpediaowl:numberOfStudents "<xsl:value-of select="numberOfStudents"/>^^xsd:nonNegativeInteger ;
+        dbpediaowl:numberOfStudents "<xsl:value-of select="numberOfStudents"/>"^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
     <!-- <xsl:apply-templates select="numberOfStudents[text() = '65']"/> -->

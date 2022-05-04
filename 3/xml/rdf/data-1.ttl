@@ -45,7 +45,7 @@
     <Economics>
         a ex:StudyProgram ;
         dcterms:title "Economics"@en ;
-        dbpediaowl:numberOfStudents "65^^xsd:nonNegativeInteger ;
+        dbpediaowl:numberOfStudents "65"^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
     
@@ -255,7 +255,7 @@
     <Philosophy>
         a ex:StudyProgram ;
         dcterms:title "Philosophy"@en ;
-        dbpediaowl:numberOfStudents "70^^xsd:nonNegativeInteger ;
+        dbpediaowl:numberOfStudents "70"^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
     
@@ -338,7 +338,7 @@
     <ComputerScience>
         a ex:StudyProgram ;
         dcterms:title "Computer Science"@en ;
-        dbpediaowl:numberOfStudents "100^^xsd:nonNegativeInteger ;
+        dbpediaowl:numberOfStudents "100"^^xsd:nonNegativeInteger ;
         ex:courseList "course1 course2 course3"@en .
 
     
