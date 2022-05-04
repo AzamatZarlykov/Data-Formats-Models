@@ -52,10 +52,12 @@
 
      <faculty>
          <name xml:lang="en">faculty of mathematics and physics</name>
+         <iri>FacultyOfMathematicsAndPhysics</iri>
          <establishmentYear>1680-02-20</establishmentYear>
          <budget>2222222</budget>
          <course>
              <id xml:lang="en">ma1fomp</id>
+             <name>MathematicalAnalysis</name>
              <numberOfCredits>6</numberOfCredits>
              <maxCapacity>30</maxCapacity>
          </course>
@@ -114,10 +116,12 @@
    
         <faculty>
             <name xml:lang="en">faculty of social sciences</name>
+            <iri>FacultyOfSocialSciences</iri>
             <establishmentYear>1750-03-10</establishmentYear>
             <budget>1000000</budget>
             <course>
                 <id xml:lang="en">e1fos</id>
+                <name>Economics</name>
                 <numberOfCredits>6</numberOfCredits>
                 <maxCapacity>60</maxCapacity>
             </course>
@@ -147,13 +151,15 @@
                <courseList xml:lang="en">course3</courseList>
            </studyProgram>
         </student>
-   
+        
         <faculty>
             <name xml:lang="en">faculty of medicine</name>
+            <iri>FacultyOfMedicine</iri>
             <establishmentYear>1800-11-04</establishmentYear>
             <budget>999999</budget>
             <course>
                 <id xml:lang="en">a1fom</id>
+                <name>Medicine</name>
                 <numberOfCredits>4</numberOfCredits>
                 <maxCapacity>50</maxCapacity>
             </course>

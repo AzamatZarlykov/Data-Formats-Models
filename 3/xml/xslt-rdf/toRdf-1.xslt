@@ -167,7 +167,7 @@
     </xsl:template>
     
     <xsl:template match="faculty">
-    &lt;<xsl:value-of select="translate(name[@xml:lang='en'], ' ', '')"/>&gt;
+    &lt;<xsl:value-of select="iri"/>&gt;
         a aiiso:Faculty ;
         dcterms:title "<xsl:value-of select="name[@xml:lang='en']"/>"@en ;
         ex:establishDate "<xsl:value-of select="establishmentYear"/>"^^xsd:date ;
@@ -179,7 +179,7 @@
     </xsl:template>
 
     <xsl:template match="course">
-    &lt;&gt;
+    &lt;<xsl:value-of select="name"/>&gt;
         a schema:Course ;
         mv:id "<xsl:value-of select="id[@xml:lang='en']"/>"@en ;
         ex:numberOfCredits "<xsl:value-of select="numberOfCredits"/>"^^xsd:nonNegativeInteger ;
