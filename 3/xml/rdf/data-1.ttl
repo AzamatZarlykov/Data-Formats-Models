@@ -100,7 +100,7 @@
         vcard:bday "1980-05-30T09:00:00"^^xsd:dateTime ;
         ex:officeHours "09:00:00"^^xsd:time ;
         
-        ex:isAuthorOf <InterestingpaperaboutMathematicalAnalysis> ;
+        ex:isAuthorOf <PaperAboutMathematicalAnalysis> ;
         
         ex:participatesIn  <ResearchAboutDeterminisitcAlgorithms> ;
         
@@ -111,7 +111,7 @@
     
 
     
-    <InterestingpaperaboutMathematicalAnalysis>
+    <PaperAboutMathematicalAnalysis>
         a ex:Paper ;
         dcterms:title "Interesting paper about Mathematical Analysis"@en ;
         ex:numberOfPeopleInPaper "3"^^xsd:positiveInteger ;
@@ -198,7 +198,7 @@
         dcterms:title "faculty of mathematics and physics"@en ;
         ex:establishDate "1680-02-20"^^xsd:date ;
         dbpediaowl:budget "2222222"^^xsd:double ;
-        ex:teaches <> .
+        ex:teaches <MathematicalAnalysis> .
     
     
     <MathematicalAnalysis>
@@ -230,14 +230,14 @@
         rdfs:range aiiso:Faculty .
 
     
-    <king'scollegelondon>
+    <King'sCollegeLondon>
         a vivo:University ;
         dcterms:title "king's college london"@en ;
         ov:phoneNumber "+44 20 7836 5454"@en ;
         vcard:street-address "Strand, London WC2R 2LS, United Kingdom"@cz ;
         dbpediaowl:numberOfStudents "1200"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "40"^^xsd:positiveInteger ;
-        ex:constitutes <FacultyOfMathematicsAndPhysics> .
+        ex:constitutes <facultyOfSocialSciences> .
         
     
     <NickOrange>
@@ -249,7 +249,7 @@
         ex:yearOfStudy  "1"^^xsd:positiveInteger ;
         ex:gpa "1.2"^^xsd:double ;
         ex:studies  <Philosophy> ;
-        ex:isPartOf <king'scollegelondon> .
+        ex:isPartOf <King'sCollegeLondon> .
     
     
     <Philosophy>
@@ -268,24 +268,24 @@
         vcard:bday "1990-03-10T07:00:00"^^xsd:dateTime ;
         ex:officeHours "10:30:00"^^xsd:time ;
         
-        ex:isAuthorOf <InterestingpaperaboutLinearAlgebra> ;
+        ex:isAuthorOf <PaperAboutLinearAlgebra> ;
         
-        ex:isAuthorOf <InterestingpaperaboutDiscreteMathematics> ;
+        ex:isAuthorOf <PaperAboutDiscreteMathematics> ;
         
         ex:participatesIn  <ResearchAboutRandomizedAlgorithms> ;
         
-        ex:isPartOf <king'scollegelondon> .
+        ex:isPartOf <King'sCollegeLondon> .
 
     
 
     
-    <InterestingpaperaboutLinearAlgebra>
+    <PaperAboutLinearAlgebra>
         a ex:Paper ;
         dcterms:title "Interesting paper about Linear Algebra"@en ;
         ex:numberOfPeopleInPaper "5"^^xsd:positiveInteger ;
         disco:startDate "1997-05-10"^^xsd:date .
     
-    <InterestingpaperaboutDiscreteMathematics>
+    <PaperAboutDiscreteMathematics>
         a ex:Paper ;
         dcterms:title "Interesting paper about Discrete Mathematics"@en ;
         ex:numberOfPeopleInPaper "7"^^xsd:positiveInteger ;
@@ -303,7 +303,7 @@
         dcterms:title "faculty of social sciences"@en ;
         ex:establishDate "1750-03-10"^^xsd:date ;
         dbpediaowl:budget "1000000"^^xsd:double ;
-        ex:teaches <> .
+        ex:teaches <Economics> .
     
     
     <Economics>
@@ -320,7 +320,7 @@
         vcard:street-address "77 Massachusetts Ave, Cambridge, MA 02139, United States"@cz ;
         dbpediaowl:numberOfStudents "1300"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "3"^^xsd:positiveInteger ;
-        ex:constitutes <FacultyOfMathematicsAndPhysics> .
+        ex:constitutes <FacultyOfMedicine> .
         
     
     <JimPurple>
@@ -348,10 +348,10 @@
         dcterms:title "faculty of medicine"@en ;
         ex:establishDate "1800-11-04"^^xsd:date ;
         dbpediaowl:budget "999999"^^xsd:double ;
-        ex:teaches <> .
+        ex:teaches <Anatomy> .
     
     
-    <Medicine>
+    <Anatomy>
         a schema:Course ;
         mv:id "a1fom"@en ;
         ex:numberOfCredits "4"^^xsd:nonNegativeInteger ;

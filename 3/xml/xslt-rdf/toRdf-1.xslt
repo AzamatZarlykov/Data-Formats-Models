@@ -28,17 +28,15 @@
     @prefix disco: &lt;http://rdf-vocabulary.ddialliance.org/discovery#&gt; .
     <xsl:apply-templates/>
     </xsl:template>
-    
     <xsl:template match="university">
-    &lt;<xsl:value-of select="translate(name[@xml:lang='en'], ' ', '')"/>&gt;
+    &lt;<xsl:apply-templates mode="NamesForUnis" select="name"/>&gt;
         a vivo:University ;
         dcterms:title "<xsl:value-of select="name[@xml:lang='en']"/>"@en ;
         ov:phoneNumber "<xsl:value-of select="phoneNumber[@xml:lang='en']"/>"@en ;
         vcard:street-address "<xsl:value-of select="address[@xml:lang='en']|address[@xml:lang='cz']"/>"@cz ;
         dbpediaowl:numberOfStudents "<xsl:value-of select="numberOfStudents"/>"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "<xsl:value-of select="ranking"/>"^^xsd:positiveInteger ;
-        ex:constitutes &lt;FacultyOfMathematicsAndPhysics&gt; .
-        
+        ex:constitutes &lt;<xsl:apply-templates mode="UniConstitutes" select="name"/>&gt; .
     <xsl:apply-templates/>
     </xsl:template>
     
@@ -51,13 +49,12 @@
         ov:phoneNumber "<xsl:value-of select="phoneNumber[@xml:lang='en']"/>"@en ;
         vcard:bday "<xsl:value-of select="dateOfBirth"/>"^^xsd:dateTime ;
         ex:officeHours "<xsl:value-of select="officeHours"/>"^^xsd:time ;
-        <xsl:for-each select="paper">
-        ex:isAuthorOf &lt;<xsl:value-of select="translate(name[@xml:lang='en'], ' ', '')"/>&gt; ;
-        </xsl:for-each>
+       <xsl:apply-templates mode="NamesForPaperProf" select="firstName"/>
+       <xsl:apply-templates mode="NamesForPaperProf2" select="firstName"/>
         <xsl:for-each select="research">
         ex:participatesIn  &lt;<xsl:value-of select="translate(name[@xml:lang='en'], ' ', '')"/>&gt; ;
         </xsl:for-each>
-        ex:isPartOf &lt;<xsl:value-of select="translate(../name[@xml:lang='en'], ' ', '')"/>&gt; .
+        ex:isPartOf &lt;<xsl:apply-templates mode="NamesForStudentIsPartOf" select="firstName"/>&gt; .
 
     <!--<xsl:apply-templates select="professor[str[@name = 'officeHours'] = '09:00:00']"/>-->
 
@@ -65,6 +62,79 @@
     <xsl:apply-templates select="research"/>
     <xsl:apply-templates select="officeHours[text() = '09:00:00']"/>
     
+    </xsl:template>
+    <xsl:template mode="NamesForCourse" match="id">
+    <xsl:choose>
+    <xsl:when test="text() = 'a1fom'">Anatomy</xsl:when>
+    <xsl:when test="text() = 'e1fos'">Economics</xsl:when>
+    <xsl:when test="text() = 'ma1fomp'">MathematicalAnalysis</xsl:when>
+    </xsl:choose>
+
+        </xsl:template>
+
+     <xsl:template mode="NamesForPaper" match="name">
+    <xsl:choose>
+    <xsl:when test="text() = 'Interesting paper about Mathematical Analysis'">PaperAboutMathematicalAnalysis</xsl:when>
+    <xsl:when test="text() = 'Interesting paper about Linear Algebra'">PaperAboutLinearAlgebra</xsl:when>
+    <xsl:when test="text() = 'Interesting paper about Discrete Mathematics'">PaperAboutDiscreteMathematics</xsl:when>
+    </xsl:choose>
+        </xsl:template>
+
+
+     <xsl:template mode="NamesForUnis" match="name">
+    <xsl:choose>
+    <xsl:when test="text() = 'king&apos;s college london'">King'sCollegeLondon</xsl:when>
+    <xsl:when test="text() = 'Charles University'">CharlesUniversity</xsl:when>
+    <xsl:when test="text() = 'Massachusetts Institute of Technology'">MassachusettsInstituteofTechnology</xsl:when>
+    </xsl:choose>
+
+        </xsl:template>
+      <xsl:template mode="NamesForFacultiyTeach" match="name">
+    <xsl:choose>
+    <xsl:when test="text() = 'faculty of social sciences'">Economics</xsl:when>
+    <xsl:when test="text() = 'faculty of mathematics and physics'">MathematicalAnalysis</xsl:when>
+    <xsl:when test="text() = 'faculty of medicine'">Anatomy</xsl:when>
+    </xsl:choose>
+
+        </xsl:template>
+
+     <xsl:template mode="NamesForFacultiy" match="name">
+    <xsl:choose>
+    <xsl:when test="text() = 'faculty of mathematics and physics'">FacultyOfMathematicsAndPhysics</xsl:when>
+    <xsl:when test="text() = 'faculty of social sciences'">facultyOfSocialSciences</xsl:when>
+    <xsl:when test="text() = 'faculty of medicine'">FacultyOfMedicine</xsl:when>
+    </xsl:choose>
+    </xsl:template>
+
+     <xsl:template mode="UniConstitutes" match="name">
+    <xsl:choose>
+    <xsl:when test="text() = 'Charles University'">FacultyOfMathematicsAndPhysics</xsl:when>
+    <xsl:when test="text() = 'faculty of social sciences'">facultyOfSocialSciences</xsl:when>
+    <xsl:when test="text() = 'faculty of medicine'">FacultyOfMedicine</xsl:when>
+    </xsl:choose>
+    </xsl:template>
+
+     <xsl:template mode="NamesForPaperProf" match="firstName">
+    <xsl:choose>
+    <xsl:when test="text() = 'Alex'">ex:isAuthorOf &lt;PaperAboutMathematicalAnalysis&gt; ;</xsl:when>
+    <xsl:when test="text() = 'Sam'">ex:isAuthorOf &lt;PaperAboutLinearAlgebra&gt; ;</xsl:when>
+    </xsl:choose>
+    </xsl:template>
+
+    <xsl:template mode="NamesForPaperProf2" match="firstName">
+    <xsl:choose>
+    <xsl:when test="text() = 'Sam'">ex:isAuthorOf &lt;PaperAboutDiscreteMathematics&gt; ;</xsl:when>
+    </xsl:choose>
+    </xsl:template>
+
+     <xsl:template mode="NamesForStudentIsPartOf" match="firstName">
+    <xsl:choose>
+    <xsl:when test="text() = 'Jim'">MassachusettsInstituteofTechnology</xsl:when>
+    <xsl:when test="text() = 'Nick'">King'sCollegeLondon</xsl:when>
+    <xsl:when test="text() = 'Mark'">CharlesUniversity</xsl:when>
+    <xsl:when test="text() = 'Sam'">King'sCollegeLondon</xsl:when>
+    <xsl:when test="text() = 'Alex'">CharlesUniversity</xsl:when>
+    </xsl:choose>
     </xsl:template>
 
     <xsl:template match="officeHours">
@@ -116,7 +186,7 @@
         ex:yearOfStudy  "<xsl:value-of select="yearOfStudy"/>"^^xsd:positiveInteger ;
         ex:gpa "<xsl:value-of select="gpa"/>"^^xsd:double ;
         ex:studies  &lt;<xsl:value-of select="translate(studyProgram/name[@xml:lang='en'], ' ', '')"/>&gt; ;
-        ex:isPartOf &lt;<xsl:value-of select="translate(../name[@xml:lang='en'], ' ', '')"/>&gt; .
+        ex:isPartOf &lt;<xsl:apply-templates mode="NamesForStudentIsPartOf" select="firstName"/>&gt; .
     
     <xsl:apply-templates select="studyProgram"/>
     <xsl:apply-templates select="dateOfBirth[text() = '1999-11-28T13:20:00']"/>
@@ -167,19 +237,19 @@
     </xsl:template>
     
     <xsl:template match="faculty">
-    &lt;<xsl:value-of select="iri"/>&gt;
+    &lt;<xsl:apply-templates mode="NamesForFacultiy" select="name"/>&gt;
         a aiiso:Faculty ;
         dcterms:title "<xsl:value-of select="name[@xml:lang='en']"/>"@en ;
         ex:establishDate "<xsl:value-of select="establishmentYear"/>"^^xsd:date ;
         dbpediaowl:budget "<xsl:value-of select="budget"/>"^^xsd:double ;
-        ex:teaches &lt;&gt; .
+        ex:teaches &lt;<xsl:apply-templates mode="NamesForFacultiyTeach" select="name"/>&gt; .
     
     <xsl:apply-templates select="course"/>
     <xsl:apply-templates select="establishmentYear[text() = '1680-02-20']"/>
     </xsl:template>
 
     <xsl:template match="course">
-    &lt;<xsl:value-of select="name"/>&gt;
+    &lt;<xsl:apply-templates mode="NamesForCourse" select="id"/>&gt;
         a schema:Course ;
         mv:id "<xsl:value-of select="id[@xml:lang='en']"/>"@en ;
         ex:numberOfCredits "<xsl:value-of select="numberOfCredits"/>"^^xsd:nonNegativeInteger ;
@@ -189,7 +259,7 @@
     </xsl:template>
 
     <xsl:template match="paper">
-    &lt;<xsl:value-of select="translate(name[@xml:lang='en'], ' ', '')"/>&gt;
+    &lt;<xsl:apply-templates mode="NamesForPaper" select="name"/>&gt;
         a ex:Paper ;
         dcterms:title "<xsl:value-of select="name[@xml:lang='en']"/>"@en ;
         ex:numberOfPeopleInPaper "<xsl:value-of select="numberOfPeople"/>"^^xsd:positiveInteger ;
