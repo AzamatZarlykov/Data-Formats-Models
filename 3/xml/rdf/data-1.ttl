@@ -28,7 +28,6 @@
         dbpediaowl:numberOfStudents "1000"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "50"^^xsd:positiveInteger ;
         ex:constitutes <FacultyOfMathematicsAndPhysics> .
-        
     
     <MarkBlue>
         a ex:Student ;
@@ -99,9 +98,7 @@
         ov:phoneNumber "+12345467"@en ;
         vcard:bday "1980-05-30T09:00:00"^^xsd:dateTime ;
         ex:officeHours "09:00:00"^^xsd:time ;
-        
-        ex:isAuthorOf <PaperAboutMathematicalAnalysis> ;
-        
+       ex:isAuthorOf <PaperAboutMathematicalAnalysis> ;
         ex:participatesIn  <ResearchAboutDeterminisitcAlgorithms> ;
         
         ex:participatesIn  <ResearchAboutConvexHulls> ;
@@ -237,8 +234,7 @@
         vcard:street-address "Strand, London WC2R 2LS, United Kingdom"@cz ;
         dbpediaowl:numberOfStudents "1200"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "40"^^xsd:positiveInteger ;
-        ex:constitutes <facultyOfSocialSciences> .
-        
+        ex:constitutes <> .
     
     <NickOrange>
         a ex:Student ;
@@ -267,11 +263,7 @@
         ov:phoneNumber "+7654321"@en ;
         vcard:bday "1990-03-10T07:00:00"^^xsd:dateTime ;
         ex:officeHours "10:30:00"^^xsd:time ;
-        
-        ex:isAuthorOf <PaperAboutLinearAlgebra> ;
-        
-        ex:isAuthorOf <PaperAboutDiscreteMathematics> ;
-        
+       ex:isAuthorOf <PaperAboutLinearAlgebra> ;ex:isAuthorOf <PaperAboutDiscreteMathematics> ;
         ex:participatesIn  <ResearchAboutRandomizedAlgorithms> ;
         
         ex:isPartOf <King'sCollegeLondon> .
@@ -298,7 +290,7 @@
         disco:startDate "2004-07-03"^^xsd:date .
 
     
-    <FacultyOfSocialSciences>
+    <facultyOfSocialSciences>
         a aiiso:Faculty ;
         dcterms:title "faculty of social sciences"@en ;
         ex:establishDate "1750-03-10"^^xsd:date ;
@@ -320,8 +312,7 @@
         vcard:street-address "77 Massachusetts Ave, Cambridge, MA 02139, United States"@cz ;
         dbpediaowl:numberOfStudents "1300"^^xsd:nonNegativeInteger ;
         dbpediaowl:ranking "3"^^xsd:positiveInteger ;
-        ex:constitutes <FacultyOfMedicine> .
-        
+        ex:constitutes <> .
     
     <JimPurple>
         a ex:Student ;

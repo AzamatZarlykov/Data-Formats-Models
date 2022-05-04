@@ -83,7 +83,7 @@
 
      <xsl:template mode="NamesForUnis" match="name">
     <xsl:choose>
-    <xsl:when test="text() = 'king&apos;s college london'">King'sCollegeLondon</xsl:when>
+    <xsl:when test="text() = 'king''s college london'">King'sCollegeLondon</xsl:when>
     <xsl:when test="text() = 'Charles University'">CharlesUniversity</xsl:when>
     <xsl:when test="text() = 'Massachusetts Institute of Technology'">MassachusettsInstituteofTechnology</xsl:when>
     </xsl:choose>
